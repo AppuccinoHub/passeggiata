@@ -51,6 +51,10 @@ export function WalkPlayer({ slug }: { slug: string }) {
   const frame =
     phase === "arrive" ? "center 40%" : frames[index % frames.length];
   const zoom = phase === "walk" ? 1.08 + index * 0.06 : 1.04;
+  const stage =
+    phase === "arrive"
+      ? "min-h-[78svh]"
+      : "min-h-[46svh] sm:min-h-[52svh]";
 
   const shell = turin
     ? "town-turin bg-background text-foreground"
@@ -76,7 +80,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
 
   return (
     <main className={shell}>
-      <div className="relative min-h-[72svh] overflow-hidden bg-black sm:min-h-[78svh]">
+      <div className={`relative overflow-hidden bg-black ${stage}`}>
         <img
           src={scene.src}
           alt={scene.alt}
@@ -84,7 +88,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
           style={{ objectPosition: frame, transform: `scale(${zoom})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/25" />
-        <div className="relative flex min-h-[72svh] flex-col justify-end px-5 pb-8 text-white sm:min-h-[78svh]">
+        <div className={`relative flex flex-col justify-end px-5 pb-8 text-white ${stage}`}>
           <div className="mx-auto w-full max-w-2xl">
             <p className="text-sm text-white/80">
               <Link href="/" className="underline decoration-white/40 underline-offset-4">
@@ -103,6 +107,15 @@ export function WalkPlayer({ slug }: { slug: string }) {
                 <p className="mt-3 max-w-md text-lg leading-snug text-white/90">
                   {stroll.place}
                 </p>
+                <div className="mt-5">
+                  <button
+                    type="button"
+                    className="inline-flex h-11 items-center rounded-lg bg-white px-5 text-sm font-medium text-[#241c16]"
+                    onClick={restart}
+                  >
+                    {alreadyWalked ? "Walk it again" : "Walk in"}
+                  </button>
+                </div>
               </>
             ) : (
               <>
@@ -173,11 +186,6 @@ export function WalkPlayer({ slug }: { slug: string }) {
             {alreadyWalked ? (
               <p className="mt-5 font-serif italic">Walked.</p>
             ) : null}
-            <div className="mt-6">
-              <Button type="button" size="lg" className="h-11 px-5" onClick={restart}>
-                {alreadyWalked ? "Walk it again" : "Walk in"}
-              </Button>
-            </div>
             <NeighborLinks
               earlier={earlier?.slug}
               later={later?.slug}
