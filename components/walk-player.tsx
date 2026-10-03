@@ -51,10 +51,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
   const frame =
     phase === "arrive" ? "center 40%" : frames[index % frames.length];
   const zoom = phase === "walk" ? 1.08 + index * 0.06 : 1.04;
-  const stage =
-    phase === "arrive"
-      ? "min-h-[78svh]"
-      : "min-h-[46svh] sm:min-h-[52svh]";
+  const stage = phase === "arrive" ? "h-[32svh]" : "h-24";
 
   const shell = turin
     ? "town-turin bg-background text-foreground"
@@ -88,7 +85,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
           style={{ objectPosition: frame, transform: `scale(${zoom})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/25" />
-        <div className={`relative flex flex-col justify-end px-5 pb-8 text-white ${stage}`}>
+        <div className={`relative flex flex-col justify-end px-5 pb-3 text-white ${stage}`}>
           <div className="mx-auto w-full max-w-2xl">
             <p className="text-sm text-white/80">
               <Link href="/" className="underline decoration-white/40 underline-offset-4">
@@ -101,7 +98,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
             </p>
             {phase === "arrive" ? (
               <>
-                <h1 className="mt-3 max-w-xl font-serif text-5xl leading-none italic sm:text-6xl">
+                <h1 className="mt-2 max-w-xl font-serif text-4xl leading-none italic sm:text-5xl">
                   {stroll.title}
                 </h1>
                 <p className="mt-3 max-w-md text-lg leading-snug text-white/90">
@@ -119,12 +116,12 @@ export function WalkPlayer({ slug }: { slug: string }) {
               </>
             ) : (
               <>
-                <p className="mt-3 text-sm uppercase tracking-[0.16em] text-white/70">
+                <p className="text-sm uppercase tracking-[0.16em] text-white/70">
                   {phase === "done"
                     ? "Fine della passeggiata"
                     : `Fermata ${index + 1} di ${stroll.stops.length}`}
                 </p>
-                <h1 className="mt-2 font-serif text-4xl italic leading-tight sm:text-5xl">
+                <h1 className="mt-1 font-serif text-2xl italic leading-tight">
                   {phase === "done" ? stroll.title : stop.short}
                 </h1>
                 {phase === "walk" ? (
@@ -152,10 +149,17 @@ export function WalkPlayer({ slug }: { slug: string }) {
         </div>
       </div>
 
-      <article className="mx-auto max-w-2xl px-5 py-8 pb-20">
+      <article className="mx-auto max-w-2xl px-5 py-4 pb-16">
         {phase === "arrive" ? (
           <>
             <p className="text-lg leading-relaxed">{stroll.skill}</p>
+            <button
+              type="button"
+              className="mt-4 inline-flex h-12 items-center rounded-lg bg-[#241c16] px-5 text-sm font-medium text-white"
+              onClick={restart}
+            >
+              {alreadyWalked ? "Ancora" : "Entra"}
+            </button>
             <ol className="mt-6 grid gap-3">
               {stroll.stops.map((item, stopIndex) => (
                 <li key={item.id} className="flex gap-3">
@@ -363,13 +367,13 @@ function WalkStop({
           ) : null}
           <blockquote
             lang="it"
-            className="mt-1 font-serif text-3xl leading-snug italic text-balance"
+            className="mt-1 font-serif text-2xl leading-snug italic text-balance"
           >
             {say(stop.heard, gender)}
           </blockquote>
         </figure>
       ) : null}
-      <p className="mt-6 font-medium">{stop.prompt}</p>
+      <p className="mt-4 font-medium">{stop.prompt}</p>
       <ul className="mt-3 grid gap-2">
         {stop.choices.map((choice, choiceIndex) => (
           <li key={choice.tone + say(choice.text, gender)}>
@@ -423,7 +427,7 @@ function ChoiceButton({
     >
       <Button
         type="button"
-        variant="ghost"
+        variant="outline"
         disabled={revealed}
         className="h-auto w-full min-h-11 items-start justify-start whitespace-normal px-3 py-3 text-left text-base leading-relaxed disabled:opacity-100"
         style={{ height: "auto", whiteSpace: "normal" }}

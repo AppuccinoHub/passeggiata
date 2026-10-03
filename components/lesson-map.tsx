@@ -26,20 +26,20 @@ export function LessonMap() {
     <main>
       <div className="h-2 bg-gradient-to-r from-[#c46a3a] via-[#6e4a58] to-[#243044]" />
       {tonight ? (
-        <Link href={`/s/${tonight.slug}`} className="group relative block min-h-[78svh] overflow-hidden bg-black text-white">
+        <Link href={`/s/${tonight.slug}`} className="group relative block h-[42svh] overflow-hidden bg-black text-white">
           <img
             src={strollScene[tonight.slug].src}
             alt={strollScene[tonight.slug].alt}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
           <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
-          <span className="relative flex min-h-[78svh] flex-col justify-end px-5 pb-8">
+          <span className="relative flex h-[42svh] flex-col justify-end px-5 pb-6">
             <span className="mx-auto w-full max-w-2xl">
               <span className="block font-serif text-lg italic text-white/80">Passeggiata</span>
               <span className="mt-2 block text-sm uppercase tracking-[0.16em] text-white/70">
                 Stasera · {tonight.time}
               </span>
-              <span className="mt-2 block font-serif text-5xl leading-none italic sm:text-6xl">
+              <span className="mt-2 block font-serif text-4xl leading-none italic sm:text-5xl">
                 {tonight.title}
               </span>
               <span className="mt-3 block max-w-md text-lg text-white/90">{tonight.place}</span>
@@ -180,7 +180,7 @@ function TownPath({
                 <img
                   src={scene.src}
                   alt={scene.alt}
-                  className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-80"
+                  className="h-36 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-44"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/10" />
                 <span className="absolute inset-x-0 bottom-0 p-4 text-white">
