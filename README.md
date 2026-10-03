@@ -1,6 +1,6 @@
 # Passeggiata
 
-A lesson map for Italian at the right distance. Twelve walks: one long evening in Lecce, then three nights in Turin. Each stop is something you overhear, answer, or read. The skill is social. Who gets *ciao*, who gets *buonasera*, and when a textbook sentence sounds cold.
+A lesson map for Italian at the right distance. Twelve evening walks, each one a photograph of the street you are on: one long evening in Lecce, then three nights in Turin. You step into the picture, then answer the person in front of you. The skill is social. Who gets *ciao*, who gets *buonasera*, and when a textbook sentence sounds cold.
 
 You can read every walk. The next one counts only when the walk before it is finished. Progress stays in the browser.
 

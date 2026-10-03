@@ -6,18 +6,15 @@ import { Button } from "@/components/ui/button";
 import { useProgress } from "@/components/progress";
 import {
   contrasts,
-  moves,
   nightLabel,
   strolls,
   threshold,
   tonightOf,
   towns,
   walkedThrough,
-  type Mode,
   type TownId,
 } from "@/lib/curriculum";
-
-const moveOrder: Mode[] = ["overhear", "answer", "notice"];
+import { strollScene } from "@/lib/scenes";
 
 export function LessonMap() {
   const { finished, reset } = useProgress();
@@ -28,65 +25,49 @@ export function LessonMap() {
   return (
     <main>
       <div className="h-2 bg-gradient-to-r from-[#c46a3a] via-[#6e4a58] to-[#243044]" />
-      <section className="mx-auto max-w-2xl px-5 pt-8 pb-2">
-        <h1 className="font-serif text-5xl leading-none italic sm:text-6xl">
-          Passeggiata
-        </h1>
-        <p className="mt-5 text-lg leading-relaxed">
-          A lesson is one evening, on foot. You don&apos;t collect words. You
-          arrive in a town and deal with the people already in the street: how
-          long a greeting lasts, who is offered <Em>tu</Em>, and when a correct
-          sentence makes the room go quiet.
-        </p>
-        <p className="mt-3 leading-relaxed text-muted-foreground">
-          Lecce first, where the stone holds the heat and warmth shows up as
-          time, food, and <Em>ciao</Em> given early. Turin after, under the
-          arcades, where courtesy is often a shorter sentence. The same{" "}
-          <Em>buonasera</Em> works in both. Almost nothing else transfers
-          without being resized. You can read ahead. The evening itself does
-          not skip.
-        </p>
-        {tonight ? (
-          <p className="mt-5 font-serif text-lg italic">
-            Next is{" "}
-            <Link
-              href={`/s/${tonight.slug}`}
-              className="underline decoration-border underline-offset-4 hover:decoration-primary"
-            >
-              {tonight.title}
-            </Link>
-            , {tonight.time}, {tonight.place}.
-          </p>
-        ) : (
-          <p className="mt-5 font-serif text-lg italic">
-            Both towns are walked. The map is still here if a sentence needs
-            another size.
-          </p>
-        )}
-      </section>
-
-      <section className="mx-auto max-w-2xl px-5 py-8">
-        <h2 className="font-serif text-2xl italic">Three moves</h2>
-        <ul className="mt-4 grid gap-5 sm:grid-cols-3">
-          {moveOrder.map((mode) => {
-            const move = moves[mode];
-            return (
-              <li key={mode}>
-                <p className="font-serif text-lg italic">{move.it}</p>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="text-foreground">{move.en}.</span> {move.text}
-                </p>
-              </li>
-            );
-          })}
-        </ul>
-        <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-          Cold means grammatical and socially off. Too close is the other
-          mistake: warmth carried in from a room that hasn&apos;t offered it.
-          You choose the line. You don&apos;t type it yet. The ear for distance
-          comes before the mouth.
-        </p>
-      </section>
+      {tonight ? (
+        <Link href={`/s/${tonight.slug}`} className="group relative block min-h-[78svh] overflow-hidden bg-black text-white">
+          <img
+            src={strollScene[tonight.slug].src}
+            alt={strollScene[tonight.slug].alt}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
+          <span className="relative flex min-h-[78svh] flex-col justify-end px-5 pb-8">
+            <span className="mx-auto w-full max-w-2xl">
+              <span className="block font-serif text-lg italic text-white/80">Passeggiata</span>
+              <span className="mt-2 block text-sm uppercase tracking-[0.16em] text-white/70">
+                Tonight · {tonight.time}
+              </span>
+              <span className="mt-2 block font-serif text-5xl leading-none italic sm:text-6xl">
+                {tonight.title}
+              </span>
+              <span className="mt-3 block max-w-md text-lg text-white/90">{tonight.place}</span>
+              <span className="mt-6 inline-flex h-11 items-center rounded-lg bg-white px-5 text-sm font-medium text-[#241c16]">
+                Walk in
+              </span>
+            </span>
+          </span>
+        </Link>
+      ) : (
+        <section className="relative min-h-[62svh] overflow-hidden bg-black text-white">
+          <img
+            src={strollScene["il-ritorno"].src}
+            alt={strollScene["il-ritorno"].alt}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/25" />
+          <div className="relative flex min-h-[62svh] flex-col justify-end px-5 pb-8">
+            <div className="mx-auto w-full max-w-2xl">
+              <p className="font-serif text-lg italic text-white/80">Passeggiata</p>
+              <h1 className="mt-2 font-serif text-5xl italic">Both towns are walked.</h1>
+              <p className="mt-3 max-w-md text-lg text-white/90">
+                The streets are still here if a sentence needs another size.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       <TownPath town="lecce" walked={walked} tonightSlug={tonight?.slug ?? null} />
 
@@ -160,14 +141,6 @@ export function LessonMap() {
   );
 }
 
-function Em({ children }: { children: React.ReactNode }) {
-  return (
-    <em lang="it" className="font-serif">
-      {children}
-    </em>
-  );
-}
-
 function TownPath({
   town,
   walked,
@@ -182,7 +155,6 @@ function TownPath({
   const info = towns[town];
   const nights = strolls.filter((stroll) => stroll.town === town);
   const mute = inverted ? "text-[#4e5c6b]" : "text-muted-foreground";
-  const line = inverted ? "border-[#c5d0da]" : "border-border";
 
   return (
     <section className="mx-auto max-w-2xl px-5 py-10">
@@ -190,8 +162,7 @@ function TownPath({
         {info.region}. {info.kicker}
       </p>
       <h2 className="mt-1 font-serif text-4xl italic">{info.name}</h2>
-      <p className="mt-4 max-w-xl leading-relaxed">{info.blurb}</p>
-      <ol className={`mt-6 border-t ${line}`}>
+      <ol className="mt-6 grid gap-4">
         {nights.map((stroll) => {
           const state = walked.includes(stroll.slug)
             ? "walked"
@@ -200,45 +171,37 @@ function TownPath({
               : "ahead";
           const status =
             state === "tonight" ? "Next" : state === "walked" ? "Walked" : "Ahead";
+          const scene = strollScene[stroll.slug];
           return (
-            <li key={stroll.slug} className={`border-b ${line}`}>
+            <li key={stroll.slug}>
               <Link
                 href={`/s/${stroll.slug}`}
-                className={`block border-l-2 py-5 pl-4 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 ${
-                  state === "tonight"
-                    ? "border-l-[#c46a3a]"
-                    : state === "walked"
-                      ? inverted
-                        ? "border-l-[#7d8fa3]"
-                        : "border-l-[#c4a484]"
-                      : "border-l-transparent"
-                }`}
+                className="group relative block overflow-hidden rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-serif text-2xl leading-tight">
-                    <span className={`mr-2 ${mute}`}>{nightLabel(stroll.number)}</span>
-                    {stroll.title}
-                  </h3>
-                  <span
-                    className={`shrink-0 font-serif text-sm italic ${
-                      state === "ahead" ? mute : ""
-                    }`}
-                  >
-                    {status}
+                <img
+                  src={scene.src}
+                  alt={scene.alt}
+                  className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-80"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/10" />
+                <span className="absolute inset-x-0 bottom-0 p-4 text-white">
+                  <span className="flex items-baseline justify-between gap-3 text-sm text-white/80">
+                    <span>
+                      {nightLabel(stroll.number)} · {stroll.time}
+                    </span>
+                    <span className="font-serif italic">{status}</span>
                   </span>
-                </div>
-                <p className={`mt-1 text-sm ${mute}`}>
-                  {stroll.time} · {stroll.place}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed">{stroll.skill}</p>
-                <p className={`mt-2 text-sm leading-relaxed ${mute}`}>
-                  {stroll.stops.map((stop) => stop.short).join(" · ")}
-                </p>
+                  <span className="mt-1 block font-serif text-3xl italic leading-tight">
+                    {stroll.title}
+                  </span>
+                  <span className="mt-1 block text-sm text-white/85">{stroll.place}</span>
+                </span>
               </Link>
             </li>
           );
         })}
       </ol>
+      <p className={`mt-6 max-w-xl text-sm leading-relaxed ${mute}`}>{info.blurb}</p>
     </section>
   );
 }

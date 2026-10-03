@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "cn";
@@ -19,17 +19,25 @@ import {
   type Choice,
   type Tone,
 } from "@/lib/curriculum";
+import { strollScene } from "@/lib/scenes";
+
+const frames = ["center 30%", "center 48%", "28% 60%", "72% 55%"];
 
 export function WalkPlayer({ slug }: { slug: string }) {
   const stroll = getStroll(slug);
   const { gender, finished, finish } = useProgress();
-  const [phase, setPhase] = useState<"map" | "walk" | "done">("map");
+  const [phase, setPhase] = useState<"arrive" | "walk" | "done">("arrive");
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<Record<string, number>>({});
-  const [showMap, setShowMap] = useState(false);
+  const [showPoint, setShowPoint] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [phase, index]);
 
   if (!stroll) return null;
 
+  const scene = strollScene[stroll.slug];
   const town = towns[stroll.town];
   const walked = walkedThrough(finished);
   const alreadyWalked = walked.includes(stroll.slug);
@@ -39,18 +47,21 @@ export function WalkPlayer({ slug }: { slug: string }) {
   const earlier = neighborStroll(slug, -1);
   const later = neighborStroll(slug, 1);
   const turin = stroll.town === "turin";
+  const stop = stroll.stops[index];
+  const frame =
+    phase === "arrive" ? "center 40%" : frames[index % frames.length];
+  const zoom = phase === "walk" ? 1.08 + index * 0.06 : 1.04;
 
   const shell = turin
     ? "town-turin bg-background text-foreground"
     : "bg-[#f6efe4] text-[#241c16]";
   const mute = turin ? "text-[#4e5c6b]" : "text-muted-foreground";
-  const rule = turin ? "border-[#c5d0da]" : "border-border";
 
   function restart() {
     setPicked({});
     setIndex(0);
+    setShowPoint(false);
     setPhase("walk");
-    setShowMap(false);
   }
 
   function endStroll() {
@@ -58,108 +69,143 @@ export function WalkPlayer({ slug }: { slug: string }) {
     setPhase("done");
   }
 
-  const offCount = stroll.stops.filter((stop) => {
-    const choice = picked[stop.id];
-    return choice === undefined || stop.choices[choice]?.tone !== "fit";
+  const offCount = stroll.stops.filter((item) => {
+    const choice = picked[item.id];
+    return choice === undefined || item.choices[choice]?.tone !== "fit";
   }).length;
 
   return (
     <main className={shell}>
-      <article className="mx-auto max-w-2xl px-5 py-8 pb-16">
-        <p className={`text-sm ${mute}`}>
-          <Link href="/" className="underline decoration-current/30 underline-offset-4">
-            The map
-          </Link>
-          <span> · {town.name} · Walk {nightLabel(stroll.number)} · {stroll.time}</span>
-        </p>
-        <h1 className="mt-3 font-serif text-4xl italic leading-tight sm:text-5xl">
-          {stroll.title}
-        </h1>
-        <p className="mt-3 text-lg leading-relaxed">{stroll.skill}</p>
-        <p className={`mt-2 leading-relaxed ${mute}`}>{stroll.promise}</p>
-        <p className={`mt-2 text-sm ${mute}`}>{stroll.place}</p>
-
-        {!canStamp && !alreadyWalked && previous ? (
-          <p className="mt-5 border-l-2 border-l-[#c46a3a] pl-4 text-sm leading-relaxed">
-            You can read and rehearse this evening. It counts on the map when
-            you finish{" "}
-            <Link
-              href={`/s/${previous.slug}`}
-              className="underline decoration-current/40 underline-offset-4"
-            >
-              {previous.title}
-            </Link>
-            .
-          </p>
-        ) : null}
-        {alreadyWalked ? (
-          <p className="mt-5 font-serif italic">Walked.</p>
-        ) : null}
-
-        {phase === "map" ? (
-          <>
-            <ol className={`mt-8 divide-y ${rule} border-y ${rule}`}>
-              {stroll.stops.map((stop, stopIndex) => (
-                <li key={stop.id} className="py-5">
-                  <p className={`text-sm ${mute}`}>
-                    {stopIndex + 1} · {moves[stop.mode].it} · {moves[stop.mode].en}
-                  </p>
-                  <h2 className="mt-1 font-serif text-2xl italic">{stop.short}</h2>
-                  <p className={`mt-1 text-sm ${mute}`}>
+      <div className="relative min-h-[72svh] overflow-hidden bg-black sm:min-h-[78svh]">
+        <img
+          src={scene.src}
+          alt={scene.alt}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out"
+          style={{ objectPosition: frame, transform: `scale(${zoom})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/25" />
+        <div className="relative flex min-h-[72svh] flex-col justify-end px-5 pb-8 text-white sm:min-h-[78svh]">
+          <div className="mx-auto w-full max-w-2xl">
+            <p className="text-sm text-white/80">
+              <Link href="/" className="underline decoration-white/40 underline-offset-4">
+                The map
+              </Link>
+              <span>
+                {" "}
+                · {town.name} · {nightLabel(stroll.number)} · {stroll.time}
+              </span>
+            </p>
+            {phase === "arrive" ? (
+              <>
+                <h1 className="mt-3 max-w-xl font-serif text-5xl leading-none italic sm:text-6xl">
+                  {stroll.title}
+                </h1>
+                <p className="mt-3 max-w-md text-lg leading-snug text-white/90">
+                  {stroll.place}
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="mt-3 text-sm uppercase tracking-[0.16em] text-white/70">
+                  {phase === "done"
+                    ? "End of the walk"
+                    : `Stop ${index + 1} of ${stroll.stops.length}`}
+                </p>
+                <h1 className="mt-2 font-serif text-4xl italic leading-tight sm:text-5xl">
+                  {phase === "done" ? stroll.title : stop.short}
+                </h1>
+                {phase === "walk" ? (
+                  <p className="mt-2 text-white/85">
                     {stop.place} · {stop.who}
                   </p>
-                  <p className="mt-3 leading-relaxed">{stop.scene}</p>
-                  {stop.heard ? (
-                    <figure className="mt-4">
-                      {stop.heardFrom ? (
-                        <figcaption className={`text-sm ${mute}`}>
-                          {stop.heardFrom}
-                        </figcaption>
-                      ) : null}
-                      <blockquote
-                        lang="it"
-                        className="mt-1 font-serif text-2xl leading-snug italic"
-                      >
-                        {say(stop.heard, gender)}
-                      </blockquote>
-                      {stop.gloss ? (
-                        <p className={`mt-2 text-sm leading-relaxed ${mute}`}>
-                          {stop.gloss}
-                        </p>
-                      ) : null}
-                    </figure>
-                  ) : null}
-                  <p className="mt-3 text-sm leading-relaxed">{stop.teach}</p>
+                ) : null}
+              </>
+            )}
+            <div className="mt-5 flex gap-1.5" aria-hidden>
+              {stroll.stops.map((item, stopIndex) => (
+                <span
+                  key={item.id}
+                  className={`h-1 flex-1 rounded-full ${
+                    phase === "done" || stopIndex < index
+                      ? "bg-white"
+                      : stopIndex === index && phase === "walk"
+                        ? "bg-white/80"
+                        : "bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article className="mx-auto max-w-2xl px-5 py-8 pb-20">
+        {phase === "arrive" ? (
+          <>
+            <p className="text-lg leading-relaxed">{stroll.skill}</p>
+            <ol className="mt-6 grid gap-3">
+              {stroll.stops.map((item, stopIndex) => (
+                <li key={item.id} className="flex gap-3">
+                  <span className={`w-5 shrink-0 font-serif italic ${mute}`}>
+                    {stopIndex + 1}
+                  </span>
+                  <span>
+                    <span className="font-serif text-xl italic">{item.short}</span>
+                    <span className={`mt-0.5 block text-sm ${mute}`}>
+                      {item.place}
+                    </span>
+                  </span>
                 </li>
               ))}
             </ol>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button type="button" size="lg" className="h-11 px-4" onClick={restart}>
-                {alreadyWalked ? "Walk it again" : "Walk this evening"}
+            {!canStamp && !alreadyWalked && previous ? (
+              <p className={`mt-5 text-sm leading-relaxed ${mute}`}>
+                You can walk it now. It counts after{" "}
+                <Link
+                  href={`/s/${previous.slug}`}
+                  className="underline decoration-current/40 underline-offset-4"
+                >
+                  {previous.title}
+                </Link>
+                .
+              </p>
+            ) : null}
+            {alreadyWalked ? (
+              <p className="mt-5 font-serif italic">Walked.</p>
+            ) : null}
+            <div className="mt-6">
+              <Button type="button" size="lg" className="h-11 px-5" onClick={restart}>
+                {alreadyWalked ? "Walk it again" : "Walk in"}
               </Button>
             </div>
-            <NeighborLinks earlier={earlier?.slug} later={later?.slug} earlierTitle={earlier?.title} laterTitle={later?.title} mute={mute} />
+            <NeighborLinks
+              earlier={earlier?.slug}
+              later={later?.slug}
+              earlierTitle={earlier?.title}
+              laterTitle={later?.title}
+              mute={mute}
+            />
           </>
         ) : null}
 
         {phase === "walk" ? (
           <WalkStop
-            strollSlug={stroll.slug}
             index={index}
             total={stroll.stops.length}
-            stop={stroll.stops[index]}
+            stop={stop}
             gender={gender}
-            pickedIndex={picked[stroll.stops[index].id]}
+            pickedIndex={picked[stop.id]}
             mute={mute}
-            showMap={showMap}
-            onToggleMap={() => setShowMap((value) => !value)}
+            showPoint={showPoint}
+            onTogglePoint={() => setShowPoint((value) => !value)}
             onPick={(choiceIndex) => {
-              const id = stroll.stops[index].id;
+              const id = stop.id;
               setPicked((prev) =>
                 prev[id] === undefined ? { ...prev, [id]: choiceIndex } : prev,
               );
             }}
             onNext={() => {
+              setShowPoint(false);
               if (index === stroll.stops.length - 1) endStroll();
               else setIndex((value) => value + 1);
             }}
@@ -167,7 +213,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
         ) : null}
 
         {phase === "done" ? (
-          <section className="mt-8">
+          <section>
             <h2 className="font-serif text-3xl italic">
               {canStamp || alreadyWalked ? "The stroll is walked." : "Rehearsed."}
             </h2>
@@ -184,37 +230,39 @@ export function WalkPlayer({ slug }: { slug: string }) {
                 starts at {previous.title}.
               </p>
             ) : null}
-            <ol className="mt-6 space-y-3">
-              {stroll.stops.map((stop) => {
-                const choice = stop.choices[picked[stop.id] ?? -1];
-                return (
-                  <li key={stop.id} className="text-sm leading-relaxed">
-                    <span className="font-serif italic">{stop.short}. </span>
-                    {choice ? toneLabel[choice.tone] : "Not answered."}{" "}
-                    <span className={mute}>{stop.teach}</span>
-                  </li>
-                );
-              })}
-            </ol>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button type="button" variant="outline" className="h-11" onClick={restart}>
                 Walk it again
               </Button>
-              {later && (alreadyWalked || canStamp) ? (
-                <Link
-                  href={`/s/${later.slug}`}
-                  className={cn(buttonVariants({ size: "lg" }), "h-11 px-4")}
-                >
-                  {later.title}
-                </Link>
-              ) : null}
               <Link
                 href="/"
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-11 px-4")}
               >
-                Back to the map
+                The map
               </Link>
             </div>
+            {later && (alreadyWalked || canStamp) ? (
+              <Link
+                href={`/s/${later.slug}`}
+                className="mt-8 block overflow-hidden rounded-2xl"
+              >
+                <span className="relative block h-52 sm:h-64">
+                  <img
+                    src={strollScene[later.slug].src}
+                    alt={strollScene[later.slug].alt}
+                    className="h-full w-full object-cover"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/75 to-black/10" />
+                  <span className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <span className="block text-sm text-white/80">Keep walking</span>
+                    <span className="mt-1 block font-serif text-3xl italic">
+                      {later.title}
+                    </span>
+                    <span className="mt-1 block text-sm text-white/85">{later.place}</span>
+                  </span>
+                </span>
+              </Link>
+            ) : null}
           </section>
         ) : null}
       </article>
@@ -261,20 +309,19 @@ function WalkStop({
   gender,
   pickedIndex,
   mute,
-  showMap,
-  onToggleMap,
+  showPoint,
+  onTogglePoint,
   onPick,
   onNext,
 }: {
-  strollSlug: string;
   index: number;
   total: number;
   stop: NonNullable<ReturnType<typeof getStroll>>["stops"][number];
   gender: "f" | "m";
   pickedIndex: number | undefined;
   mute: string;
-  showMap: boolean;
-  onToggleMap: () => void;
+  showPoint: boolean;
+  onTogglePoint: () => void;
   onPick: (index: number) => void;
   onNext: () => void;
 }) {
@@ -282,33 +329,33 @@ function WalkStop({
   const move = moves[stop.mode];
 
   return (
-    <section className="mt-8" aria-live="polite">
+    <section aria-live="polite">
       <div className="flex items-baseline justify-between gap-3">
         <p className={`text-sm ${mute}`}>
-          Stop {index + 1} of {total} · {move.it} · {move.en}
+          {move.it} · {move.en}
         </p>
         <button
           type="button"
           className={`text-sm underline decoration-current/30 underline-offset-4 ${mute}`}
-          onClick={onToggleMap}
+          onClick={onTogglePoint}
         >
-          {showMap ? "Hide the point" : "The point of this stop"}
+          {showPoint ? "Hide the point" : "Why this stop"}
         </button>
       </div>
-      {showMap ? (
-        <p className={`mt-2 text-sm leading-relaxed ${mute}`}>{stop.teach}</p>
-      ) : null}
-      <h2 className="mt-3 font-serif text-3xl italic">{stop.short}</h2>
-      <p className={`mt-1 text-sm ${mute}`}>
-        {stop.place} · {stop.who}
-      </p>
-      <p className="mt-4 leading-relaxed">{stop.scene}</p>
+      {showPoint ? (
+        <p className={`mt-3 text-sm leading-relaxed ${mute}`}>{stop.teach}</p>
+      ) : (
+        <p className="mt-3 leading-relaxed">{stop.scene}</p>
+      )}
       {stop.heard ? (
         <figure className="mt-5">
           {stop.heardFrom ? (
             <figcaption className={`text-sm ${mute}`}>{stop.heardFrom}</figcaption>
           ) : null}
-          <blockquote lang="it" className="mt-1 font-serif text-2xl leading-snug italic text-balance">
+          <blockquote
+            lang="it"
+            className="mt-1 font-serif text-3xl leading-snug italic text-balance"
+          >
             {say(stop.heard, gender)}
           </blockquote>
           {stop.gloss ? (
@@ -337,7 +384,7 @@ function WalkStop({
       {revealed ? (
         <div className="mt-5">
           <Button type="button" size="lg" className="h-11 px-4" onClick={onNext}>
-            {index === total - 1 ? "End the stroll" : "Next stop"}
+            {index === total - 1 ? "End the stroll" : "Keep walking"}
           </Button>
         </div>
       ) : null}
