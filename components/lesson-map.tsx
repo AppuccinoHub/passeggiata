@@ -37,14 +37,14 @@ export function LessonMap() {
             <span className="mx-auto w-full max-w-2xl">
               <span className="block font-serif text-lg italic text-white/80">Passeggiata</span>
               <span className="mt-2 block text-sm uppercase tracking-[0.16em] text-white/70">
-                Tonight · {tonight.time}
+                Stasera · {tonight.time}
               </span>
               <span className="mt-2 block font-serif text-5xl leading-none italic sm:text-6xl">
                 {tonight.title}
               </span>
               <span className="mt-3 block max-w-md text-lg text-white/90">{tonight.place}</span>
               <span className="mt-6 inline-flex h-11 items-center rounded-lg bg-white px-5 text-sm font-medium text-[#241c16]">
-                Walk in
+                Entra
               </span>
             </span>
           </span>
@@ -60,9 +60,9 @@ export function LessonMap() {
           <div className="relative flex min-h-[62svh] flex-col justify-end px-5 pb-8">
             <div className="mx-auto w-full max-w-2xl">
               <p className="font-serif text-lg italic text-white/80">Passeggiata</p>
-              <h1 className="mt-2 font-serif text-5xl italic">Both towns are walked.</h1>
+              <h1 className="mt-2 font-serif text-5xl italic">Lecce e Torino, camminate.</h1>
               <p className="mt-3 max-w-md text-lg text-white/90">
-                The streets are still here if a sentence needs another size.
+                Le strade ci sono ancora, se una frase va rifatta.
               </p>
             </div>
           </div>
@@ -90,10 +90,9 @@ export function LessonMap() {
       </div>
 
       <section className="mx-auto max-w-2xl px-5 py-12">
-        <h2 className="font-serif text-3xl italic">How the evenings differ</h2>
+        <h2 className="font-serif text-3xl italic">Come cambiano le sere</h2>
         <p className="mt-3 leading-relaxed text-muted-foreground">
-          Read this after the map, or before it. The strolls are the proof. This
-          is only the spine.
+          Le passeggiate sono la prova. Questo è solo il filo.
         </p>
         <dl className="mt-8 divide-y divide-border border-y border-border">
           {contrasts.map((row) => (
@@ -105,7 +104,7 @@ export function LessonMap() {
                   {row.lecce}
                 </p>
                 <p className="text-sm leading-relaxed">
-                  <span className="text-[#3e5166]">Turin. </span>
+                  <span className="text-[#3e5166]">Torino. </span>
                   {row.turin}
                 </p>
               </dd>
@@ -119,22 +118,22 @@ export function LessonMap() {
                 reset();
                 setArmed(false);
               }}>
-                Clear the walked evenings
+                Cancella le sere camminate
               </Button>
               <Button type="button" variant="ghost" onClick={() => setArmed(false)}>
-                Keep them
+                Tienile
               </Button>
             </>
           ) : (
             <Button type="button" variant="outline" onClick={() => setArmed(true)}>
-              Start the evenings over
+              Ricomincia le sere
             </Button>
           )}
         </div>
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-          The places are real: Sant&apos;Oronzo, Santa Croce, via Po, Piazza
-          Vittorio Veneto, Porta Nuova. The people are not. Progress stays in
-          this browser.
+          I posti sono veri: Sant&apos;Oronzo, Santa Croce, via Po, Piazza
+          Vittorio Veneto, Porta Nuova. Le persone no. Il percorso resta in
+          questo browser.
         </p>
       </section>
     </main>
@@ -170,7 +169,7 @@ function TownPath({
               ? "tonight"
               : "ahead";
           const status =
-            state === "tonight" ? "Next" : state === "walked" ? "Walked" : "Ahead";
+            state === "tonight" ? "Adesso" : state === "walked" ? "Fatta" : "Poi";
           const scene = strollScene[stroll.slug];
           return (
             <li key={stroll.slug}>

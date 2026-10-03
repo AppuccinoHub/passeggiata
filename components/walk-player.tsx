@@ -92,7 +92,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
           <div className="mx-auto w-full max-w-2xl">
             <p className="text-sm text-white/80">
               <Link href="/" className="underline decoration-white/40 underline-offset-4">
-                The map
+                La mappa
               </Link>
               <span>
                 {" "}
@@ -113,7 +113,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
                     className="inline-flex h-11 items-center rounded-lg bg-white px-5 text-sm font-medium text-[#241c16]"
                     onClick={restart}
                   >
-                    {alreadyWalked ? "Walk it again" : "Walk in"}
+                    {alreadyWalked ? "Ancora" : "Entra"}
                   </button>
                 </div>
               </>
@@ -121,8 +121,8 @@ export function WalkPlayer({ slug }: { slug: string }) {
               <>
                 <p className="mt-3 text-sm uppercase tracking-[0.16em] text-white/70">
                   {phase === "done"
-                    ? "End of the walk"
-                    : `Stop ${index + 1} of ${stroll.stops.length}`}
+                    ? "Fine della passeggiata"
+                    : `Fermata ${index + 1} di ${stroll.stops.length}`}
                 </p>
                 <h1 className="mt-2 font-serif text-4xl italic leading-tight sm:text-5xl">
                   {phase === "done" ? stroll.title : stop.short}
@@ -173,7 +173,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
             </ol>
             {!canStamp && !alreadyWalked && previous ? (
               <p className={`mt-5 text-sm leading-relaxed ${mute}`}>
-                You can walk it now. It counts after{" "}
+                Puoi camminarla. Conta dopo{" "}
                 <Link
                   href={`/s/${previous.slug}`}
                   className="underline decoration-current/40 underline-offset-4"
@@ -184,7 +184,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
               </p>
             ) : null}
             {alreadyWalked ? (
-              <p className="mt-5 font-serif italic">Walked.</p>
+              <p className="mt-5 font-serif italic">Fatta.</p>
             ) : null}
             <NeighborLinks
               earlier={earlier?.slug}
@@ -223,30 +223,29 @@ export function WalkPlayer({ slug }: { slug: string }) {
         {phase === "done" ? (
           <section>
             <h2 className="font-serif text-3xl italic">
-              {canStamp || alreadyWalked ? "The stroll is walked." : "Rehearsed."}
+              {canStamp || alreadyWalked ? "Passeggiata fatta." : "Provata."}
             </h2>
             <p className="mt-3 leading-relaxed">
               {offCount === 0
-                ? "You kept the distance. That is the whole skill of this evening."
+                ? "Hai tenuto la distanza. È tutto il mestiere di questa sera."
                 : offCount === 1
-                  ? "One stop came out at the wrong distance. The street is still there."
-                  : `${offCount} stops came out at the wrong distance. The street is still there.`}
+                  ? "Una fermata è uscita alla distanza sbagliata. La strada è ancora lì."
+                  : `${offCount} fermate sono uscite alla distanza sbagliata. La strada è ancora lì.`}
             </p>
             {!canStamp && !alreadyWalked && previous ? (
               <p className="mt-3 leading-relaxed">
-                This pass doesn&apos;t light the next night. The evening still
-                starts at {previous.title}.
+                Questo giro non accende la sera dopo. Si ricomincia da {previous.title}.
               </p>
             ) : null}
             <div className="mt-6 flex flex-wrap gap-3">
               <Button type="button" variant="outline" className="h-11" onClick={restart}>
-                Walk it again
+                Ancora
               </Button>
               <Link
                 href="/"
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-11 px-4")}
               >
-                The map
+                La mappa
               </Link>
             </div>
             {later && (alreadyWalked || canStamp) ? (
@@ -262,7 +261,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-black/75 to-black/10" />
                   <span className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <span className="block text-sm text-white/80">Keep walking</span>
+                    <span className="block text-sm text-white/80">Avanti</span>
                     <span className="mt-1 block font-serif text-3xl italic">
                       {later.title}
                     </span>
@@ -296,14 +295,14 @@ function NeighborLinks({
     <nav className={`mt-8 flex flex-wrap justify-between gap-3 text-sm ${mute}`}>
       {earlier ? (
         <Link href={`/s/${earlier}`} className="underline decoration-current/30 underline-offset-4">
-          Earlier: {earlierTitle}
+          Prima: {earlierTitle}
         </Link>
       ) : (
         <span />
       )}
       {later ? (
         <Link href={`/s/${later}`} className="underline decoration-current/30 underline-offset-4">
-          Later: {laterTitle}
+          Dopo: {laterTitle}
         </Link>
       ) : null}
     </nav>
@@ -340,21 +339,23 @@ function WalkStop({
     <section aria-live="polite">
       <div className="flex items-baseline justify-between gap-3">
         <p className={`text-sm ${mute}`}>
-          {move.it} · {move.en}
+          {move.it}
         </p>
         <button
           type="button"
           className={`text-sm underline decoration-current/30 underline-offset-4 ${mute}`}
           onClick={onTogglePoint}
         >
-          {showPoint ? "Hide the point" : "Why this stop"}
+          {showPoint ? "Nascondi" : "Perché"}
         </button>
       </div>
+      <p className="mt-3 leading-relaxed">{stop.scene}</p>
       {showPoint ? (
-        <p className={`mt-3 text-sm leading-relaxed ${mute}`}>{stop.teach}</p>
-      ) : (
-        <p className="mt-3 leading-relaxed">{stop.scene}</p>
-      )}
+        <div className={`mt-3 space-y-2 text-sm leading-relaxed ${mute}`}>
+          <p>{stop.teach}</p>
+          {stop.gloss ? <p>{stop.gloss}</p> : null}
+        </div>
+      ) : null}
       {stop.heard ? (
         <figure className="mt-5">
           {stop.heardFrom ? (
@@ -366,9 +367,6 @@ function WalkStop({
           >
             {say(stop.heard, gender)}
           </blockquote>
-          {stop.gloss ? (
-            <p className={`mt-2 text-sm leading-relaxed ${mute}`}>{stop.gloss}</p>
-          ) : null}
         </figure>
       ) : null}
       <p className="mt-6 font-medium">{stop.prompt}</p>
@@ -392,7 +390,7 @@ function WalkStop({
       {revealed ? (
         <div className="mt-5">
           <Button type="button" size="lg" className="h-11 px-4" onClick={onNext}>
-            {index === total - 1 ? "End the stroll" : "Keep walking"}
+            {index === total - 1 ? "Fine" : "Avanti"}
           </Button>
         </div>
       ) : null}
@@ -443,7 +441,7 @@ function ChoiceButton({
         <div className="px-3 pb-3">
           <p className="font-serif text-sm italic">
             {toneLabel[choice.tone]}
-            {selected ? " · yours" : ""}
+            {selected ? " · la tua" : ""}
           </p>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {choice.feedback}

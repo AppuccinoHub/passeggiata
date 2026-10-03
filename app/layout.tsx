@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     template: "%s · Passeggiata",
   },
   description:
-    "A lesson map of twelve Italian walks through Lecce and Turin. Who gets ciao, who gets buonasera, and when a correct sentence sounds cold.",
+    "Dodici passeggiate serali, a Lecce e a Torino. Chi riceve il ciao, chi il buonasera, e quando una frase corretta suona fredda.",
   icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="it"
       className={`${outfit.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">

@@ -1,50 +1,50 @@
 export const strollScene: Record<string, { src: string; alt: string }> = {
   "arrivo-in-piazza": {
     src: "/scenes/lecce-piazza.jpg",
-    alt: "Dusk in a Lecce piazza: a tall stone column, warm palazzi, and people crossing the square",
+    alt: "Crepuscolo in una piazza di Lecce: la colonna di pietra, i palazzi caldi, gente che attraversa",
   },
   "il-primo-caffe": {
     src: "/scenes/lecce-bar.jpg",
-    alt: "A marble bar in the evening, espresso and a pastry in the foreground, customers at the counter",
+    alt: "Un banco di marmo la sera, caffè e pasticciotto in primo piano, clienti al banco",
   },
   "la-vetrina": {
     src: "/scenes/lecce-shop.jpg",
-    alt: "A lit shop window on a Lecce street at night",
+    alt: "Una vetrina accesa in una via di Lecce, di notte",
   },
   "la-porta-della-chiesa": {
     src: "/scenes/lecce-church.jpg",
-    alt: "The carved stone front of a Lecce church in the last light",
+    alt: "La facciata scolpita di una chiesa di Lecce, nell'ultima luce",
   },
   "il-cugino": {
     src: "/scenes/lecce-stairs.jpg",
-    alt: "A worn stone stairwell in an old Lecce building",
+    alt: "Una scala di pietra consumata, in un palazzo vecchio di Lecce",
   },
   "la-cena": {
     src: "/scenes/lecce-table.jpg",
-    alt: "A dinner table set for an evening meal, plates and glasses in warm light",
+    alt: "Una tavola apparecchiata per la cena, piatti e bicchieri nella luce calda",
   },
   "sotto-i-portici": {
     src: "/scenes/turin-portici.jpg",
-    alt: "Rain under Turin's arcades at night, wet stone and people with umbrellas",
+    alt: "Pioggia sotto i portici di Torino, di notte, pietra bagnata e ombrelli",
   },
   "l-aperitivo": {
     src: "/scenes/turin-aperitivo.jpg",
-    alt: "An aperitivo table under the arcades, glasses and a small plate of food",
+    alt: "Un tavolo da aperitivo sotto i portici, bicchieri e un piatto piccolo",
   },
   "la-scala-b": {
     src: "/scenes/turin-entry.jpg",
-    alt: "A dim Turin apartment entry, stairs and a door at the end of the hall",
+    alt: "Un ingresso di appartamento a Torino, scale e una porta in fondo al corridoio",
   },
   "il-collega": {
     src: "/scenes/turin-office.jpg",
-    alt: "A quiet office near Piazza San Carlo, a desk by a tall window",
+    alt: "Un ufficio quieto vicino a Piazza San Carlo, una scrivania accanto a una finestra alta",
   },
   "la-nonna": {
     src: "/scenes/turin-kitchen.jpg",
-    alt: "A home kitchen in the evening, a pot on the stove and a table set for family",
+    alt: "Una cucina di casa la sera, una pentola sul fuoco e la tavola apparecchiata",
   },
   "il-ritorno": {
     src: "/scenes/turin-return.jpg",
-    alt: "Night outside Porta Nuova, the station lights and a wet street",
+    alt: "Notte fuori da Porta Nuova, le luci della stazione e la strada bagnata",
   },
 };

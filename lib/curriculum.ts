@@ -38,9 +38,9 @@ export type Stroll = {
 };
 
 export const toneLabel: Record<Tone, string> = {
-  fit: "The right distance",
-  cold: "Grammatical, and cold",
-  near: "Too close",
+  fit: "La distanza giusta",
+  cold: "Corretta, e fredda",
+  near: "Troppo vicina",
 };
 
 export const moves: Record<
@@ -50,17 +50,17 @@ export const moves: Record<
   overhear: {
     it: "Ascolta",
     en: "Overhear",
-    text: "Someone speaks. You decide what they meant, including what they left unsaid.",
+    text: "Qualcuno parla. Decidi cosa voleva dire, anche quello che ha lasciato fuori.",
   },
   answer: {
     it: "Rispondi",
     en: "Answer",
-    text: "You have to say something. The textbook line is often sitting right there, and it is often the cold one.",
+    text: "Devi dire qualcosa. La frase del libro è spesso lì, ed è spesso quella fredda.",
   },
   notice: {
     it: "Leggi",
     en: "Notice",
-    text: "A window, a church door, a notice board. Written Italian has registers too.",
+    text: "Una vetrina, una porta di chiesa, una bacheca. Anche l'italiano scritto ha dei registri.",
   },
 };
 
@@ -72,60 +72,60 @@ export const towns: Record<
     id: "lecce",
     name: "Lecce",
     region: "Salento",
-    kicker: "One evening, six walks",
+    kicker: "Una sera, sei passeggiate",
     blurb:
-      "You are from Rome. Marta, who grew up here, has told her cousin to expect you. It is a single evening, and you can't skip from the bus to the dinner. It starts at Piazza Sant'Oronzo and ends when they walk you back down to the street. Warmth is the habit of that evening: time, food, and ciao given early. Match it, and don't outrun the person who offered it.",
+      "Sei di Roma. Marta, cresciuta qui, ha detto al cugino di aspettarti. È una sera sola, e non si salta dal pullman alla cena. Si comincia in Piazza Sant'Oronzo e si finisce quando ti accompagnano giù in strada. Il calore è l'abitudine di quella sera: il tempo, il cibo, e il ciao dato presto. Stagli vicino, senza correre più di chi te l'ha offerto.",
   },
   turin: {
     id: "turin",
-    name: "Turin",
+    name: "Torino",
     region: "Piemonte",
-    kicker: "Three nights, under the arcades",
+    kicker: "Tre sere, sotto i portici",
     blurb:
-      "The first night is arrival: via Po in the rain, an aperitivo with Marco, and the key Giulia left you. On another day a desk near Piazza San Carlo still says lei. On a later night his mother arrives from Lecce, and you walk back to Porta Nuova. Marco's tu is his, not the city's. Courtesy is often a shorter sentence. The Lecce habit of adding one more is the mistake to watch.",
+      "La prima sera è l'arrivo: via Po sotto la pioggia, un aperitivo con Marco, e la chiave che ti ha lasciato Giulia. Un altro giorno, una scrivania vicino a Piazza San Carlo dice ancora lei. Una sera dopo arriva sua madre da Lecce, e tornate a Porta Nuova. Il tu di Marco è suo, non della città. La cortesia, spesso, è una frase più corta.",
   },
 };
 
 export const threshold = {
-  kicker: "The night train north",
-  text: "From here the evening starts earlier and the sentences get shorter. Warmth is still available. A person offers it. The street no longer does it for you.",
+  kicker: "Il treno della notte, verso nord",
+  text: "Da qui la sera comincia prima e le frasi si accorciano. Il calore c'è ancora. Lo offre una persona. La strada no.",
 };
 
 export const contrasts: { label: string; lecce: string; turin: string }[] = [
   {
-    label: "Greeting",
+    label: "Il saluto",
     lecce:
-      "Longer, sooner, warmer. Ciao belongs to people inside the evening, not to the driver ending his shift.",
+      "Più lungo, più presto, più caldo. Il ciao è per chi è dentro la sera, non per l'autista a fine turno.",
     turin:
-      "Shorter, and the short version is the polite one. Buonasera can be the whole conversation.",
+      "Più corto, e il corto è quello educato. Buonasera può essere tutta la conversazione.",
   },
   {
-    label: "Tu",
+    label: "Il tu",
     lecce:
-      "Often given the same night, sometimes with a reason: dammi del tu, se no sembriamo in comune.",
+      "Spesso arriva la stessa sera, a volte con un motivo: dammi del tu, se no sembriamo in comune.",
     turin:
-      "Held until one person offers it. Marco's tu is not the office's tu. The elevator does not vote.",
+      "Si tiene finché qualcuno non lo offre. Il tu di Marco non è il tu dell'ufficio. L'ascensore non vota.",
   },
   {
-    label: "Food",
+    label: "Il cibo",
     lecce:
-      "An instant no can refuse the person. Taste first. The soft no comes with praise, and a small joke so the offer is received as affection.",
+      "Un no secco può rifiutare la persona. Si assaggia prima. Il no morbido arriva con un elogio, e una battuta piccola, così l'offerta resta affetto.",
     turin:
-      "Food at aperitivo belongs to the drink. A piled plate imports a Lecce table into the wrong ritual.",
+      "All'aperitivo il cibo appartiene al bicchiere. Un piatto colmo porta una tavola di Lecce nel rito sbagliato.",
   },
   {
-    label: "The cold sentence",
+    label: "La frase fredda",
     lecce:
-      "Town-hall lei after you were asked to come closer. A language certificate where a tease was supposed to go.",
+      "Il lei del municipio, dopo che ti hanno chiesto di avvicinarti. Un certificato di lingua, dove doveva esserci una presa in giro.",
     turin:
-      "The extra sentence of enthusiasm nobody requested. A thesis, where a returned glove only needed grazie.",
+      "La frase di entusiasmo che nessuno ha chiesto. Una tesi, dove un guanto restituito voleva solo grazie.",
   },
   {
-    label: "Leaving",
+    label: "L'uscita",
     lecce:
-      "They walk you down. You let them. In the street the cousin drops back to tu, and the last line is short because the walk was long.",
+      "Ti accompagnano giù. Li lasci fare. In strada il cugino torna al tu, e l'ultima frase è corta perché la passeggiata è stata lunga.",
     turin:
-      "You are released after buona serata. Staying in order to seem warmer means you didn't hear the ending.",
+      "Ti lasciano andare dopo buona serata. Restare per sembrare più caldo vuol dire che non hai sentito la fine.",
   },
 ];
 
@@ -136,130 +136,130 @@ const lecce: Stroll[] = [
     town: "lecce",
     title: "Arrivo in piazza",
     time: "19:05",
-    place: "The bus into Piazza Sant'Oronzo",
-    skill: "Three distances of greeting, before you have said anything clever.",
+    place: "Il pullman, in Piazza Sant'Oronzo",
+    skill: "Tre distanze di saluto, prima di dire qualcosa di intelligente.",
     promise:
-      "The first night is only arrivals. Driver, stranger, child, desk. Each one is a different length of sentence.",
+      "La prima sera è solo arrivi. Autista, sconosciuta, bambino, banco. Ognuno è una frase di lunghezza diversa.",
     stops: [
       {
         id: "arrivo-1",
-        short: "the driver",
-        place: "The last step of the bus",
-        who: "The driver, end of a shift",
+        short: "l'autista",
+        place: "L'ultimo gradino del pullman",
+        who: "L'autista, a fine turno",
         mode: "answer",
         scene:
-          "The stone is still warm and the piazza is already full. He has one hand on the door. He is finished with the route. He is not beginning your evening.",
+          "La pietra è ancora calda e la piazza è già piena. Ha una mano sulla porta. Il giro è finito. Non sta cominciando la tua sera.",
         heard: "Attenzione al gradino.",
-        heardFrom: "The driver",
-        gloss: "Watch the step. A fact, not a welcome.",
+        heardFrom: "L'autista",
+        gloss: "Attento al gradino. Un fatto, non un benvenuto.",
         teach:
-          "Ciao is for people inside your evening. He gets a short thanks and buonasera. A speech thanks him for a relationship you don't have.",
-        prompt: "What do you say as you step down?",
+          "Il ciao è per chi è dentro la tua sera. A lui basta un grazie corto e buonasera. Un discorso lo ringrazia di un rapporto che non c'è.",
+        prompt: "Cosa dici, scendendo?",
         choices: [
           {
             text: "Grazie, buonasera.",
             tone: "fit",
             feedback:
-              "Short, and finished. He can close the door. You have been polite without asking him to host you.",
+              "Corto, e finito. Può chiudere la porta. Sei stato educato senza chiedergli di ospitarti.",
           },
           {
             text: "Ciao, grazie mille, sei gentilissimo!",
             tone: "near",
             feedback:
-              "Ciao and a compliment pull him into your night. He is in uniform, at the end of the route. Warmth this size is work for him.",
+              "Ciao e un complimento lo tirano nella tua sera. È in divisa, a fine corsa. Un calore così, per lui, è lavoro.",
           },
           {
             text: "La ringrazio per il servizio di trasporto.",
             tone: "cold",
             feedback:
-              "Grammatical, and it sounds like a form. The step only needed grazie. Buonasera is what makes it human without making it a speech.",
+              "Grammaticale, e sembra un modulo. Al gradino bastava grazie. Buonasera lo rende umano senza farne un discorso.",
           },
         ],
       },
       {
         id: "arrivo-2",
-        short: "the woman with the dog",
-        place: "The edge of the piazza",
-        who: "A woman older than you, walking a dog",
+        short: "la signora col cane",
+        place: "Il bordo della piazza",
+        who: "Una signora più grande di te, con un cane",
         mode: "answer",
         scene:
-          "You got off one stop early. She is not in a hurry, and she is not your friend. The dog has already decided about you. She hasn't.",
+          "Sei sceso una fermata prima. Lei non ha fretta, e non è un'amica. Il cane ha già deciso. Lei no.",
         teach:
-          "A stranger older than you gets mi scusi and a short question. Ciao, or a barked place-name, spends a closeness she didn't offer.",
-        prompt: "How do you ask for the piazza?",
+          "A una sconosciuta più grande di te si dice mi scusi, e una domanda corta. Il ciao, o il nome del posto abbaiato, spende una vicinanza che lei non ha offerto.",
+        prompt: "Come chiedi la piazza?",
         choices: [
           {
             text: "Scusa, Sant'Oronzo?",
             tone: "near",
             feedback:
-              "Tu, and half a sentence. It can be fine with someone your age who is already talking to you. She is neither.",
+              "Il tu, e mezza frase. Può andare con uno della tua età che sta già parlando con te. Lei non è né l'uno né l'altro.",
           },
           {
             text: "Mi scusi, per Piazza Sant'Oronzo?",
             tone: "fit",
             feedback:
-              "She says: «Sempre dritto, cinque minuti. Buona serata.» You answer «Grazie, gentilissima. Buona serata.» The exchange is complete. You don't add your origin story as a tip.",
+              "Lei dice: «Sempre dritto, cinque minuti. Buona serata.» Tu rispondi «Grazie, gentilissima. Buona serata.» Lo scambio è chiuso. Non aggiungi da dove vieni, come mancia.",
           },
           {
             text: "Buonasera, sarebbe possibile ottenere un'indicazione per la piazza principale?",
             tone: "cold",
             feedback:
-              "Correct, and it asks her to stand through a small ceremony. Mi scusi plus the name of the place is the living version of the same politeness.",
+              "Corretta, e le chiede di restare in piedi per una piccola cerimonia. Mi scusi e il nome del posto sono la stessa educazione, quella viva.",
           },
         ],
       },
       {
         id: "arrivo-3",
-        short: "the boy",
-        place: "The open stone of the piazza",
-        who: "A boy of about ten",
+        short: "il bambino",
+        place: "La pietra aperta della piazza",
+        who: "Un bambino di circa dieci anni",
         mode: "answer",
         scene:
-          "A ball stops against your shoe. He is already jogging over, sure you will give it back, because in this piazza people do.",
+          "Una palla si ferma contro la scarpa. Sta già correndo verso di te, sicuro che gliela ridai, perché in questa piazza si fa così.",
         heard: "Me la tiri?",
-        heardFrom: "The boy",
-        gloss: "Will you throw it to me? Tu, from a child, which is the right distance.",
+        heardFrom: "Il bambino",
+        gloss: "Me la lanci? Il tu, da un bambino, è la distanza giusta.",
         teach:
-          "Lei aimed at a child is not extra polite. It ignores his age. Tieni is the whole reply. You don't keep him for a conversation.",
-        prompt: "What do you say as you throw it?",
+          "Il lei a un bambino non è più educato. Ignora la sua età. Tieni è tutta la risposta. Non lo tieni lì per fare conversazione.",
+        prompt: "Cosa dici, mentre gliela lanci?",
         choices: [
           {
             text: "Tenga.",
             tone: "cold",
             feedback:
-              "Tenga is what a man in Turin will say when he hands you a dropped glove. A ten-year-old gets tieni. Politeness that ignores who is in front of you is its own coldness.",
+              "Tenga è quello che un signore a Torino dice quando ti rende un guanto. A un bambino di dieci anni si dice tieni. L'educazione che non guarda chi ha davanti è fredda per conto suo.",
           },
           {
             text: "Un attimo, prima dimmi come ti chiami.",
             tone: "near",
             feedback:
-              "He asked for the ball, not for an exchange. Holding a child in your Italian practice is the too-close version of a kind moment.",
+              "Ha chiesto la palla, non uno scambio. Tenere un bambino fermo per esercitarti in italiano è la versione troppo vicina di un momento gentile.",
           },
           {
             text: "Tieni.",
             tone: "fit",
             feedback:
-              "Tu back to a child, and nothing added. He is already turning toward his game. That is the goodbye.",
+              "Il tu, restituito a un bambino, e nient'altro. Si sta già girando verso il gioco. Quello è il saluto.",
           },
         ],
       },
       {
         id: "arrivo-4",
-        short: "the desk",
-        place: "A small hotel just off the piazza",
-        who: "The man at the desk, in his sixties",
+        short: "il banco",
+        place: "Un piccolo albergo, appena fuori dalla piazza",
+        who: "L'uomo al banco, sulla sessantina",
         mode: "answer",
         scene:
-          "The lobby is one lamp and a fan. Marta booked the room under her surname, Elia. He has not decided to like you yet. Liking you is not required for the key.",
+          "L'ingresso è una lampada e un ventilatore. Marta ha prenotato a nome Elia, il suo cognome. Lui non ha ancora deciso se gli stai simpatico. Per la chiave non serve.",
         teach:
-          "A desk gets buonasera, the name on the booking, and no ciao. You are a guest with a reservation, not a nephew walking into a kitchen.",
-        prompt: "How do you open?",
+          "Al banco si dice buonasera, il nome della prenotazione, e niente ciao. Sei un ospite con una camera, non un nipote che entra in cucina.",
+        prompt: "Come apri?",
         choices: [
           {
             text: "Buonasera. Ho una prenotazione a nome Elia.",
             tone: "fit",
             feedback:
-              "He can find the reservation. If he moves to tu later, that is his door to open. You don't start on the other side of it.",
+              "Può trovare la prenotazione. Se più tardi passa al tu, quella porta la apre lui. Non cominci già dall'altra parte.",
           },
           {
             text: {
@@ -268,13 +268,13 @@ const lecce: Stroll[] = [
             },
             tone: "near",
             feedback:
-              "Ciao, plus being «Marta's person,» asks a stranger to treat you as family before he has even found the booking. The surname was the warm thing Marta already did for you.",
+              "Ciao, e il «sono di Marta», chiedono a uno sconosciuto di trattarti come famiglia prima ancora di trovare la prenotazione. Il cognome era già il calore che Marta ti aveva preparato.",
           },
           {
             text: "Salve. Vorrei effettuare il check-in della prenotazione.",
             tone: "cold",
             feedback:
-              "Check-in is airport Italian. A one-lamp lobby in Lecce runs on buonasera and a surname. Same information, none of the counter between you.",
+              "Check-in è l'italiano dell'aeroporto. Un ingresso con una lampada, a Lecce, va a buonasera e cognome. Le stesse informazioni, senza il banco in mezzo.",
           },
         ],
       },
@@ -286,145 +286,145 @@ const lecce: Stroll[] = [
     town: "lecce",
     title: "Il primo caffè",
     time: "19:30",
-    place: "A bar just off Piazza Sant'Oronzo",
-    skill: "The counter is a greeting, not a table you host.",
+    place: "Un bar, appena fuori da Piazza Sant'Oronzo",
+    skill: "Il banco è un saluto, non un tavolo che ospiti tu.",
     promise:
-      "Your first coffee is standing up. The long version of a polite order marks you as outside the room.",
+      "Il primo caffè si beve in piedi. L'ordine lungo e educato ti segna come uno che sta fuori dalla stanza.",
     stops: [
       {
         id: "caffe-1",
-        short: "counter or table",
-        place: "The doorway of the bar",
-        who: "The room, and a man already at the counter",
+        short: "banco o tavolo",
+        place: "La porta del bar",
+        who: "La stanza, e un uomo già al banco",
         mode: "notice",
         scene:
-          "Two small tables by the window, both empty. The life of the place is a line of elbows at the zinc. You were about to sit, because sitting looks respectful.",
+          "Due tavolini alla finestra, tutti e due vuoti. La vita del posto è una fila di gomiti sullo zinco. Stavi per sederti, perché sedersi sembra rispettoso.",
         heard: "Un caffè.",
-        heardFrom: "A man at the counter",
-        gloss: "A coffee. No greeting, no conditional, no speech. He will add buonasera if he meets someone's eyes. The order itself is this short.",
+        heardFrom: "Un uomo al banco",
+        gloss: "Un caffè. Niente saluto, niente condizionale, niente discorso. Buonasera lo aggiunge se incrocia gli occhi di qualcuno. L'ordine, da solo, è così corto.",
         teach:
-          "The first coffee is a greeting said standing up. A table is for people who are staying. Sitting down to be polite misreads the room.",
-        prompt: "What is the room telling you?",
+          "Il primo caffè è un saluto detto in piedi. Il tavolo è per chi resta. Sedersi per educazione legge male la stanza.",
+        prompt: "Cosa ti sta dicendo la stanza?",
         choices: [
           {
-            text: "Sit. Taking a table shows you honor the place, and you can order properly once you are settled.",
+            text: "Ti siedi. Prendere un tavolo mostra che onori il posto, e ordini come si deve quando sei sistemato.",
             tone: "near",
             feedback:
-              "The table is an honor you are paying to your own idea of a café. The room's honor is knowing where people stand for one euro and twenty.",
+              "Il tavolo è un onore che stai pagando alla tua idea di caffè. L'onore della stanza è sapere dove si sta in piedi per un euro e venti.",
           },
           {
-            text: "Leave. A place without menus is not set up for someone who wants to sit and learn.",
+            text: "Te ne vai. Un posto senza menu non è fatto per chi vuole sedersi e imparare.",
             tone: "cold",
             feedback:
-              "You just declined the actual classroom. The counter is the lesson. Menus come later, in rooms that are trying to be something else.",
+              "Hai appena rifiutato l'aula vera. La lezione è il banco. I menu arrivano dopo, nelle stanze che vogliono essere un'altra cosa.",
           },
           {
-            text: "Stand at the counter. This coffee is a greeting, not a sitting. The table is for when you are staying.",
+            text: "Resti al banco. Questo caffè è un saluto, non una seduta. Il tavolo è per quando resti.",
             tone: "fit",
             feedback:
-              "You step up. When it is your turn, the whole order is «Un caffè, per favore.» Vorrei is correct Italian and, for this cup, slightly ceremonial.",
+              "Ti avvicini. Quando tocca a te, tutto l'ordine è «Un caffè, per favore.» Vorrei è italiano corretto e, per questa tazza, un po' cerimoniale.",
           },
         ],
       },
       {
         id: "caffe-2",
-        short: "where you're from",
-        place: "The counter",
-        who: "The barista, about your age",
+        short: "di dove sei",
+        place: "Il banco",
+        who: "Il barista, più o meno della tua età",
         mode: "answer",
         scene:
-          "He has clocked the accent and the hesitation, and he is not unkind. The machine is loud. He asks between cups, not as an interview.",
+          "Ha sentito l'accento e l'esitazione, e non è scortese. La macchina è forte. Chiede tra una tazza e l'altra, non come un colloquio.",
         heard: "Tu di dove sei?",
-        heardFrom: "The barista",
-        gloss: "Where are you from? He used tu. You can return it. He did not ask for your project.",
+        heardFrom: "Il barista",
+        gloss: "Di dove sei? Ha usato il tu. Puoi restituirlo. Non ti ha chiesto il progetto.",
         teach:
-          "Tu can come back to him. Your biography cannot. A city, the fact of a first night, and a question returned: that is the size of this pause.",
-        prompt: "What do you give him?",
+          "Il tu può tornare a lui. La biografia no. Una città, il fatto di una prima sera, e una domanda restituita: è la misura di questa pausa.",
+        prompt: "Cosa gli dai?",
         choices: [
           {
             text: "Di Roma. Prima sera. Tu sei di qui?",
             tone: "fit",
             feedback:
-              "He gets a place, a tense, and the turn. He'll probably say he's from here and then call the next coffee. You will have had a conversation.",
+              "Gli dai un posto, un tempo, e il turno. Probabilmente dirà che è di qui e poi chiamerà il caffè dopo. Avrete avuto una conversazione.",
           },
           {
             text: "Provengo dal Lazio e mi trovo a Lecce per un soggiorno linguistico.",
             tone: "cold",
             feedback:
-              "You answered a bar with a cover letter. He used tu and a four-word question. The coldness is the distance between those two sizes.",
+              "Hai risposto a un bar con una lettera di presentazione. Lui ha usato il tu e una domanda di quattro parole. Il freddo è la distanza tra quelle due misure.",
           },
           {
             text: "Di Roma. Dai, raccontami Lecce, ho tutta la sera.",
             tone: "near",
             feedback:
-              "You handed him your whole evening and took his. He is working. Curiosity can wait until he is still, if he ever is.",
+              "Gli hai dato tutta la tua sera e gli hai preso la sua. Sta lavorando. La curiosità può aspettare che sia fermo, se mai lo sarà.",
           },
         ],
       },
       {
         id: "caffe-3",
-        short: "the board",
-        place: "The chalkboard over the machine",
-        who: "The board, then you",
+        short: "la lavagna",
+        place: "La lavagna sopra la macchina",
+        who: "La lavagna, e poi tu",
         mode: "answer",
         scene:
-          "Under the specials, in a hurried hand: pasticciotto crema, pasticciotto nutella, caffè in ghiaccio con latte di mandorla. You know crema. You don't need a lecture to order.",
+          "Sotto i piatti del giorno, di fretta: pasticciotto crema, pasticciotto nutella, caffè in ghiaccio con latte di mandorla. La crema la conosci. Per ordinare non ti serve una lezione.",
         teach:
-          "Pointing is fluent. One real question is fluent. A request for the history of each typical product turns a craving into a presentation you are giving him.",
-        prompt: "How do you order?",
+          "Indicare è fluente. Una domanda vera è fluente. Chiedere la storia di ogni dolce tipico trasforma una voglia in una conferenza che stai facendo a lui.",
+        prompt: "Come ordini?",
         choices: [
           {
             text: "Il solito.",
             tone: "near",
             feedback:
-              "Il solito is intimacy: a usual, earned by coming back. On night two it pretends a history with the bar you haven't had.",
+              "Il solito è intimità: un'abitudine, guadagnata tornando. La seconda sera finge una storia col bar che non hai.",
           },
           {
             text: "Questo, con la crema. Grazie.",
             tone: "fit",
             feedback:
-              "You pointed. If you want one true question, it is «Il pasticciotto è quello con la crema?» He will say yes, or nutella, and you will choose. That is the whole dictionary.",
+              "Hai indicato. Se vuoi una domanda vera, è «Il pasticciotto è quello con la crema?» Dirà di sì, o nutella, e tu scegli. Tutto il dizionario è quello.",
           },
           {
             text: "Mi può spiegare la storia e gli ingredienti di ogni dolce?",
             tone: "cold",
             feedback:
-              "He can, and he will like his city less by the end of it. The board is an offer, not a syllabus. Point, then ask the one thing you actually need.",
+              "Può farlo, e alla fine gli piacerà meno la sua città. La lavagna è un'offerta, non un programma. Indica, poi chiedi l'unica cosa che ti serve.",
           },
         ],
       },
       {
         id: "caffe-4",
-        short: "paying",
-        place: "The same counter, cup empty",
-        who: "The barista",
+        short: "il conto",
+        place: "Lo stesso banco, tazza vuota",
+        who: "Il barista",
         mode: "answer",
         scene:
-          "Coins, a small saucer, the next person already half in your place. He isn't dismissing you. He is putting you in the town's future.",
+          "Monete, un piattino, il prossimo già mezzo nel tuo posto. Non ti sta mandando via. Ti sta mettendo nel futuro del paese.",
         heard: "Un euro e venti. A dopo.",
-        heardFrom: "The barista",
-        gloss: "One euro twenty. See you later. In a town this size, a dopo is a reasonable assumption, and a friendly one.",
+        heardFrom: "Il barista",
+        gloss: "Un euro e venti. A dopo. In un paese così, a dopo è un'ipotesi ragionevole, e amichevole.",
         teach:
-          "You return a dopo. You don't praise the service, and you don't promote him to a confidant. The warmth was already in the assumption that you'll be back.",
-        prompt: "What do you leave on?",
+          "Restituisci l'a dopo. Non lodare il servizio, e non promuoverlo a confidente. Il calore era già nell'idea che tornerai.",
+        prompt: "Con cosa te ne vai?",
         choices: [
           {
             text: "A dopo, bellissimo, sei un amore.",
             tone: "near",
             feedback:
-              "He wished you a later. You answered with a pet name. The friendliness was already at the right size, and you enlarged it until it got strange.",
+              "Ti ha augurato un dopo. Tu hai risposto con un vezzeggiativo. La simpatia era già della misura giusta, e tu l'hai allargata fino a farla strana.",
           },
           {
             text: "Arrivederci e grazie per l'ottimo servizio.",
             tone: "cold",
             feedback:
-              "Ottimo servizio is a review, not a goodbye. A dopo was a hand he held out. Arrivederci puts the hand back in a uniform.",
+              "Ottimo servizio è una recensione, non un arrivederci. A dopo era una mano tesa. Arrivederci gliela rimette in divisa.",
           },
           {
             text: "A dopo. Grazie.",
             tone: "fit",
             feedback:
-              "You accepted the assumption. Tomorrow, if you come back, you have earned a little more of il solito. Not tonight.",
+              "Hai accettato l'ipotesi. Domani, se torni, ti sei guadagnato un po' di più del solito. Non stasera.",
           },
         ],
       },
@@ -437,147 +437,147 @@ const lecce: Stroll[] = [
     title: "La vetrina",
     time: "19:55",
     place: "Via Vittorio Emanuele II",
-    skill: "Reading what was written for neighbors, and refusing a dress without refusing a friend.",
+    skill: "Leggere quello che è scritto per i vicini, e rifiutare un vestito senza rifiutare un'amica.",
     promise:
-      "The shops are half-closing. The notes in the windows are not for tourists, and the judgments in front of them are half-finished on purpose.",
+      "I negozi stanno chiudendo a metà. I biglietti in vetrina non sono per i turisti, e i giudizi davanti sono lasciati a metà apposta.",
     stops: [
       {
         id: "vetrina-1",
-        short: "the note",
-        place: "A locked shop door",
-        who: "A handwritten card",
+        short: "il biglietto",
+        place: "Una porta di negozio, chiusa",
+        who: "Un cartoncino scritto a mano",
         mode: "notice",
         scene:
-          "The lights are off and a card is taped inside the glass, written with a pen that was running out. Someone passing will understand it immediately. You are deciding whether to be annoyed.",
+          "Le luci sono spente e un cartoncino è attaccato al vetro, scritto con una penna che stava finendo. Chi passa capisce subito. Tu stai decidendo se irritarti.",
         heard: "Torno subito. Sono al bar.",
-        heardFrom: "The card",
-        gloss: "Back in a minute. I'm at the bar. Not a schedule. A neighbor's note.",
+        heardFrom: "Il cartoncino",
+        gloss: "Torno subito. Sono al bar. Non è un orario. È il biglietto di una vicina.",
         teach:
-          "This is closed for the length of a coffee. It isn't a contract you can be injured by, and it isn't an invitation to go find the speaker.",
-        prompt: "What kind of writing is this?",
+          "È chiuso per la durata di un caffè. Non è un contratto con cui puoi ferirti, e non è un invito ad andare a cercare chi l'ha scritto.",
+        prompt: "Che scrittura è questa?",
         choices: [
           {
-            text: "A note to neighbors. The shop is paused, not insulting you. Come back, or don't. The bar is not a meeting she scheduled with you.",
+            text: "Un biglietto per i vicini. Il negozio è in pausa, non ti sta offendendo. Torni, o no. Il bar non è un appuntamento che ha fissato con te.",
             tone: "fit",
             feedback:
-              "You read the trust in it: she told the street where she is. That is warmth on paper. It still isn't a conversation she opened with a stranger.",
+              "Hai letto la fiducia: ha detto alla via dov'è. È calore sulla carta. Non è comunque una conversazione aperta con uno sconosciuto.",
           },
           {
-            text: "Unprofessional. The right feeling is annoyance, and the right lesson is that some businesses don't respect customers.",
+            text: "Poco professionale. La reazione giusta è il fastidio, e la lezione è che certi negozi non rispettano i clienti.",
             tone: "cold",
             feedback:
-              "You imported a chain-store rule into a one-person shop. The card would be cold in a station. On this street it is how the street works.",
+              "Hai portato in un negozio di una persona sola la regola di una catena. In stazione quel cartoncino sarebbe freddo. In questa via è il modo in cui funziona la via.",
           },
           {
-            text: "An invitation. You should find her at the bar and continue the conversation the card started.",
+            text: "Un invito. Dovresti trovarla al bar e continuare la conversazione che ha aperto il cartoncino.",
             tone: "near",
             feedback:
-              "The card started a conversation with people who already know which bar. Joining it as a stranger turns her errand into your scene.",
+              "Il cartoncino ha aperto una conversazione con chi sa già quale bar. Entrarci da sconosciuto trasforma la sua commissione nella tua scena.",
           },
         ],
       },
       {
         id: "vetrina-2",
-        short: "the dress",
-        place: "The next window",
-        who: "Two women, one of them in a dress she's unsure about",
+        short: "il vestito",
+        place: "La vetrina dopo",
+        who: "Due donne, una con un vestito di cui non è sicura",
         mode: "overhear",
         scene:
-          "They aren't whispering. They also aren't finishing their sentences. You catch it because you've stopped pretending to study the mannequin.",
+          "Non bisbigliano. E non finiscono le frasi. La senti perché hai smesso di fingere di studiare il manichino.",
         heard: "Mah. Il colore, non lo so.",
-        heardFrom: "The woman in the dress, after her friend said «Secondo me ti sta bene.»",
-        gloss: "Mah. The color, I don't know. Mah plus an unfinished thought is the judgment.",
+        heardFrom: "La donna col vestito, dopo che l'amica ha detto «Secondo me ti sta bene.»",
+        gloss: "Mah. Il colore, non lo so. Il mah, più un pensiero lasciato a metà, è il giudizio.",
         teach:
-          "She is refusing the dress without refusing her friend. The no lives in mah and in the sentence she doesn't complete. A clean «è brutto» would be a different, colder friendship.",
-        prompt: "What is she saying?",
+          "Sta rifiutando il vestito senza rifiutare l'amica. Il no sta nel mah e nella frase che non chiude. Un «è brutto» netto sarebbe un'amicizia diversa, e più fredda.",
+        prompt: "Cosa sta dicendo?",
         choices: [
           {
-            text: "She wants the dress and is working up to the price.",
+            text: "Vuole il vestito e sta arrivando al prezzo.",
             tone: "cold",
             feedback:
-              "You heard the words and missed the particle. Mah is the no. The unfinished color is how she keeps the friend while dropping the dress.",
+              "Hai sentito le parole e hai perso la particella. Il mah è il no. Il colore lasciato a metà è il modo in cui tiene l'amica e lascia il vestito.",
           },
           {
-            text: "She is turning the dress down, and leaving her friend intact. The refusal is in mah and in what she doesn't finish.",
+            text: "Sta rifiutando il vestito, e lascia intera l'amica. Il no sta nel mah e in quello che non finisce.",
             tone: "fit",
             feedback:
-              "If a shopkeeper later asks you, the same shape works: «Mah, non sono convinta. Il colore, forse.» You don't have to produce a verdict to be clear.",
+              "Se più tardi te lo chiede una negoziante, la stessa forma funziona: «Mah, non sono convinta. Il colore, forse.» Non serve un verdetto per essere chiari.",
           },
           {
-            text: "Her friend has insulted her, and mah is the start of a fight.",
+            text: "L'amica l'ha offesa, e mah è l'inizio di una lite.",
             tone: "near",
             feedback:
-              "«Ti sta bene» was a gift. Mah returns the gift without breaking it. Hearing a fight here means you only recognize disagreement when it is loud.",
+              "«Ti sta bene» era un regalo. Il mah lo restituisce senza romperlo. Sentire una lite qui vuol dire che riconosci il disaccordo solo quando è forte.",
           },
         ],
       },
       {
         id: "vetrina-3",
-        short: "pittule",
-        place: "A fryer's window further down",
-        who: "A woman next to you, and a sign",
+        short: "le pittule",
+        place: "La vetrina di una friggitoria, più avanti",
+        who: "Una donna accanto a te, e un cartello",
         mode: "answer",
         scene:
-          "The sign says only «Pittule calde solo stasera.» You don't know the word. She watches you fail to know it, and decides to be the dictionary. She is already a little pleased.",
+          "Il cartello dice solo «Pittule calde solo stasera.» La parola non la sai. Lei ti guarda non saperla, e decide di fare il dizionario. È già un po' contenta.",
         heard: "Sono frittelle. Se non le hai mai prese, prendile.",
-        heardFrom: "The woman beside you",
-        gloss: "They're fritters. If you've never had them, have them. Pittule are the Salento version, sold hot.",
+        heardFrom: "La donna accanto a te",
+        gloss: "Sono frittelle. Se non le hai mai prese, prendile. Le pittule sono la versione del Salento, vendute calde.",
         teach:
-          "You are not tested on the word. You are tested on letting her be the dictionary without turning her advice into a debt or a seminar.",
-        prompt: "What do you say?",
+          "Non ti stanno esaminando sulla parola. Ti stanno esaminando sul lasciarla fare il dizionario, senza trasformare il consiglio in un debito o in un seminario.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Potrebbe fornirmi una definizione più precisa?",
             tone: "cold",
             feedback:
-              "She already defined it, in the only way the moment needed: what it is, and what you should do. A finer definition sends her back to work she had finished.",
+              "L'aveva già definita, nell'unico modo che serviva al momento: cos'è, e cosa fai. Una definizione più fine la rimanda a un lavoro che aveva già chiuso.",
           },
           {
             text: "Allora sì. Grazie.",
             tone: "fit",
             feedback:
-              "You took the advice and the translation. If you want the word in your mouth, you can say pittule when you order. You don't make her repeat the lesson.",
+              "Hai preso il consiglio e la traduzione. Se vuoi la parola in bocca, dici pittule quando ordini. Non le fai ripetere la lezione.",
           },
           {
             text: "Solo se me le offri tu.",
             tone: "near",
             feedback:
-              "She offered knowledge, not a round. Turning advice into a debt is how a friendly street gets wary of visitors.",
+              "Ti ha offerto una conoscenza, non un giro. Trasformare un consiglio in un debito è il modo in cui una via gentile diventa diffidente con chi arriva.",
           },
         ],
       },
       {
         id: "vetrina-4",
-        short: "she comes back",
-        place: "The shop with the card, ten minutes later",
-        who: "The shopkeeper",
+        short: "è tornata",
+        place: "Il negozio del cartoncino, dieci minuti dopo",
+        who: "La negoziante",
         mode: "answer",
         scene:
-          "You did come back. She is unlocking the door with the energy of someone who knows exactly how this looks and is not going to perform guilt at the size of a corporation.",
+          "Sei tornato. Sta aprendo la porta con l'energia di chi sa benissimo che figura fa, e non reciterà un senso di colpa da grande magazzino.",
         heard: "Eh, scusate, ero di là.",
-        heardFrom: "The shopkeeper",
-        gloss: "Sorry, I was over there. Scusate, you-plural, said to one customer: a softener, not a mistake about how many of you there are. It is also not an offer of tu.",
+        heardFrom: "La negoziante",
+        gloss: "Scusa, ero di là. Scusate, il voi, detto a un cliente solo: un ammorbidimento, non un errore sul numero. E non è un'offerta di tu.",
         teach:
-          "Ma figurati releases her. Then you do the thing you came for. A complaint treats a coffee as a broken contract. A sudden tu treats her softener as intimacy.",
-        prompt: "What do you say?",
+          "Ma figurati la libera. Poi fai la cosa per cui sei venuto. Un reclamo tratta un caffè come un contratto rotto. Un tu improvviso tratta quell'ammorbidimento come intimità.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Ho aspettato. Non è serio.",
             tone: "cold",
             feedback:
-              "Seriousness, in this register, is a train station. She told the street where she was. You came back. The relationship is already repaired, if you let it be.",
+              "La serietà, in questo registro, è una stazione. Ha detto alla via dov'era. Sei tornato. Il rapporto è già aggiustato, se lo lasci essere.",
           },
           {
             text: "Tranquilla, tu che fai di bello stasera?",
             tone: "near",
             feedback:
-              "Tu, plus a claim on her evening. Her scusate was a softener, not a key. You just walked into a life she didn't put on the card.",
+              "Il tu, più un diritto sulla sua sera. Il suo scusate era un ammorbidimento, non una chiave. Sei entrato in una vita che sul cartoncino non c'era.",
           },
           {
             text: "Ma figurati. Posso vedere quella borsa?",
             tone: "fit",
             feedback:
-              "You cancelled the debt and named the object. She can go back to being a shop. That is the friendly outcome.",
+              "Hai cancellato il debito e hai nominato l'oggetto. Può tornare a essere un negozio. Quello è l'esito amichevole.",
           },
         ],
       },
@@ -590,146 +590,146 @@ const lecce: Stroll[] = [
     title: "La porta della chiesa",
     time: "20:15",
     place: "Basilica di Santa Croce",
-    skill: "Solemn register. A short mi dispiace. Letting help stay small.",
+    skill: "Registro solenne. Un mi dispiace corto. Lasciare che l'aiuto resti piccolo.",
     promise:
-      "Two papers on one door: a death and a lost cat. The evening teaches you they do not ask for the same behavior, even if you can parse both.",
+      "Due fogli sulla stessa porta: una morte e un gatto perso. La sera ti insegna che non chiedono lo stesso comportamento, anche se li sai leggere tutti e due.",
     stops: [
       {
         id: "porta-1",
-        short: "the notice",
-        place: "The church door",
-        who: "A printed funeral notice",
+        short: "l'avviso",
+        place: "La porta della chiesa",
+        who: "Un avviso funebre stampato",
         mode: "notice",
         scene:
-          "The paper is fresh, the photograph formal, the formula one you may have met in a textbook under «annunci funebri.» People passing slow down and do not stop. Nobody is reading it aloud.",
+          "Il foglio è fresco, la fotografia è formale, la formula è quella che forse hai visto sul libro sotto «annunci funebri.» Chi passa rallenta e non si ferma. Nessuno lo legge ad alta voce.",
         heard:
           "È mancato all'affetto dei suoi cari il signor Antonio Greco, di anni 84. I funerali si terranno domani alle ore 16 nella Basilica di Santa Croce.",
-        heardFrom: "The notice",
-        gloss: "The standard formula: he has died, loved by his people, at 84. The funeral is tomorrow at four, here.",
+        heardFrom: "L'avviso",
+        gloss: "La formula di sempre: è mancato all'affetto dei suoi, a 84 anni. Il funerale è domani alle quattro, qui.",
         teach:
-          "You can understand it and still not use it. No photograph for the group chat, no asking a stranger to turn a death into your lesson.",
-        prompt: "What do you do with a text like this?",
+          "Puoi capirlo e non usarlo. Niente fotografia per la chat, niente chiedere a uno sconosciuto di trasformare una morte nella tua lezione.",
+        prompt: "Cosa fai con un testo così?",
         choices: [
           {
-            text: "Read it silently, and leave it on the door. It is not a sample sentence, and it is not your entrance.",
+            text: "Lo leggi in silenzio, e lo lasci sulla porta. Non è una frase di esempio, e non è il tuo ingresso.",
             tone: "fit",
             feedback:
-              "Understanding the formula is the skill. Extracting it is the failure. If someone later asks what you were looking at: «Un avviso. Non lo conoscevo.» Then stop.",
+              "Capire la formula è l'abilità. Estrarla è il fallimento. Se più tardi qualcuno chiede cosa stavi guardando: «Un avviso. Non lo conoscevo.» Poi ti fermi.",
           },
           {
-            text: "Photograph it. Formal Italian this clean is exactly what your notes are missing.",
+            text: "Lo fotografi. Un italiano formale così pulito è proprio quello che manca nei tuoi appunti.",
             tone: "cold",
             feedback:
-              "You turned a family's notice into courseware. The grammar will still be in your book tonight. The paper is doing a different job.",
+              "Hai trasformato l'avviso di una famiglia in materiale didattico. La grammatica resta nel libro, stasera. Il foglio sta facendo un altro lavoro.",
           },
           {
-            text: "Go inside and offer condolences to whoever is there, so the family feels accompanied.",
+            text: "Entri e fai le condoglianze a chi c'è, così la famiglia si sente accompagnata.",
             tone: "near",
             feedback:
-              "You don't know the dead, and the people inside haven't asked a stranger for company. Invented intimacy at a church door is not kindness. It is a scene.",
+              "Non conosci il morto, e chi è dentro non ha chiesto compagnia a uno sconosciuto. Un'intimità inventata sulla porta di una chiesa non è gentilezza. È una scena.",
           },
         ],
       },
       {
         id: "porta-2",
-        short: "the priest",
-        place: "The steps",
-        who: "The priest, passing",
+        short: "il prete",
+        place: "I gradini",
+        who: "Il prete, di passaggio",
         mode: "answer",
         scene:
-          "He nods, the way people nod when they have already greeted the whole street once this hour. He is not slowing down. The basilica behind him is famous. He knows.",
+          "Fa un cenno, come si fa quando in quest'ora hai già salutato tutta la strada. Non rallenta. La basilica alle sue spalle è famosa. Lo sa.",
         teach:
-          "A nod from a priest who isn't stopping gets buonasera and nothing else. A question about the building turns him into a guide he didn't volunteer to be.",
-        prompt: "What do you say?",
+          "A un prete che non si ferma basta buonasera, e nient'altro. Una domanda sull'edificio lo trasforma in una guida che non si era offerto di essere.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Ciao padre, bellissima questa chiesa. Da quando è qui?",
             tone: "near",
             feedback:
-              "Ciao, a compliment, and a biographical question, all for a man mid-step. You asked him to host the monument and himself.",
+              "Ciao, un complimento, e una domanda biografica, tutto per un uomo a metà passo. Gli hai chiesto di ospitare il monumento e se stesso.",
           },
           {
             text: "Buonasera.",
             tone: "fit",
             feedback:
-              "He answers «Buonasera» and continues. The exchange is the nod, said aloud. You let the church be a church and not a prompt.",
+              "Risponde «Buonasera» e continua. Lo scambio è il cenno, detto ad alta voce. Lasci che la chiesa sia una chiesa, non un esercizio.",
           },
           {
             text: "Salve, potrebbe illustrarmi la storia della basilica?",
             tone: "cold",
             feedback:
-              "A fair question for a desk that exists to answer it. He was walking. The conditional of courtesy doesn't create a tour that wasn't offered.",
+              "Una domanda giusta per un banco che esiste per rispondere. Lui stava camminando. Il condizionale di cortesia non crea una visita che nessuno ha offerto.",
           },
         ],
       },
       {
         id: "porta-3",
-        short: "the cat",
-        place: "The same door, lower down",
-        who: "A handwritten note",
+        short: "il gatto",
+        place: "La stessa porta, più in basso",
+        who: "Un biglietto a mano",
         mode: "notice",
         scene:
-          "Under the funeral paper, taped a little crooked: different pen, different stakes. You can feel that this one is allowed to be warm, and that reading them in the same voice would be a mistake.",
+          "Sotto il foglio del funerale, attaccato un po' storto: un'altra penna, un'altra posta. Si sente che questo può essere caldo, e che leggerli con la stessa voce sarebbe un errore.",
         heard:
           "È scomparsa Nina, gatta tigrata, zona Sant'Oronzo. Chi la vede lascia detto al bar di Mimmo.",
-        heardFrom: "The note",
-        gloss: "Nina, a tabby, is missing around Sant'Oronzo. If you see her, leave word at Mimmo's bar.",
+        heardFrom: "Il biglietto",
+        gloss: "Nina, gatta tigrata, è scomparsa intorno a Sant'Oronzo. Se la vedi, lascia detto al bar di Mimmo.",
         teach:
-          "Same door, different distance. The cat can be spoken about warmly. The funeral cannot. If you had seen Nina, the next stop is the bar, not the priest.",
-        prompt: "What changes between the two papers?",
+          "Stessa porta, distanza diversa. Del gatto si può parlare con calore. Del funerale no. Se avessi visto Nina, la fermata dopo è il bar, non il prete.",
+        prompt: "Cosa cambia tra i due fogli?",
         choices: [
           {
-            text: "Nothing. Both are private, so the kind move is to ignore the cat as well.",
+            text: "Niente. Sono tutte e due cose private, quindi il gesto gentile è ignorare anche il gatto.",
             tone: "cold",
             feedback:
-              "You flattened two registers into one rule. The cat note is asking the street for help. The funeral notice is not asking you for anything.",
+              "Hai schiacciato due registri in una regola sola. Il biglietto del gatto chiede aiuto alla via. L'avviso funebre non ti sta chiedendo niente.",
           },
           {
-            text: "The cat can be warm and practical. The funeral stays quiet. Same door, different behavior. Nina, if you saw her, goes to the bar.",
+            text: "Il gatto può essere caldo e pratico. Il funerale resta quieto. Stessa porta, comportamento diverso. Nina, se l'hai vista, va al bar.",
             tone: "fit",
             feedback:
-              "You let the paper tell you the distance. That is the whole skill of Leggi: the Italian is not one temperature.",
+              "Hai lasciato che il foglio ti dicesse la distanza. È tutta l'abilità di Leggi: l'italiano non ha una temperatura sola.",
           },
           {
-            text: "Both are local color. Reading them aloud is good pronunciation practice, as long as you are respectful.",
+            text: "Sono tutte e due colore locale. Leggerle ad alta voce è un buon esercizio, se resti rispettoso.",
             tone: "near",
             feedback:
-              "Respectful extraction is still extraction. One of these papers asked for a witness. The other asked to be left in a low voice. Aloud serves neither.",
+              "Estrarre con rispetto è ancora estrarre. Uno di questi fogli chiedeva un testimone. L'altro chiedeva di essere lasciato a voce bassa. Ad alta voce non servi né l'uno né l'altro.",
           },
         ],
       },
       {
         id: "porta-4",
         short: "mi dispiace",
-        place: "Beside the notice",
-        who: "A woman who saw you hesitate on the formula",
+        place: "Accanto all'avviso",
+        who: "Una donna che ti ha visto esitare sulla formula",
         mode: "answer",
         scene:
-          "She speaks more quietly than the piazza. She is not crying. She is deciding, quickly, whether you are a person who can be told a small true thing.",
+          "Parla più piano della piazza. Non piange. Sta decidendo, in fretta, se sei una persona a cui si può dire una cosa vera e piccola.",
         heard: "È il papà di un'amica mia. Ieri.",
-        heardFrom: "The woman",
-        gloss: "It's my friend's father. Yesterday. Un'amica mia: the possessive after the noun, a southern rhythm. She stays on lei with you when she goes on.",
+        heardFrom: "La donna",
+        gloss: "È il padre di un'amica. Ieri. Un'amica mia: il possessivo dopo il nome, un ritmo del sud. Con te resta sul lei, anche quando continua.",
         teach:
-          "Mi dispiace, and then room. A long offer of support from a stranger is a speech about your own kindness. She did not hand you the family.",
-        prompt: "What do you answer?",
+          "Mi dispiace, e poi spazio. Un'offerta lunga di sostegno, da uno sconosciuto, è un discorso sulla tua gentilezza. Non ti ha consegnato la famiglia.",
+        prompt: "Cosa rispondi?",
         choices: [
           {
             text: "Mi dispiace tanto. Se ha bisogno di qualsiasi cosa, io ci sono.",
             tone: "cold",
             feedback:
-              "The grammar of empathy, at a length that makes her manage you. You didn't know him. «Io ci sono» recruits you into a role she didn't offer.",
+              "La grammatica dell'empatia, a una lunghezza che la obbliga a gestire te. Non lo conoscevi. «Io ci sono» ti arruola in un ruolo che non ti ha offerto.",
           },
           {
             text: "Mi dispiace.",
             tone: "fit",
             feedback:
-              "Then you stop. Because you did, she may add, still on lei: «Lei non è di qui. Domenica, la messa delle sette è cantata, se vuole.» The fitting reply is «Grazie. Forse domenica.» You do not switch to tu. Her kindness was not that invitation.",
+              "Poi ti fermi. Proprio per questo può aggiungere, ancora sul lei: «Lei non è di qui. Domenica, la messa delle sette è cantata, se vuole.» La risposta giusta è «Grazie. Forse domenica.» Non passi al tu. La sua gentilezza non era quell'invito.",
           },
           {
             text: "Oh no. Ma che è successo? Era malato? Posso venire al funerale?",
             tone: "near",
             feedback:
-              "Three questions and a self-invitation. You turned her one sentence into an interview and a place for yourself. The funeral is not a room you enter by being moved.",
+              "Tre domande e un autoinvito. Hai trasformato una frase sola in un'intervista e in un posto per te. Il funerale non è una stanza in cui si entra perché si è commossi.",
           },
         ],
       },
@@ -741,32 +741,32 @@ const lecce: Stroll[] = [
     town: "lecce",
     title: "Il cugino",
     time: "20:45",
-    place: "A stairwell near Porta Napoli",
-    skill: "Register follows who is in the scene, not who you are.",
+    place: "Una scala, vicino a Porta Napoli",
+    skill: "Il registro segue chi è nella scena, non chi sei tu.",
     promise:
-      "Marta's cousin gives you tu at the door. On the landing, a neighbor appears and his Italian straightens. You have to go with him, and come back when she leaves.",
+      "Il cugino di Marta ti dà del tu sulla porta. Sul pianerottolo compare una vicina e il suo italiano si raddrizza. Devi andare con lui, e tornare quando lei se ne va.",
     stops: [
       {
         id: "cugino-1",
-        short: "the doorway",
-        place: "His door",
-        who: "Marta's cousin, your age",
+        short: "la porta",
+        place: "La sua porta",
+        who: "Il cugino di Marta, della tua età",
         mode: "answer",
         scene:
-          "He is already smiling in the way of someone who has been told you exist. The apartment behind him smells like dinner that assumed you were staying. He doesn't do a formal hello. He warns you not to.",
+          "Sta già sorridendo come chi sa che esisti. L'appartamento dietro di lui sa di una cena che dava per scontato che restavi. Non fa un saluto formale. Ti avverte di non farlo.",
         heard:
           "Ehi, finalmente. Entra, non fare complimenti. E dammi del tu, eh. Marta ha detto che un po' parli.",
-        heardFrom: "The cousin",
-        gloss: "Finally. Come in, don't stand on ceremony, and use tu with me. Marta said you speak a little. Non fare complimenti means: don't perform the guest.",
+        heardFrom: "Il cugino",
+        gloss: "Finalmente. Entra, non fare complimenti, e dammi del tu. Marta ha detto che parli un po'. Non fare complimenti vuol dire: non recitare l'ospite.",
         teach:
-          "He set the distance out loud. Lei now is not respect. It refuses a gift he just put in your hand. Matching him is not the same as being careless.",
-        prompt: "What do you say on the threshold?",
+          "Ha detto la distanza ad alta voce. Il lei, adesso, non è rispetto. Rifiuta un regalo che ti ha appena messo in mano. Stargli dietro non è la stessa cosa che essere disinvolti.",
+        prompt: "Cosa dici sulla soglia?",
         choices: [
           {
             text: "Buonasera. Piacere di conoscerla. La ringrazio dell'invito.",
             tone: "cold",
             feedback:
-              "He will laugh, not unkindly, and repeat himself: dammi del tu. You answered the person you expected, not the person in the door.",
+              "Riderà, senza cattiveria, e si ripeterà: dammi del tu. Hai risposto alla persona che ti aspettavi, non a quella sulla porta.",
           },
           {
             text: {
@@ -775,80 +775,80 @@ const lecce: Stroll[] = [
             },
             tone: "fit",
             feedback:
-              "Tu, a small truth, a thanks. You didn't apologize for existing and you didn't inventory your grammar. He can let you in.",
+              "Il tu, una verità piccola, un grazie. Niente scuse per esistere, e niente inventario della grammatica. Può farti entrare.",
           },
           {
             text: "Apri, muoio di fame. Marta non mi ha detto niente.",
             tone: "near",
             feedback:
-              "Tu was offered. A complaint and a claim on the fridge were not. Too close skips the step where you actually arrive.",
+              "Il tu era offerto. Un reclamo e un diritto sul frigo no. Troppo vicino salta il passo in cui arrivi davvero.",
           },
         ],
       },
       {
         id: "cugino-2",
-        short: "the stairs",
-        place: "Half a flight down",
-        who: "Signora Lina, seventies, with a bag",
+        short: "le scale",
+        place: "Mezza rampa più sotto",
+        who: "La signora Lina, settant'anni, con una borsa",
         mode: "answer",
         scene:
-          "She appears from the floor below and his whole sentence changes temperature. You feel it in your mouth before you understand it. He has not become a different man. The scene gained a person.",
+          "Compare dal piano di sotto e tutta la sua frase cambia temperatura. Lo senti in bocca prima di capirlo. Non è diventato un altro. Nella scena è entrata una persona.",
         heard: {
           f: "Buonasera, signora Lina. Le do una mano? Le presento l'amica di Marta.",
           m: "Buonasera, signora Lina. Le do una mano? Le presento l'amico di Marta.",
         },
-        heardFrom: "The cousin",
-        gloss: "Good evening. Can I help you with that? This is Marta's friend. He speaks to her on lei, and he presents you inside that same distance.",
+        heardFrom: "Il cugino",
+        gloss: "Buonasera. La aiuto? Questo è l'ospite di Marta. Con lei sta sul lei, e presenta te dentro la stessa distanza.",
         teach:
-          "The warmth of the doorway is not transferable. She gets buonasera and piacere. Ciao plus her name spends his relationship as if it were yours.",
-        prompt: "She looks at you. What do you say?",
+          "Il calore della soglia non si trasferisce. A lei toccano buonasera e piacere. Ciao più il suo nome spende il rapporto di lui come se fosse tuo.",
+        prompt: "Ti guarda. Cosa dici?",
         choices: [
           {
-            text: "You stay a step behind and say nothing. He is handling it.",
+            text: "Resti un passo indietro e non dici niente. Ci pensa lui.",
             tone: "cold",
             feedback:
-              "He included you. Silence makes you luggage, and it leaves her greeting an absence. One buonasera puts you in the scene at her distance.",
+              "Ti ha incluso. Il silenzio ti fa bagaglio, e lascia che lei saluti un'assenza. Un buonasera ti mette nella scena, alla sua distanza.",
           },
           {
             text: "Buonasera. Piacere.",
             tone: "fit",
             feedback:
-              "She says «Piacere» and refuses his help: «No, caro, ce la faccio.» Caro is hers for him, earned over years. It is not a pattern you copy tonight.",
+              "Dice «Piacere» e rifiuta l'aiuto: «No, caro, ce la faccio.» Caro è suo per lui, guadagnato in anni. Non è un modello da copiare stasera.",
           },
           {
             text: "Ciao Lina! Finalmente qualcuno, questo portone è un labirinto.",
             tone: "near",
             feedback:
-              "You took the cousin's tu and aimed it at her, then added a complaint about her building. He will have to repair a small tear you didn't feel.",
+              "Hai preso il tu del cugino e l'hai puntato su di lei, poi ci hai messo un reclamo sul palazzo. Lui dovrà rammendare uno strappo che tu non hai sentito.",
           },
         ],
       },
       {
         id: "cugino-3",
-        short: "the landing",
-        place: "After she goes",
-        who: "The cousin, tu again",
+        short: "il pianerottolo",
+        place: "Dopo che lei se n'è andata",
+        who: "Il cugino, di nuovo tu",
         mode: "answer",
         scene:
-          "Her door closes two floors down. He exhales, not unkindly, and the Italian loosens back into the doorway version. He is letting you in on the rule, because you felt the switch and he saw you feel it.",
+          "La porta di lei si chiude due piani sotto. Lui espira, senza cattiveria, e l'italiano si allenta di nuovo, quello della soglia. Ti mette dentro la regola, perché hai sentito il cambio e lui ha visto che l'hai sentito.",
         heard: "È d'oro. Però se le dai del tu, ti sistema lei.",
-        heardFrom: "The cousin",
-        gloss: "She's gold. But if you say tu to her, she'll sort you out herself. Le is the formal her. Lei at the end is she.",
+        heardFrom: "Il cugino",
+        gloss: "È un oro. Ma se le dai del tu, ti sistema lei. Le è il lei formale. Lei in fondo è lei, la persona.",
         teach:
-          "You can show you understood without analyzing him. A joke that keeps the buonasera is the right size. A linguistic comment turns his neighbor into a case.",
-        prompt: "What do you say?",
+          "Puoi far vedere che hai capito senza analizzarlo. Una battuta che tiene il buonasera è la misura giusta. Un commento linguistico trasforma la vicina in un caso.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Allora il buonasera me lo tengo.",
             tone: "fit",
             feedback:
-              "You joined the joke and accepted the rule. He doesn't have to become your teacher. He already was, for one flight of stairs.",
+              "Sei entrato nella battuta e hai accettato la regola. Non deve diventare il tuo insegnante. Lo è già stato, per una rampa di scale.",
           },
           {
             text: "Interessante. Hai cambiato registro appena è arrivata una persona più distante.",
             tone: "cold",
             feedback:
-              "True, and you said it like a footnote about his life. He offered you a warning, not a phenomenon. The coldness is making him the text.",
+              "Vero, e l'hai detto come una nota a piè di pagina sulla sua vita. Ti ha offerto un avvertimento, non un fenomeno. Il freddo è farne un testo.",
           },
           {
             text: {
@@ -857,43 +857,43 @@ const lecce: Stroll[] = [
             },
             tone: "near",
             feedback:
-              "You heard the rule and volunteered to break it for charm. Simpatica is not the goal on her landing. Surviving her correction is not a cute story.",
+              "Hai sentito la regola e ti sei offerto di romperla per simpatia. Simpatica non è l'obiettivo sul suo pianerottolo. Sopravvivere alla correzione non è un aneddoto carino.",
           },
         ],
       },
       {
         id: "cugino-4",
-        short: "the water",
-        place: "His kitchen doorway",
-        who: "The cousin",
+        short: "l'acqua",
+        place: "La porta della sua cucina",
+        who: "Il cugino",
         mode: "answer",
         scene:
-          "He starts a sentence you don't catch. Salentino, fast, aimed at the fridge. He hears himself miss you, stops, and does the kind thing without making a class of it.",
+          "Comincia una frase che non prendi. Salentino, veloce, rivolto al frigo. Si accorge di averti perso, si ferma, e fa la cosa gentile senza farne una lezione.",
         heard:
           "Aspetta, in italiano, se no non ci capiamo. Vuoi l'acqua o già un goccio di vino?",
-        heardFrom: "The cousin",
-        gloss: "Wait, in Italian, otherwise we won't understand each other. Water, or already a drop of wine? He translated himself. A goccio is an affectionate small pour.",
+        heardFrom: "Il cugino",
+        gloss: "Aspetta, in italiano, se no non ci capiamo. Acqua, o già un goccio di vino? Si è tradotto da solo. Un goccio è un versare piccolo, e affettuoso.",
         teach:
-          "You are not examined on the dialect. He already did the courtesy, which was switching. Ask for the first sentence later if you still want it, at the table, not as the price of a drink.",
-        prompt: "What do you answer?",
+          "Non ti stanno esaminando sul dialetto. La cortesia l'ha già fatta lui, ed era passare all'italiano. La prima frase, se la vuoi ancora, la chiedi dopo, a tavola, non come prezzo di un bicchiere.",
+        prompt: "Cosa rispondi?",
         choices: [
           {
             text: "Puoi ripetere la prima parte e tradurla parola per parola?",
             tone: "cold",
             feedback:
-              "You turned a glass of wine into a worksheet, in the doorway, while he was being careful. Later, if it still matters: «Prima, cos'è che hai detto?» That is curiosity with timing.",
+              "Hai trasformato un bicchiere di vino in una scheda, sulla soglia, mentre lui stava attento. Dopo, se conta ancora: «Prima, cos'è che hai detto?» Quella è curiosità col tempo giusto.",
           },
           {
             text: "No, solo dialetto tutta la cena, se no non vale.",
             tone: "near",
             feedback:
-              "You asked him to perform his region for you. He had just gone out of his way so you wouldn't be locked out of the room.",
+              "Gli hai chiesto di recitare la sua terra per te. Si era appena spostato perché tu non restassi fuori dalla stanza.",
           },
           {
             text: "Un goccio. Grazie.",
             tone: "fit",
             feedback:
-              "You answered the question he actually asked. The dialect is still in the house. It doesn't have to be your activity.",
+              "Hai risposto alla domanda che ti ha fatto davvero. Il dialetto è ancora in casa. Non deve essere la tua attività.",
           },
         ],
       },
@@ -905,145 +905,145 @@ const lecce: Stroll[] = [
     town: "lecce",
     title: "La cena che non finisce",
     time: "21:40",
-    place: "The cousin's table, then the street",
-    skill: "Refusal, teasing, and a goodbye that is allowed to take time.",
+    place: "La tavola del cugino, poi la strada",
+    skill: "Il rifiuto, la presa in giro, e un arrivederci che può prendersi tempo.",
     promise:
-      "His mother has decided you are eating. The cold move is a perfect no, said too fast, or a lei she has already retired.",
+      "Sua madre ha deciso che mangi. La mossa fredda è un no perfetto, detto troppo presto, o un lei che lei ha già messo in pensione.",
     stops: [
       {
         id: "cena-1",
-        short: "the first plate",
-        place: "The table",
-        who: "His mother",
+        short: "il primo piatto",
+        place: "La tavola",
+        who: "Sua madre",
         mode: "answer",
         scene:
-          "The plate is already in front of you. She is not asking whether you eat. She is telling you the distance she wants, and giving you the reason so you won't be brave and formal.",
+          "Il piatto è già davanti a te. Non ti sta chiedendo se mangi. Ti sta dicendo la distanza che vuole, e ti dà il motivo così non fai il coraggioso formale.",
         heard: "Mangia, su. E dammi del tu, se no sembriamo in comune.",
-        heardFrom: "His mother",
-        gloss: "Eat. And use tu with me, otherwise we sound like we're at the town hall.",
+        heardFrom: "Sua madre",
+        gloss: "Mangia. E dammi del tu, se no sembriamo in comune.",
         teach:
-          "She retired lei out loud. Keeping it is not respect anymore. Tu in return stays soft: thanks, and the food, with no joke aimed at her portions.",
-        prompt: "What do you say?",
+          "Ha messo in pensione il lei ad alta voce. Tenerlo non è più rispetto. Il tu di ritorno resta morbido: il grazie, e il cibo, senza una battuta sulle porzioni.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "La ringrazio, signora. Sono a posto così.",
             tone: "cold",
             feedback:
-              "Lei, a title, and a no before you've tasted. You declined the dish and the distance in one breath. Sono a posto can be right later. It is not right at second zero, and not on lei after this sentence.",
+              "Il lei, un titolo, e un no prima di aver assaggiato. Hai rifiutato il piatto e la distanza in un fiato. Sono a posto può essere giusto dopo. Non è giusto al secondo zero, e non sul lei dopo questa frase.",
           },
           {
             text: "Va bene, tu però calma con le porzioni.",
             tone: "near",
             feedback:
-              "Tu was the invitation. Managing her cooking was not. You sounded like a peer correcting a host, which is a different room from the one she opened.",
+              "Il tu era l'invito. Gestire la sua cucina no. Hai suonato come un pari che corregge chi ospita, e quella è un'altra stanza da quella che ha aperto lei.",
           },
           {
             text: "Allora grazie. È buonissimo.",
             tone: "fit",
             feedback:
-              "You took the tu and the plate. When she offers more, the soft no is allowed to arrive: «Davvero, è ottimo, ma sono a posto. Un altro po' e non mi alzo più.» The joke shows you received the offer as affection.",
+              "Hai preso il tu e il piatto. Quando offre ancora, il no morbido può arrivare: «Davvero, è ottimo, ma sono a posto. Un altro po' e non mi alzo più.» La battuta fa vedere che hai ricevuto l'offerta come affetto.",
           },
         ],
       },
       {
         id: "cena-2",
-        short: "the uncle",
-        place: "The same table",
-        who: "An uncle, already amused",
+        short: "lo zio",
+        place: "La stessa tavola",
+        who: "Uno zio, già divertito",
         mode: "answer",
         scene:
-          "He has been waiting for a harmless target and you are conveniently from the capital. The table is on your side. He wants a rally, not a surrender and not a diploma.",
+          "Aspettava un bersaglio innocuo e tu, comodamente, sei della capitale. La tavola è dalla tua parte. Vuole uno scambio, non una resa e non un diploma.",
         heard: "E l'italiano com'è? A Roma vi fanno studiare solo i libri?",
-        heardFrom: "The uncle",
-        gloss: "How's the Italian? In Rome do they only make you study books?",
+        heardFrom: "Lo zio",
+        gloss: "L'italiano com'è? A Roma vi fanno studiare solo i libri?",
         teach:
-          "He opened a door so you could tease the gap. A certificate slams it. Crowning his city as «real Italy» turns his house into a postcard.",
-        prompt: "What do you give him?",
+          "Ha aperto una porta perché tu potessi prendere in giro il divario. Un certificato la sbatte. Incoronare la sua città come «l'Italia vera» trasforma la casa in una cartolina.",
+        prompt: "Cosa gli dai?",
         choices: [
           {
             text: "I libri sì. Le cene no.",
             tone: "fit",
             feedback:
-              "You gave him the win and told the truth. The gap is the point. He can pour you more wine. Nobody has to be a symbol.",
+              "Gli hai dato la vittoria e hai detto la verità. Il divario è il punto. Può versarti altro vino. Nessuno deve essere un simbolo.",
           },
           {
             text: "Ho un livello intermedio certificato.",
             tone: "cold",
             feedback:
-              "You answered a tease with a credential. The table goes briefly into the town hall his mother just banned. He wasn't asking what you can prove.",
+              "Hai risposto a una presa in giro con un titolo. La tavola entra per un attimo nel comune che sua madre ha appena vietato. Non ti stava chiedendo cosa sai dimostrare.",
           },
           {
             text: "Eh, per fortuna. Qui almeno si parla davvero.",
             tone: "near",
             feedback:
-              "You flattered the room by flattening it, and insulted your own city to buy safety. He teased you so you could be a person, not a visitor awarding them authenticity.",
+              "Hai lusingato la stanza appiattendola, e hai insultato la tua città per comprarti sicurezza. Ti ha preso in giro perché potessi essere una persona, non un visitatore che assegna autenticità.",
           },
         ],
       },
       {
         id: "cena-3",
-        short: "the missed sentence",
-        place: "The table, under noise",
-        who: "His mother again",
+        short: "la frase persa",
+        place: "La tavola, nel rumore",
+        who: "Sua madre, di nuovo",
         mode: "answer",
         scene:
-          "A chair scrapes. You catch quanto and then nothing. She is looking at you, waiting for an answer you don't have. Nodding would be a lie with a smile on it.",
+          "Una sedia stride. Prendi quanto e poi niente. Ti guarda, e aspetta una risposta che non hai. Annuire sarebbe una bugia col sorriso.",
         teach:
-          "You ask her to repeat, on tu, because she already closed the town hall. Mi scusi, può ripetere is the right line for an hour ago and the cold line now. Eh? is not the resized version. It is a drop.",
-        prompt: "What do you say when you've lost the sentence?",
+          "Le chiedi di ripetere, sul tu, perché il comune l'ha già chiuso lei. Mi scusi, può ripetere era giusto un'ora fa, e adesso è la frase fredda. Eh? non è la versione ridotta. È un calo.",
+        prompt: "Cosa dici, quando hai perso la frase?",
         choices: [
           {
             text: "Scusami, non l'ho presa. Me la ridici più piano?",
             tone: "fit",
             feedback:
-              "Same politeness as mi scusi, cut to the distance she asked for. Non l'ho presa is honest. Piano gives her a way to help without a scene.",
+              "La stessa educazione di mi scusi, tagliata sulla distanza che ha chiesto lei. Non l'ho presa è onesto. Piano le dà un modo di aiutare senza fare una scena.",
           },
           {
             text: "Mi scusi, può ripetere per favore?",
             tone: "cold",
             feedback:
-              "Perfect in the piazza, and a small reversal here. You put lei back on the table after she told you it made you both sound like an office. She may think she rushed you into something you didn't want.",
+              "Perfetto in piazza, e qui un piccolo rovescio. Hai rimesso il lei in tavola dopo che ti ha detto che vi faceva sembrare un ufficio. Può pensare di averti spinto in una cosa che non volevi.",
           },
           {
             text: "Eh?",
             tone: "near",
             feedback:
-              "Sharp, and public. The noise was not her fault, and Eh? makes it sound like it was. Closeness still has a soft edge.",
+              "Secco, e in pubblico. Il rumore non era colpa sua, e Eh? lo fa sembrare tale. Anche la vicinanza ha un bordo morbido.",
           },
         ],
       },
       {
         id: "cena-4",
-        short: "the stairs down",
-        place: "The doorway, then the street",
-        who: "All of them, walking you out",
+        short: "le scale, giù",
+        place: "La porta, poi la strada",
+        who: "Tutti loro, che ti accompagnano",
         mode: "answer",
         scene:
-          "You have your bag. They have their shoes on. Nobody is treating the door as an ending. In this apartment the goodbye includes the stair, and refusing the stair refuses the dinner.",
+          "Hai la borsa. Loro hanno le scarpe. Nessuno tratta la porta come una fine. In questo appartamento l'arrivederci comprende la scala, e rifiutare la scala rifiuta la cena.",
         heard: "Ti accompagniamo giù.",
-        heardFrom: "The cousin",
-        gloss: "We'll walk you down. Tu. It is not a question, and it is not optional in the way a textbook thinks.",
+        heardFrom: "Il cugino",
+        gloss: "Ti accompagniamo giù. Il tu. Non è una domanda, e non è facoltativo nel senso in cui lo pensa un libro.",
         teach:
-          "Let yourself be walked. The thanks names the food and promises a return without declaring a family. A one-beat arrivederci is efficient and, here, cold. Loving them out loud on night one is the other error.",
-        prompt: "What do you say on the way down?",
+          "Lasciati accompagnare. Il grazie nomina il cibo e promette un ritorno senza dichiarare una famiglia. Un arrivederci di un colpo è efficiente e, qui, freddo. Amarli ad alta voce la prima sera è l'altro errore.",
+        prompt: "Cosa dici, scendendo?",
         choices: [
           {
             text: "Grazie. Arrivederci.",
             tone: "cold",
             feedback:
-              "Right for a desk. They put their shoes on for you. A short corporate ending tells them the stair was unnecessary.",
+              "Giusto per un banco. Si sono messi le scarpe per te. Un finale aziendale corto gli dice che la scala non serviva.",
           },
           {
             text: "Vi voglio bene. Siete la mia famiglia.",
             tone: "near",
             feedback:
-              "You spent a feeling the evening hadn't earned, and you made them carry it. They were already being family-like. Announcing it turns their hospitality into your revelation.",
+              "Hai speso un sentimento che la sera non si era guadagnato, e gliel'hai fatto portare. Stavano già facendo i familiari. Annunciarlo trasforma la loro ospitalità nella tua rivelazione.",
           },
           {
             text: "Grazie di tutto. Era tutto buonissimo. Torno, eh.",
             tone: "fit",
             feedback:
-              "In the street he drops back to a quieter tu: «Ci sentiamo. E alla signora Lina, buonasera e basta.» You answer «Promesso. Notte.» The long goodbye was the walk. The last line is allowed to be short.",
+              "In strada torna a un tu più quieto: «Ci sentiamo. E alla signora Lina, buonasera e basta.» Tu rispondi «Promesso. Notte.» Il saluto lungo era la camminata. L'ultima riga può essere corta.",
           },
         ],
       },
@@ -1058,142 +1058,142 @@ const turin: Stroll[] = [
     town: "turin",
     title: "Sotto i portici",
     time: "19:40",
-    place: "The arcades of via Po",
-    skill: "Courtesy as brevity. The conditional is for when someone must do something.",
+    place: "I portici di via Po",
+    skill: "La cortesia è la brevità. Il condizionale è per quando qualcuno deve fare una cosa.",
     promise:
-      "It is already night, and raining. The doorman, a stranger, a pharmacist, a door held open. Almost none of them want a second sentence.",
+      "È già notte, e piove. Il portiere, uno sconosciuto, una farmacista, una porta tenuta aperta. Quasi nessuno di loro vuole una seconda frase.",
     stops: [
       {
         id: "portici-1",
-        short: "the doorman",
-        place: "A doorway on via Po",
-        who: "The portiere",
+        short: "il portiere",
+        place: "Un portone su via Po",
+        who: "Il portiere",
         mode: "answer",
         scene:
-          "Giulia's building. He has seen a hundred guests and he is not collecting origins. Rain is hitting the arcade just behind you. He is the person who knows which stair is B.",
+          "Il palazzo di Giulia. Ha visto cento ospiti e non colleziona provenienze. La pioggia batte sul portico, appena dietro di te. È lui che sa qual è la scala B.",
         teach:
-          "Buonasera, who you are going to, which floor, why you have a key. Then you stop. The Lecce habit of adding weather and your plans makes him do emotional labor on top of the door.",
-        prompt: "What do you say?",
+          "Buonasera, da chi vai, che piano, perché hai una chiave. Poi ti fermi. L'abitudine di Lecce, aggiungere il tempo e i programmi, gli mette un lavoro emotivo sopra la porta.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Buonasera. Salgo dai Rossi, terzo piano. Mi hanno lasciato le chiavi.",
             tone: "fit",
             feedback:
-              "He says: «Scala B, a destra. Buonasera.» The second buonasera is the end. If you had asked about the rain he might have answered «Spesso,» and looked at the door until you heard it.",
+              "Dice: «Scala B, a destra. Buonasera.» Il secondo buonasera è la fine. Se avessi chiesto della pioggia, forse avrebbe risposto «Spesso,» e guardato la porta finché non lo sentivi.",
           },
           {
             text: "Buonasera, che bel palazzo. Piove sempre così? Io resto qualche settimana.",
             tone: "near",
             feedback:
-              "A compliment, the weather, your itinerary. You imported the length of a Lecce stairwell into a job he is trying to finish. Beauty of the building was not a question he asked.",
+              "Un complimento, il tempo, il tuo itinerario. Hai importato la lunghezza di una scala di Lecce in un lavoro che sta cercando di chiudere. La bellezza del palazzo non era una domanda che ti ha fatto.",
           },
           {
             text: "Salve. Devo accedere all'unità abitativa Rossi. Dispongo delle chiavi.",
             tone: "cold",
             feedback:
-              "You spoke like a notice taped to his desk. He is a person, and the human version is shorter, not longer: buonasera, Rossi, third floor, keys.",
+              "Hai parlato come un avviso attaccato alla sua scrivania. È una persona, e la versione umana è più corta, non più lunga: buonasera, Rossi, terzo piano, chiavi.",
           },
         ],
       },
       {
         id: "portici-2",
-        short: "the direction",
-        place: "Under the arcade",
-        who: "A man your age, walking the other way",
+        short: "l'indicazione",
+        place: "Sotto il portico",
+        who: "Un uomo della tua età, che viene incontro",
         mode: "answer",
         scene:
-          "Your throat is already unhappy from the train. You need a pharmacy, not a relationship. He has earphones around his neck and the face of someone who will help and keep walking.",
+          "La gola è già stanca del treno. Ti serve una farmacia, non un rapporto. Ha le cuffie al collo e la faccia di chi aiuta e continua a camminare.",
         teach:
-          "Mi scusi plus a present-tense question. Vorrei is for when the other person has to do something. A direction costs him one sentence. Don't make him stand through a conditional ceremony, and don't call him bello.",
-        prompt: "How do you ask?",
+          "Mi scusi più una domanda al presente. Vorrei è per quando l'altro deve fare qualcosa. Un'indicazione gli costa una frase. Non farlo restare in piedi per una cerimonia al condizionale, e non chiamarlo bello.",
+        prompt: "Come chiedi?",
         choices: [
           {
             text: "Vorrei sapere se esiste una farmacia nelle immediate vicinanze.",
             tone: "cold",
             feedback:
-              "Exists, immediate vicinity: a phrasebook being careful. He only needed farmacia and qui vicino. The conditional didn't buy you any warmth. It bought you distance.",
+              "Esiste, immediata vicinanza: un frasario che sta attento. A lui bastavano farmacia e qui vicino. Il condizionale non ti ha comprato calore. Ti ha comprato distanza.",
           },
           {
             text: "Scusa bello, una farmacia?",
             tone: "near",
             feedback:
-              "Tu and bello, for a stranger under the arcades. Brevity isn't the same as grabbing. Mi scusi is the part that makes the short question polite.",
+              "Il tu e bello, per uno sconosciuto sotto i portici. Essere corti non è la stessa cosa che afferrare. Mi scusi è la parte che rende educata la domanda corta.",
           },
           {
             text: "Mi scusi, c'è una farmacia qui vicino?",
             tone: "fit",
             feedback:
-              "He says: «Sì. In fondo al portico, a sinistra.» You say: «Grazie. Buona serata.» Four words back. The favor is paid.",
+              "Dice: «Sì. In fondo al portico, a sinistra.» Tu dici: «Grazie. Buona serata.» Quattro parole di ritorno. Il favore è pagato.",
           },
         ],
       },
       {
         id: "portici-3",
-        short: "the pharmacist",
-        place: "The pharmacy at the end of the arcade",
-        who: "The pharmacist",
+        short: "la farmacista",
+        place: "La farmacia in fondo al portico",
+        who: "La farmacista",
         mode: "answer",
         scene:
-          "This is the place the conditional was saved for. She is already on lei. She can refuse you, advise you, or sell you the wrong thing if you perform instead of asking.",
+          "È il posto per cui tenevi da parte il condizionale. Lei è già sul lei. Può rifiutarti, consigliarti, o venderti la cosa sbagliata se reciti invece di chiedere.",
         heard: "Mi dica.",
-        heardFrom: "The pharmacist",
-        gloss: "Go ahead. Lei. An invitation to state the need, not to tell the trip.",
+        heardFrom: "La farmacista",
+        gloss: "Prego. Il lei. Un invito a dire il bisogno, non a raccontare il viaggio.",
         teach:
-          "Vorrei plus the need. She will ask «Ha febbre?» and «No, solo la gola» is the whole answer. Ciao and dammi is a different shop. Your learning journey is not a symptom.",
-        prompt: "What do you say?",
+          "Vorrei più il bisogno. Chiederà «Ha febbre?» e «No, solo la gola» è tutta la risposta. Ciao e dammi sono un altro negozio. Il tuo percorso di studio non è un sintomo.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Buonasera. Vorrei qualcosa per il mal di gola.",
             tone: "fit",
             feedback:
-              "Need, conditional, done. You don't correct her lei and you don't explain the climate of Piemonte. She is good at throats. She is not your diary.",
+              "Bisogno, condizionale, finito. Non le correggi il lei e non le spieghi il clima del Piemonte. È brava con le gole. Non è il tuo diario.",
           },
           {
             text: "Ciao, dammi una cosa per la gola.",
             tone: "near",
             feedback:
-              "Tu and an imperative, to a professional who opened on lei. Dammi is what you say for a glass of water in the cousin's kitchen. This counter didn't offer it.",
+              "Il tu e un imperativo, a una professionista che ha aperto sul lei. Dammi è quello che dici per un bicchiere d'acqua in cucina dal cugino. Questo banco non l'ha offerto.",
           },
           {
             text: "Buonasera. Il clima piemontese mi ha provocato una lieve infiammazione.",
             tone: "cold",
             feedback:
-              "You gave her a composition. Lieve infiammazione hides the useful word, gola, inside a performance of vocabulary. Vorrei qualcosa per il mal di gola is both clearer and warmer.",
+              "Le hai dato un tema. Lieve infiammazione nasconde la parola utile, gola, dentro una prova di vocabolario. Vorrei qualcosa per il mal di gola è più chiaro, e più caldo.",
           },
         ],
       },
       {
         id: "portici-4",
-        short: "the door",
-        place: "Back at the street door",
-        who: "An older woman, stepping out as you step in",
+        short: "la porta",
+        place: "Di nuovo al portone",
+        who: "Una signora, che esce mentre tu entri",
         mode: "overhear",
         scene:
-          "You hold the door because the closer is heavy. She passes close enough that her coat brushes the handle. What she owes this moment is one word, and she pays it exactly.",
+          "Tieni la porta perché il chiudiporta è pesante. Passa così vicina che il cappotto sfiora la maniglia. A questo momento deve una parola, e la paga esatta.",
         heard: "Grazie.",
-        heardFrom: "The woman",
-        gloss: "Thanks. Not an opening. A receipt.",
+        heardFrom: "La donna",
+        gloss: "Grazie. Non è un'apertura. È una ricevuta.",
         teach:
-          "In Lecce a held door often starts a sentence. Here the courtesy was the holding. Prego, buonasera closes it. A longer thanks from her would have meant something else, and it didn't arrive.",
-        prompt: "What does her grazie oblige you to do?",
+          "A Lecce una porta tenuta aperta spesso apre una frase. Qui la cortesia era il tenerla. Prego, buonasera la chiude. Un grazie più lungo, da parte sua, avrebbe voluto dire un'altra cosa, e non è arrivato.",
+        prompt: "Il suo grazie a cosa ti obbliga?",
         choices: [
           {
-            text: "End it. «Prego, buonasera.» The favor was the door. She has finished paying for it.",
+            text: "Chiudi. «Prego, buonasera.» Il favore era la porta. Lei ha già finito di pagarlo.",
             tone: "fit",
             feedback:
-              "You let a small kindness stay small. That is not coldness. Coldness would be a speech about the gesture, or a silence that pretends she didn't speak.",
+              "Hai lasciato che una gentilezza piccola restasse piccola. Quello non è freddo. Freddo sarebbe un discorso sul gesto, o un silenzio che finge che lei non abbia parlato.",
           },
           {
-            text: "Continue. A grazie in passing is the first step. She is waiting for your name and how long you are staying.",
+            text: "Continua. Un grazie di passaggio è solo il primo passo. Aspetta il tuo nome e quanto resti.",
             tone: "near",
             feedback:
-              "That is the Lecce door, remembered too literally. She used the shortest thanks in the language. Lengthening it is you talking to a city that isn't on this step.",
+              "È la porta di Lecce, ricordata troppo alla lettera. Ha usato il grazie più corto della lingua. Allungarlo è parlare a una città che su questo gradino non c'è.",
           },
           {
-            text: "Apologize. Grazie here means you were in her way, and you should explain yourself until she is comfortable.",
+            text: "Ti scusi. Grazie qui vuol dire che le eri d'intralcio, e devi spiegarti finché non è a suo agio.",
             tone: "cold",
             feedback:
-              "You heard a closed word as a complaint. She was precise, not wounded. An apology sequence makes her responsible for soothing you.",
+              "Hai sentito una parola chiusa come un reclamo. Era precisa, non ferita. Una sequenza di scuse la rende responsabile di consolarti.",
           },
         ],
       },
@@ -1205,145 +1205,145 @@ const turin: Stroll[] = [
     town: "turin",
     title: "L'aperitivo",
     time: "19:55",
-    place: "A bar on Piazza Vittorio Veneto",
-    skill: "Tu offered by a person. A small plate. One sentence that returns a round.",
+    place: "Un bar in Piazza Vittorio Veneto",
+    skill: "Il tu offerto da una persona. Un piatto piccolo. Una frase che restituisce un giro.",
     promise:
-      "Marco has a table. He starts on tu. Nothing else about the city has changed: the buffet, the bill, and the praise still have a Turin size.",
+      "Marco ha un tavolo. Parte sul tu. Del resto la città non è cambiata: il buffet, il conto e l'elogio hanno ancora la misura di Torino.",
     stops: [
       {
         id: "aperitivo-1",
-        short: "the offer of tu",
-        place: "The table he kept",
-        who: "Marco, your age",
+        short: "l'offerta del tu",
+        place: "Il tavolo che ti ha tenuto",
+        who: "Marco, della tua età",
         mode: "answer",
         scene:
-          "He stands up just enough to mark that you are the person he was waiting for, and not a ceremony. The piazza outside is loud with trams. In here he has already decided the distance.",
+          "Si alza appena, per segnare che sei la persona che aspettava, e non una cerimonia. Fuori la piazza è piena di tram. Qui dentro la distanza l'ha già decisa.",
         heard: "Ho preso un tavolo in fondo. Ti va un aperitivo?",
         heardFrom: "Marco",
-        gloss: "I got a table at the back. Do you want an aperitivo? Ti: he offered tu by using it, without a speech about offering it.",
+        gloss: "Ho un tavolo in fondo. Ti va un aperitivo? Ti: ti ha dato del tu usandolo, senza un discorso sul dartelo.",
         teach:
-          "You can return this tu. It belongs to him, not to the doorman and not to the office you haven't entered yet. Volentieri is the whole yes. Don't thank him as if he were an institution.",
-        prompt: "What do you say?",
+          "Questo tu puoi restituirlo. È suo, non del portiere e non dell'ufficio in cui non sei ancora entrato. Volentieri è tutto il sì. Non ringraziarlo come se fosse un'istituzione.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Buonasera. La ringrazio per la disponibilità.",
             tone: "cold",
             feedback:
-              "Lei, and disponibilità, which is a word for appointments. He handed you ti and a table. You handed him a front desk.",
+              "Il lei, e disponibilità, che è una parola da appuntamenti. Ti ha dato il ti e un tavolo. Tu gli hai dato un banco.",
           },
           {
             text: "Sì, volentieri.",
             tone: "fit",
             feedback:
-              "Tu returned by not contradicting it, and a yes at the size of the question. You can sit. The evening has a person in it now.",
+              "Il tu restituito col non contraddirlo, e un sì della misura della domanda. Puoi sederti. Adesso nella sera c'è una persona.",
           },
           {
             text: "Certo. E dopo usciamo, dopo ti racconto tutta la vita.",
             tone: "near",
             feedback:
-              "You accepted tu and then spent the next three hours of his evening without asking. Volentieri leaves him room. Your life story doesn't.",
+              "Hai accettato il tu e poi hai speso le prossime tre ore della sua sera senza chiedere. Volentieri gli lascia spazio. La tua biografia no.",
           },
         ],
       },
       {
         id: "aperitivo-2",
-        short: "the buffet",
-        place: "The table, once the drinks are down",
-        who: "Marco, explaining the food",
+        short: "il buffet",
+        place: "Il tavolo, con i bicchieri già posati",
+        who: "Marco, che spiega il cibo",
         mode: "notice",
         scene:
-          "There is a spread along the counter that you clocked as a dinner menu. He nods toward it the way you nod toward something obvious, and you realize you were about to get it wrong in one of two directions.",
+          "Lungo il banco c'è un assortimento che hai letto come un menu di cena. Lui lo indica come si indica una cosa ovvia, e capisci che stavi per sbagliarla in uno dei due sensi.",
         heard: "Puoi prendere da mangiare, è compreso.",
         heardFrom: "Marco",
-        gloss: "You can get food, it's included. Not: please eat a lot, my hospitality depends on it.",
+        gloss: "Puoi prendere da mangiare, è compreso. Non: ti prego, mangia tanto, la mia ospitalità dipende da questo.",
         teach:
-          "A modest plate. The food belongs to the drink. Lecce says an empty plate refuses a person. This ritual says a piled plate misreads a snack as a feast you are owed, or that you owe him.",
-        prompt: "What does compreso ask of your plate?",
+          "Un piatto modesto. Il cibo appartiene al bicchiere. Lecce dice che un piatto vuoto rifiuta una persona. Questo rito dice che un piatto colmo legge uno spuntino come un banchetto che ti è dovuto, o che devi a lui.",
+        prompt: "Compreso cosa chiede al tuo piatto?",
         choices: [
           {
-            text: "Fill it. He pointed you to food, and leaving abundance untouched is rude. You learned this at the cousin's table.",
+            text: "Lo riempi. Ti ha indicato il cibo, e lasciare l'abbondanza intatta è scortese. L'hai imparato alla tavola del cugino.",
             tone: "near",
             feedback:
-              "That rule was true last week, in a kitchen, said by a mother. Here the food is a clause inside a drink. Importing the full plate makes his city look like it failed at hosting.",
+              "Quella regola era vera la settimana scorsa, in una cucina, detta da una madre. Qui il cibo è una frase dentro un bicchiere. Importare il piatto pieno fa sembrare che la sua città abbia fallito nell'ospitare.",
           },
           {
-            text: "A small plate. It comes with the glass. You weren't asked to make a meal, and you weren't asked to refuse one.",
+            text: "Un piatto piccolo. Viene col bicchiere. Non ti ha chiesto di fare un pasto, e non ti ha chiesto di rifiutarlo.",
             tone: "fit",
             feedback:
-              "You can say «Non lo sapevo. Allora prendo poco.» That sentence shows you learned the ritual without turning it into a bargain.",
+              "Puoi dire «Non lo sapevo. Allora prendo poco.» Quella frase fa vedere che hai imparato il rito senza farne un contratto.",
           },
           {
-            text: "Eat nothing. Touching included food looks greedy, and you are a guest in a reserved city.",
+            text: "Non mangi niente. Toccare il cibo compreso sembra ingordo, e sei ospite in una città riservata.",
             tone: "cold",
             feedback:
-              "You overcorrected into a fast. He told you the food is part of what he offered. Declining the whole counter makes the offer look like a trap you were too careful to enter.",
+              "Hai corretto troppo, fino al digiuno. Ti ha detto che il cibo fa parte di quello che ha offerto. Rifiutare tutto il banco fa sembrare l'offerta una trappola in cui eri troppo attento per entrare.",
           },
         ],
       },
       {
         id: "aperitivo-3",
-        short: "the round",
-        place: "The table, when the bill appears",
+        short: "il giro",
+        place: "Il tavolo, quando arriva il conto",
         who: "Marco",
         mode: "answer",
         scene:
-          "He doesn't display the paying. He just does it, with the ease of a decision made before you could start the Italian fight about Italian bills.",
+          "Non mette in scena il pagare. Lo fa e basta, con la leggerezza di una decisione presa prima che tu potessi cominciare la lite italiana sul conto italiano.",
         heard: "Faccio io.",
         heardFrom: "Marco",
-        gloss: "I'll get this. Two words. The warmth is in the decision, not in a speech about the decision.",
+        gloss: "Offro io. Due parole. Il calore sta nella decisione, non in un discorso sulla decisione.",
         teach:
-          "You don't wrestle him for five minutes, and you don't let the round vanish. The next one, named, is the whole return. Grazie alone keeps the favor. Insisto performs it.",
-        prompt: "What do you say?",
+          "Non lotti con lui per cinque minuti, e non lasci sparire il giro. Il prossimo, nominato, è tutto il ritorno. Grazie da solo tiene il favore. Insisto lo recita.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "No, insisto, pago io, non si discute.",
             tone: "near",
             feedback:
-              "The fight is a performance of generosity. He already closed the question. Reopening it tells him you don't trust a short kindness to be real.",
+              "La lotta è una recita di generosità. La domanda l'aveva già chiusa. Riaprirla gli dice che non ti fidi di una gentilezza corta.",
           },
           {
             text: "Perfetto, grazie.",
             tone: "cold",
             feedback:
-              "Accurate, and finished too early. You accepted a round the way you accept a receipt. The missing half is the return: the next one has your name on it.",
+              "Preciso, e chiuso troppo presto. Hai accettato un giro come si accetta uno scontrino. La metà che manca è il ritorno: il prossimo ha il tuo nome.",
           },
           {
             text: "Grazie. Il prossimo lo offro io.",
             tone: "fit",
             feedback:
-              "One thanks, one promise, no wrestling. He can say «Va bene» and mean it. That sentence is the warmth. You don't also compliment his character.",
+              "Un grazie, una promessa, niente lotta. Può dire «Va bene» e pensarlo. Quella frase è il calore. Non ci aggiungi anche un elogio del carattere.",
           },
         ],
       },
       {
         id: "aperitivo-4",
-        short: "the praise",
-        place: "The table, near the end",
-        who: "Marco, and the room you actually like",
+        short: "l'elogio",
+        place: "Il tavolo, verso la fine",
+        who: "Marco, e la stanza che ti piace davvero",
         mode: "answer",
         scene:
-          "You like it more than the sentence you're about to allow yourself. The piazza, the hour, the fact of a table. In Lecce you would have said so at full volume. He is looking at the square, not at you, which is a kind of contentment.",
+          "Ti piace più della frase che stai per concederti. La piazza, l'ora, il fatto di un tavolo. A Lecce l'avresti detto a voce piena. Lui guarda la piazza, non te, e quella è una forma di contentezza.",
         teach:
-          "One degree under what you feel. Bello, and the wish to come back. Fantastico plus a compliment to his taste asks him to host your enthusiasm. Gradevole is a brochure.",
-        prompt: "What do you let out?",
+          "Un grado sotto quello che senti. Bello, e la voglia di tornare. Fantastico più un complimento al suo gusto gli chiede di ospitare il tuo entusiasmo. Gradevole è un depliant.",
+        prompt: "Cosa ti lasci uscire?",
         choices: [
           {
             text: "È incredibile, adoro questo posto, sei un genio per averlo scelto.",
             tone: "near",
             feedback:
-              "Three sizes too big, and the last clause makes him responsible for your feelings. He chose a bar, not a revelation. Praise at that heat is work.",
+              "Tre misure troppo grande, e l'ultima frase lo rende responsabile dei tuoi sentimenti. Ha scelto un bar, non una rivelazione. Un elogio a quel calore è lavoro.",
           },
           {
             text: "Il locale è gradevole.",
             tone: "cold",
             feedback:
-              "You retreated into a review. Gradevole is what a notice would say if notices had drinks. He can't answer it. There is no handhold.",
+              "Ti sei ritirato in una recensione. Gradevole è quello che direbbe un avviso, se gli avvisi bevessero. Non può rispondere. Non c'è un appiglio.",
           },
           {
             text: "Bello qui. Ci torno volentieri.",
             tone: "fit",
             feedback:
-              "He says: «Sì, è tranquillo.» That is him agreeing with you. Tranquillo is not less than bello. It is the same feeling, in the local volume.",
+              "Dice: «Sì, è tranquillo.» Sta d'accordo con te. Tranquillo non è meno di bello. È lo stesso sentimento, al volume del posto.",
           },
         ],
       },
@@ -1355,146 +1355,146 @@ const turin: Stroll[] = [
     town: "turin",
     title: "La scala B",
     time: "21:05",
-    place: "Giulia's building, off via Po",
-    skill: "Bureaucratic cold is not a person's cold. A stuck key is not a friendship.",
+    place: "Il palazzo di Giulia, fuori da via Po",
+    skill: "Il freddo di un avviso non è il freddo di una persona. Una chiave inceppata non è un'amicizia.",
     promise:
-      "Names on a citofono, a neighbor's silence, a notice about the heating, and a text from the woman who left you milk. Four written or half-written distances.",
+      "Nomi su un citofono, il silenzio di un vicino, un avviso sul riscaldamento, e un messaggio della donna che ti ha lasciato il latte. Quattro distanze scritte, o scritte a metà.",
     stops: [
       {
         id: "scala-1",
-        short: "the citofono",
-        place: "The panel of names",
-        who: "A voice that is not Giulia",
+        short: "il citofono",
+        place: "Il pannello dei nomi",
+        who: "Una voce che non è Giulia",
         mode: "answer",
         scene:
-          "Three Rossi. Her message said Rossi G., scala B, interno 8, and also that she is out tonight. You press the right name out of reflex anyway. Someone answers on the second buzz. You have used up their evening already.",
+          "Tre Rossi. Il messaggio diceva Rossi G., scala B, interno 8, e anche che stasera è fuori. Premi comunque il nome giusto, per riflesso. Qualcuno risponde al secondo squillo. Gli hai già preso un pezzo di sera.",
         heard: "Sì?",
-        heardFrom: "A voice, irritated only by the hour",
-        gloss: "Yes? The entire welcome a wrong buzzer gets.",
+        heardFrom: "Una voce, infastidita solo dall'ora",
+        gloss: "Sì? Tutto il benvenuto che riceve un citofono sbagliato.",
         teach:
-          "You apologize and release them in one breath. You don't search their name for a connection to Giulia, and you don't explain your housing arrangement through a speaker.",
-        prompt: "What do you say into the panel?",
+          "Ti scusi e li liberi in un fiato. Non cerchi nel nome un legame con Giulia, e non spieghi la tua sistemazione attraverso un citofono.",
+        prompt: "Cosa dici nel citofono?",
         choices: [
           {
             text: "Mi scusi, ho sbagliato. Buonasera.",
             tone: "fit",
             feedback:
-              "They get their kitchen back. You still have the key. The citofono was a reflex, not a plot. Ending it is the courtesy.",
+              "Si riprendono la cucina. La chiave ce l'hai ancora. Il citofono era un riflesso, non un complotto. Chiuderlo è la cortesia.",
           },
           {
             text: "Ciao! Sei un Rossi anche tu? Conosci Giulia? Io dormo da lei.",
             tone: "near",
             feedback:
-              "Tu, a hunt for connection, and your sleeping arrangements, broadcast into a stranger's hall. The panel is not a piazza. They did not come to the door of their own will.",
+              "Il tu, una caccia al legame, e dove dormi, trasmessi nell'ingresso di uno sconosciuto. Il pannello non è una piazza. Non sono venuti alla porta di loro volontà.",
           },
           {
             text: "Buonasera. Sono l'ospite dell'interno 8 e sto verificando la corrispondenza dei cognomi.",
             tone: "cold",
             feedback:
-              "Verificare la corrispondenza: you spoke like the notice board one floor up. They only needed to be released. Mi scusi, ho sbagliato does that without a report.",
+              "Verificare la corrispondenza: hai parlato come la bacheca un piano sopra. Avevano solo bisogno di essere liberati. Mi scusi, ho sbagliato lo fa senza un verbale.",
           },
         ],
       },
       {
         id: "scala-2",
-        short: "the stuck key",
-        place: "The street door",
-        who: "A neighbor, leaving",
+        short: "la chiave inceppata",
+        place: "Il portone",
+        who: "Una vicina, che sta uscendo",
         mode: "answer",
         scene:
-          "The key doesn't turn. She is on her way out, sees the problem, and holds the door with the efficiency of someone who has done this for other guests and does not want a chapter about it.",
+          "La chiave non gira. Sta uscendo, vede il problema, e tiene la porta con l'efficienza di chi l'ha fatto per altri ospiti e non vuole un capitolo.",
         teach:
-          "Grazie, buona serata. The key's biography is not a gift to her. A question about how long she has lived here spends the favor to buy a conversation. Silence spends her differently, by erasing her.",
-        prompt: "What do you say as you take the door?",
+          "Grazie, buona serata. La biografia della chiave non è un regalo per lei. Una domanda su da quant'è che abita qui spende il favore per comprare una conversazione. Il silenzio la spende in un altro modo: la cancella.",
+        prompt: "Cosa dici, prendendo la porta?",
         choices: [
           {
             text: "Grazie, lei da quant'è che vive qui? Questa chiave mi odia.",
             tone: "near",
             feedback:
-              "A complaint and a personal question, as payment for three seconds of her hand. She may answer, because she is polite, and resent the answer she felt obliged to give.",
+              "Un reclamo e una domanda personale, come pagamento di tre secondi della sua mano. Può rispondere, perché è educata, e detestare la risposta che si è sentita obbligata a dare.",
           },
           {
-            text: "You take the door and go through. Saying something would delay her.",
+            text: "Prendi la porta e passi. Dire qualcosa la farebbe aspettare.",
             tone: "cold",
             feedback:
-              "You protected her time so thoroughly that you deleted her. Grazie costs less than the story, and more than nothing. Nothing is what you say to a door, not to a person holding one.",
+              "Le hai protetto il tempo così a fondo da cancellarla. Grazie costa meno della storia, e più di niente. Niente è quello che si dice a una porta, non a una persona che la tiene.",
           },
           {
             text: "Grazie. Buona serata.",
             tone: "fit",
             feedback:
-              "She nods. Done. The key remains your problem, to be solved with Giulia's message, not with a neighbor's evening.",
+              "Annuisce. Finito. La chiave resta un problema tuo, da risolvere col messaggio di Giulia, non con la sera di una vicina.",
           },
         ],
       },
       {
         id: "scala-3",
-        short: "the notice",
-        place: "The board inside the courtyard",
-        who: "The amministratore, on paper",
+        short: "l'avviso",
+        place: "La bacheca nel cortile",
+        who: "L'amministratore, sulla carta",
         mode: "notice",
         scene:
-          "A sheet in a plastic sleeve, printed, with the tone of a rule that expects to be obeyed and does not expect to be loved. You feel accused, and then you look again.",
+          "Un foglio in una busta di plastica, stampato, col tono di una regola che si aspetta di essere obbedita e non di essere amata. Ti senti accusato, e poi riguardi.",
         heard:
           "Si avvisano i condomini che l'impianto di riscaldamento sarà avviato il 15 ottobre. Si prega di non appoggiare oggetti sulle scale. L'amministratore.",
-        heardFrom: "The notice",
-        gloss: "Residents are informed that the heat starts on 15 October. Please don't leave things on the stairs. Signed, the building manager.",
+        heardFrom: "L'avviso",
+        gloss: "Si informano i condomini che il riscaldamento parte il 15 ottobre. Si prega di non lasciare oggetti sulle scale. Firmato, l'amministratore.",
         teach:
-          "This cold belongs to the genre. The amministratore is not angry at you, and you don't answer in that voice at dinner. You also don't hear si prega as a person begging. If you need the fact, you can ask it in a human line: «Il riscaldamento parte il 15, giusto?»",
-        prompt: "What kind of cold is this?",
+          "Questo freddo appartiene al genere. L'amministratore non è arrabbiato con te, e a cena non rispondi con quella voce. E non senti si prega come una persona che supplica. Se ti serve il fatto, lo chiedi in una riga umana: «Il riscaldamento parte il 15, giusto?»",
+        prompt: "Che freddo è questo?",
         choices: [
           {
-            text: "A hostile building. You should answer in the same legal tone, so they know you are not someone to push.",
+            text: "Un palazzo ostile. Devi rispondere nello stesso tono legale, così capiscono che non sei uno da spingere.",
             tone: "cold",
             feedback:
-              "You let a genre occupy your mouth. Notices are cold so that a person doesn't have to be. Speaking back in sleeve-and-plastic Italian makes you the notice.",
+              "Hai lasciato che un genere ti occupasse la bocca. Gli avvisi sono freddi perché una persona non debba esserlo. Rispondere in italiano da busta di plastica ti fa diventare l'avviso.",
           },
           {
-            text: "Ordinary written cold. It isn't a mood. You don't imitate it, you don't take it personally, and you can still ask a neighbor about the date in a human voice.",
+            text: "Il freddo ordinario della carta. Non è un umore. Non lo imiti, non te lo prendi, e la data la puoi ancora chiedere a un vicino, a voce.",
             tone: "fit",
             feedback:
-              "Genre is a distance you can name. Once you can name it, you stop hearing every formal sentence as a person stepping back from you.",
+              "Il genere è una distanza che puoi nominare. Quando sai nominarla, smetti di sentire ogni frase formale come una persona che si allontana da te.",
           },
           {
-            text: "Si prega means someone is pleading. You should reassure the building that you would never leave anything on the stairs.",
+            text: "Si prega vuol dire che qualcuno supplica. Devi rassicurare il palazzo che non lasceresti mai niente sulle scale.",
             tone: "near",
             feedback:
-              "Si prega is a formula, not a feeling. An emotional reply to a heating notice is the too-close reading: you offered comfort to a plastic sleeve.",
+              "Si prega è una formula, non un sentimento. Una risposta emotiva a un avviso sul riscaldamento è la lettura troppo vicina: hai offerto conforto a una busta di plastica.",
           },
         ],
       },
       {
         id: "scala-4",
         short: "the milk",
-        place: "A note on the fridge, then your phone",
-        who: "Giulia, who is not home",
+        place: "Un biglietto sul frigo, poi il telefono",
+        who: "Giulia, che non è in casa",
         mode: "answer",
         scene:
-          "Her handwriting is ordinary. The fridge has milk, eggs, and nothing romantic about it. She already uses tu with you, because a friend of yours put you on tu before you arrived. The warmth is the milk, not a style.",
+          "La scrittura è ordinaria. Nel frigo ci sono latte, uova, e niente di romantico. Con te dà già del tu, perché un tuo amico ti ci ha messo prima che arrivassi. Il calore è il latte, non uno stile.",
         heard: "Se ti serve qualcosa, scrivimi. Il latte è nel frigo. Buona permanenza, Giulia.",
-        heardFrom: "The note",
-        gloss: "If you need anything, write me. The milk is in the fridge. Enjoy the stay. Tu, practical, done.",
+        heardFrom: "Il biglietto",
+        gloss: "Se ti serve qualcosa, scrivimi. Il latte è in frigo. Buon soggiorno. Il tu, pratico, finito.",
         teach:
-          "Your reply stays practical and on tu. Lei plus a ceremony of gratitude tells her something is wrong. A flood of love tells her the milk was a bigger relationship than she wrote down.",
-        prompt: "What do you write back?",
+          "La risposta resta pratica e sul tu. Il lei più una cerimonia di gratitudine le dice che qualcosa non va. Un'ondata d'affetto le dice che il latte era un rapporto più grande di quello che ha scritto.",
+        prompt: "Cosa le scrivi?",
         choices: [
           {
             text: "Cara Giulia, desidero esprimerle la mia più sentita gratitudine per l'ospitalità.",
             tone: "cold",
             feedback:
-              "Lei, sentita gratitudine, a letter to an institution. She wrote ti and mentioned milk. Your register tells her the keys went to the wrong guest, or that you are frightened.",
+              "Il lei, sentita gratitudine, una lettera a un'istituzione. Ha scritto ti e ha nominato il latte. Il tuo registro le dice che le chiavi sono andate all'ospite sbagliato, o che hai paura.",
           },
           {
             text: "Grazie. Ho visto il latte. Tutto a posto. A presto.",
             tone: "fit",
             feedback:
-              "You proved you read the note, you used her tu, and you released her. Practical warmth answered in kind. She doesn't have to host a feeling.",
+              "Hai dimostrato di aver letto il biglietto, hai usato il suo tu, e l'hai liberata. Il calore pratico ha avuto risposta della stessa misura. Non deve ospitare un sentimento.",
           },
           {
             text: "Giulia sei la migliore del mondo, ti devo la vita, latte apprezzatissimo.",
             tone: "near",
             feedback:
-              "She left dairy, not a rescue. Ti devo la vita inflates a favor until she has to manage your gratitude. The right size was the size of the milk.",
+              "Ha lasciato del latte, non un salvataggio. Ti devo la vita gonfia un favore finché deve gestire la tua gratitudine. La misura giusta era quella del latte.",
           },
         ],
       },
@@ -1506,148 +1506,148 @@ const turin: Stroll[] = [
     town: "turin",
     title: "Il collega",
     time: "18:45",
-    place: "An office near Piazza San Carlo",
-    skill: "Tu is a person's offer. A dry joke is answered at its own volume.",
+    place: "Un ufficio vicino a Piazza San Carlo",
+    skill: "Il tu lo offre una persona. Una battuta secca si risponde allo stesso volume.",
     promise:
-      "Dottoressa Ferrero has used lei for two weeks. Her first name, Laura, is on the directory. You still don't have it. Tonight the elevator, a file, a printer, and then, at the end, her decision.",
+      "La dottoressa Ferrero usa il lei da due settimane. Il nome, Laura, sta sull'elenco. Tu non ce l'hai ancora. Stasera l'ascensore, un file, una stampante, e poi, alla fine, la sua decisione.",
     stops: [
       {
         id: "collega-1",
-        short: "the elevator",
-        place: "The elevator",
-        who: "Dottoressa Ferrero",
+        short: "l'ascensore",
+        place: "L'ascensore",
+        who: "La dottoressa Ferrero",
         mode: "overhear",
         scene:
-          "You know her surname because that is what everyone uses with her. You have seen Laura on a list. She has never put it in your mouth. The doors close. There are four floors.",
+          "Il cognome lo sai perché è quello che usano tutti con lei. Laura l'hai visto su una lista. In bocca non te l'ha mai messo lei. Le porte si chiudono. Sono quattro piani.",
         heard: "Buonasera.",
-        heardFrom: "Dottoressa Ferrero, who then looks at the doors",
-        gloss: "Good evening. And then the doors, which is the rest of the conversation.",
+        heardFrom: "La dottoressa Ferrero, che poi guarda le porte",
+        gloss: "Buonasera. E poi le porte, che sono il resto della conversazione.",
         teach:
-          "The greeting is complete. Another sentence spends a closeness she hasn't offered. Filling silence is not the same as being human. The directory is not permission.",
-        prompt: "What is the silence asking of you?",
+          "Il saluto è completo. Un'altra frase spende una vicinanza che non ha offerto. Riempire il silenzio non è la stessa cosa che essere umani. L'elenco non è un permesso.",
+        prompt: "Il silenzio cosa ti chiede?",
         choices: [
           {
-            text: "Nothing further. Buonasera back, and the doors. The greeting already happened.",
+            text: "Nient'altro. Buonasera di rimando, e le porte. Il saluto c'è già stato.",
             tone: "fit",
             feedback:
-              "You ride four floors without turning her into a host. When the doors open she can still like working with you. That is not a small outcome.",
+              "Fai quattro piani senza trasformarla in un'ospite. Quando le porte si aprono può ancora avere piacere di lavorare con te. Non è un esito piccolo.",
           },
           {
-            text: "Fill it. Silence in an elevator is hostile, so you offer your weekend, your Italian, your impression of the city.",
+            text: "Lo riempi. Il silenzio in ascensore è ostile, quindi offri il weekend, l'italiano, l'impressione della città.",
             tone: "near",
             feedback:
-              "You treated quiet as a problem you had to solve with autobiography. She chose the doors. Adding your weekend tells her her choice was a mistake you are correcting.",
+              "Hai trattato il silenzio come un problema da risolvere con l'autobiografia. Ha scelto le porte. Aggiungere il fine settimana le dice che la sua scelta era un errore che stai correggendo.",
           },
           {
-            text: "Reintroduce yourself, with your language level, in case she has forgotten who you are.",
+            text: "Ti ripresenti, col tuo livello di lingua, nel caso si sia dimenticata chi sei.",
             tone: "cold",
             feedback:
-              "A status report, unprompted, in a box. She knows who you are. The level of your Italian is not the greeting she was missing.",
+              "Un rapporto di stato, non richiesto, in una scatola. Sa chi sei. Il livello del tuo italiano non è il saluto che le mancava.",
           },
         ],
       },
       {
         id: "collega-2",
-        short: "the file",
-        place: "Her office door",
-        who: "Dottoressa Ferrero",
+        short: "il fascicolo",
+        place: "La porta del suo ufficio",
+        who: "La dottoressa Ferrero",
         mode: "answer",
         scene:
-          "She is already turning back to her screen. The request is small and timed. Marco's tu from the piazza is still in your ear from last night. This room did not attend that aperitivo.",
+          "Si sta già girando verso lo schermo. La richiesta è piccola e a tempo. Il tu di Marco, in piazza, te lo hai ancora nell'orecchio da ieri sera. Questa stanza a quell'aperitivo non c'era.",
         heard: "Può mandarmi quel file prima delle sei?",
         heardFrom: "Dottoressa Ferrero",
-        gloss: "Can you send me that file before six? Può: lei. The whole request is one line, which is its courtesy.",
+        gloss: "Mi può mandare quel file entro le sei? Può: il lei. Tutta la richiesta è una riga, e quella è la sua cortesia.",
         teach:
-          "Glielo mando keeps her lei and names the doing. Te lo mando spends Marco's tu in a room that hasn't offered it. A ceremonial certamente, dottoressa is the other miss: more bow than she asked for.",
-        prompt: "What do you answer?",
+          "Glielo mando tiene il suo lei e nomina il fare. Te lo mando spende il tu di Marco in una stanza che non l'ha offerto. Un certamente, dottoressa cerimoniale è l'altro errore: più inchino di quanto abbia chiesto.",
+        prompt: "Cosa rispondi?",
         choices: [
           {
             text: "Sì, te lo mando subito.",
             tone: "near",
             feedback:
-              "Te is Marco's, or the cousin's. She said può. Borrowing tu from a friendlier room is not efficiency. It is a door opened from the wrong side.",
+              "Te è di Marco, o del cugino. Lei ha detto può. Prendere in prestito il tu da una stanza più amica non è efficienza. È una porta aperta dal lato sbagliato.",
           },
           {
             text: "Certamente, dottoressa. Sarà mia cura provvedere.",
             tone: "cold",
             feedback:
-              "You answered a clear request with a little oath. Provvedere belongs to notices. She wanted the file, not a pledge. The title every sentence is a distance she isn't actually demanding.",
+              "Hai risposto a una richiesta chiara con un piccolo giuramento. Provvedere appartiene agli avvisi. Voleva il file, non un impegno. Il titolo a ogni frase è una distanza che in realtà non sta chiedendo.",
           },
           {
             text: "Sì, glielo mando.",
             tone: "fit",
             feedback:
-              "Glielo: to her, the file. Lei intact, no extra bow, no imported tu. She can go back to the screen. That was the kindness she designed.",
+              "Glielo: a lei, il file. Il lei intatto, niente inchino in più, niente tu importato. Può tornare allo schermo. Quella era la gentilezza che aveva disegnato.",
           },
         ],
       },
       {
         id: "collega-3",
-        short: "the printer",
-        place: "The corridor",
-        who: "Dottoressa Ferrero, almost to herself",
+        short: "la stampante",
+        place: "Il corridoio",
+        who: "La dottoressa Ferrero, quasi tra sé",
         mode: "answer",
         scene:
-          "The printer has stopped again. It is Friday. She doesn't look at you when she says it, which is how you know you are allowed to answer and not required to solve her life.",
+          "La stampante si è fermata di nuovo. È venerdì. Non ti guarda mentre lo dice, ed è così che sai che puoi rispondere e che non devi risolverle la vita.",
         heard: "Ha deciso di non lavorare il venerdì.",
         heardFrom: "Dottoressa Ferrero",
-        gloss: "It has decided not to work on Fridays. The printer, given a will. Dry, and one degree under funny.",
+        gloss: "Ha deciso di non funzionare il venerdì. La stampante, con una volontà. Secco, e un grado sotto il divertente.",
         teach:
-          "You answer at her volume, once. A story about a printer in Rome enlarges the joke until she has to host it. Offering to call support answers a person as if she had filed a ticket.",
-        prompt: "What do you say?",
+          "Rispondi al suo volume, una volta. Una storia sulla stampante di Roma allarga la battuta finché deve ospitarla. Offrirti di chiamare l'assistenza risponde a una persona come se avesse aperto un ticket.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "Aspetta, la stampante di Roma ci mette cinque minuti a raccontarla.",
             tone: "near",
             feedback:
-              "Aspetta already assumes tu and an audience. She gave you one dry line, not a stage. The story is probably good. It is not this corridor's.",
+              "Aspetta dà già per scontato il tu e un pubblico. Ti ha dato una riga secca, non un palco. La storia probabilmente è buona. Non è di questo corridoio.",
           },
           {
             text: "Ha i suoi principi.",
             tone: "fit",
             feedback:
-              "You continued the fiction at the same size and then stopped. She can smile without scheduling your anecdote. Matching volume is the humor.",
+              "Hai continuato la finzione alla stessa misura e poi ti sei fermato. Può sorridere senza mettere in agenda il tuo aneddoto. Stare al volume è l'umorismo.",
           },
           {
             text: "Vuole che contatti l'assistenza?",
             tone: "cold",
             feedback:
-              "You heard a joke as a work order. Assistenza is the right word in another minute, if she asks. As a reply to ha deciso, it corrects her for being playful.",
+              "Hai sentito una battuta come un ordine di lavoro. Assistenza è la parola giusta in un altro minuto, se la chiede lei. Come risposta a ha deciso, la corregge perché stava giocando.",
           },
         ],
       },
       {
         id: "collega-4",
         short: "ormai",
-        place: "The elevator again, end of the day",
-        who: "Dottoressa Ferrero",
+        place: "L'ascensore, a fine giornata",
+        who: "La dottoressa Ferrero",
         mode: "answer",
         scene:
-          "Two weeks of lei. She chooses the moment, which is the whole content of the offer: it is hers, it is timed, and it is not a confession that the lei was a burden you both hated.",
+          "Due settimane di lei. Il momento lo sceglie lei, ed è tutto il contenuto dell'offerta: è suo, è a tempo, e non è la confessione che il lei fosse un peso che odiavate tutti e due.",
         heard: "Può darmi del tu. Ormai.",
         heardFrom: "Dottoressa Ferrero",
-        gloss: "You can use tu with me. By now. Ormai means the lei has done its job and is over. She does not say Laura. She does not say finally.",
+        gloss: "Puoi darmi del tu. Ormai. Ormai vuol dire che il lei ha fatto il suo lavoro ed è finito. Non dice Laura. Non dice finalmente.",
         teach:
-          "Take the tu. Don't take the name, which wasn't in the sentence, and don't insult the two weeks she used to make the offer easy. Refusing, to stay professional, punishes her timing.",
-        prompt: "What do you answer?",
+          "Prendi il tu. Non prendere il nome, che nella frase non c'era, e non insultare le due settimane che ha usato per rendere facile l'offerta. Rifiutare, per restare professionali, punisce il suo tempo.",
+        prompt: "Cosa rispondi?",
         choices: [
           {
             text: "Volentieri. Buona serata.",
             tone: "fit",
             feedback:
-              "You accepted, and you let the evening end. Next time, tu. The name Laura waits for a separate door, if she ever opens it. Tonight's door was the pronoun.",
+              "Hai accettato, e hai lasciato finire la sera. La prossima volta, il tu. Il nome Laura aspetta un'altra porta, se mai la apre. La porta di stasera era il pronome.",
           },
           {
             text: "Finalmente. Ciao Laura, il lei era pesantissimo.",
             tone: "near",
             feedback:
-              "Finalmente insults the timing. Laura takes a name she didn't give. Pesantissimo tells her the care she took felt like a weight you were enduring. Three mistakes, one breath.",
+              "Finalmente insulta il tempo. Laura prende un nome che non ha dato. Pesantissimo le dice che la cura che ha avuto ti è sembrata un peso da sopportare. Tre errori, un fiato.",
           },
           {
             text: "La ringrazio, ma preferisco mantenere il lei.",
             tone: "cold",
             feedback:
-              "You turned her offer into a policy. She will not make it twice. Professional was the lei she was already giving you. This sentence was the moment it stopped being the careful choice.",
+              "Hai trasformato la sua offerta in una politica. Non la farà due volte. Professionale era il lei che ti stava già dando. Questa frase era il momento in cui smetteva di essere la scelta attenta.",
           },
         ],
       },
@@ -1659,105 +1659,105 @@ const turin: Stroll[] = [
     town: "turin",
     title: "La nonna in visita",
     time: "20:35",
-    place: "Marco's apartment, above the arcades",
-    skill: "Two distances in one hallway. Hers, then his, without betraying either.",
+    place: "L'appartamento di Marco, sopra i portici",
+    skill: "Due distanze nello stesso corridoio. La sua, poi la sua di lui, senza tradire nessuna delle due.",
     promise:
-      "His mother arrived this morning from Lecce. The southern room is going to appear inside his Torinese apartment. You are the person who has walked both.",
+      "Sua madre è arrivata stamattina da Lecce. La stanza del sud sta per comparire dentro l'appartamento torinese. Sei la persona che ha camminato tutte e due.",
     stops: [
       {
         id: "nonna-1",
-        short: "the warning",
-        place: "His door",
+        short: "l'avvertimento",
+        place: "La sua porta",
         who: "Marco",
         mode: "overhear",
         scene:
-          "He says it before you are out of your coat, quietly, with the fondness of a son who knows the next ten minutes. He is not joking exactly. He is resizing you so you won't be surprised into a mistake.",
+          "Lo dice prima che tu tolga il cappotto, piano, con l'affetto di un figlio che conosce i prossimi dieci minuti. Non sta proprio scherzando. Ti sta ridimensionando, così la sorpresa non ti fa sbagliare.",
         heard: "Entra. C'è mia madre, arrivata stamattina da Lecce. Parla con tutti.",
         heardFrom: "Marco",
-        gloss: "Come in. My mother is here, she arrived this morning from Lecce. She talks to everyone. A fact, a warning, and not quite a complaint.",
+        gloss: "Entra. C'è mia madre, è arrivata stamattina da Lecce. Parla con tutti. Un fatto, un avvertimento, e non proprio un reclamo.",
         teach:
-          "He is not recruiting you against her, and he is not asking you to refrigerate her. You can be warm at her volume and quiet at his. The warning is so the switch won't throw you.",
-        prompt: "What is he asking?",
+          "Non ti sta arruolando contro di lei, e non ti sta chiedendo di metterla in fresco. Puoi essere caldo al volume di lei e quieto al suo. L'avvertimento serve perché il cambio non ti sbilanci.",
+        prompt: "Cosa ti sta chiedendo?",
         choices: [
           {
-            text: "Nothing against her. He is changing your expectations, not recruiting you. Warm with her, at her size. Quiet with him, at his.",
+            text: "Niente contro di lei. Ti sta cambiando le attese, non ti sta arruolando. Caldo con lei, alla sua misura. Quieto con lui, alla sua.",
             tone: "fit",
             feedback:
-              "You walk in able to hold both. The sentence you don't say, later, in the kitchen where she can hear, is any version of «è un po' troppo.»",
+              "Entri capace di tenere tutte e due. La frase che non dici, dopo, in cucina dove può sentire, è qualsiasi versione di «è un po' troppo.»",
           },
           {
-            text: "To keep the apartment at one temperature. You should be reserved with her, so Turin doesn't break.",
+            text: "Tenere l'appartamento a una temperatura sola. Devi essere riservato con lei, così Torino non si rompe.",
             tone: "cold",
             feedback:
-              "You would freeze a guest who crossed Italy this morning, to protect a mood. He lives with her voice. He asked for your flexibility, not for an ally in coolness.",
+              "Metteresti in fresco un'ospite che stamattina ha attraversato l'Italia, per proteggere un umore. Lui vive con la sua voce. Ti ha chiesto elasticità, non un alleato nel freddo.",
           },
           {
-            text: "To help him correct her. She is about to be too much, and a gentle edit of her Italian would be a favor.",
+            text: "Aiutarlo a correggerla. Sta per essere troppo, e una correzione gentile del suo italiano sarebbe un favore.",
             tone: "near",
             feedback:
-              "Editing his mother is not the favor. It is an astonishing trespass. Parla con tutti is information, not a diagnosis you are licensed to treat.",
+              "Correggere sua madre non è il favore. È un'invasione stupefacente. Parla con tutti è un'informazione, non una diagnosi che hai licenza di curare.",
           },
         ],
       },
       {
         id: "nonna-2",
-        short: "the orecchiette",
-        place: "His kitchen",
-        who: "Marco's mother",
+        short: "le orecchiette",
+        place: "La sua cucina",
+        who: "La madre di Marco",
         mode: "answer",
         scene:
-          "She becomes Lecce the moment she sees a new face. The pot is already a decision. Marco is still in the doorway in his coat, holding the earlier ritual, the aperitivo, in his body.",
+          "Diventa Lecce nel momento in cui vede una faccia nuova. La pentola è già una decisione. Marco è ancora sulla porta, col cappotto, e tiene in corpo il rito di prima, l'aperitivo.",
         heard:
           "Meno male, una faccia nuova. Hai mangiato? Ti ho fatto le orecchiette. Marco non le fa mai.",
-        heardFrom: "His mother",
-        gloss: "Finally, a new face. Have you eaten? I made you orecchiette. Marco never makes them. Tu, immediate, southern, allowed. The complaint about him is hers.",
+        heardFrom: "Sua madre",
+        gloss: "Finalmente una faccia nuova. Hai mangiato? Ti ho fatto le orecchiette. Marco non le fa mai. Il tu, immediato, del sud, permesso. Il reclamo su di lui è suo.",
         teach:
-          "You accept a small portion, and you let the aperitivo exist so his evening stays true. An instant no repeats the coldest Lecce mistake. Joining the complaint about him is the too-close one: her right, not yours.",
-        prompt: "What do you say?",
+          "Accetti una porzione piccola, e lasci che l'aperitivo esista così la sua sera resta vera. Un no immediato ripete l'errore più freddo di Lecce. Unirti al reclamo su di lui è quello troppo vicino: è un diritto suo, non tuo.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: "No, grazie, sono a posto.",
             tone: "cold",
             feedback:
-              "The instant no, before a plate exists. In her kitchen in Lecce this refused the person. It does the same inside his apartment. The city changed. This particular offer didn't.",
+              "Il no immediato, prima che esista un piatto. Nella sua cucina a Lecce questo rifiutava la persona. Fa lo stesso dentro l'appartamento di lui. La città è cambiata. Questa offerta no.",
           },
           {
             text: "Hai ragione. Che figlio.",
             tone: "near",
             feedback:
-              "You joined her indictment while he was still in his coat. She may complain about him. You don't get to. He will still be her son after you leave, and he will remember the chair you chose.",
+              "Ti sei unito all'accusa mentre lui aveva ancora il cappotto. Lei può lamentarsi di lui. Tu no. Sarà ancora suo figlio dopo che te ne vai, e si ricorderà la sedia che hai scelto.",
           },
           {
             text: "Grazie. Ne prendo un po'. L'aperitivo c'è stato, queste no.",
             tone: "fit",
             feedback:
-              "Food accepted, portion modest, his ritual still visible. You honored the pot and the hour before it. She can be pleased. He can breathe.",
+              "Cibo accettato, porzione modesta, il suo rito ancora visibile. Hai onorato la pentola e l'ora di prima. Lei può essere contenta. Lui può respirare.",
           },
         ],
       },
       {
         id: "nonna-3",
-        short: "three questions",
-        place: "The kitchen, still standing",
-        who: "His mother",
+        short: "tre domande",
+        place: "La cucina, ancora in piedi",
+        who: "Sua madre",
         mode: "answer",
         scene:
-          "She stacks them the way the cousin's table stacked plates, with affection and no pause for your syllabus. One of the questions is a tease of her son. You can hear the trap because you have been loved this way before, further south.",
+          "Le impila come la tavola del cugino impilava i piatti, con affetto e senza pausa per il tuo programma. Una delle domande prende in giro il figlio. La trappola la senti perché ti hanno voluto bene così, più a sud.",
         heard: {
           f: "Ma tu da quanto sei qui? Ti trovi? E Marco ti porta in giro, o ti lascia sola come fa con me?",
           m: "Ma tu da quanto sei qui? Ti trovi? E Marco ti porta in giro, o ti lascia solo come fa con me?",
         },
-        heardFrom: "His mother",
-        gloss: "How long have you been here? Do you like it? And does Marco take you around, or leave you alone the way he does with me?",
+        heardFrom: "Sua madre",
+        gloss: "Da quanto sei qui? Ti piace? E Marco ti porta in giro, o ti lascia solo come fa con me?",
         teach:
-          "Answer the human question, short, and don't indict him. «Stasera mi ha portata qui» gives her the reassurance without the alliance. A syllabus answers none of what she asked.",
-        prompt: "What do you answer?",
+          "Rispondi alla domanda umana, corta, e non accusarlo. «Stasera mi ha portato qui» le dà la rassicurazione senza l'alleanza. Un programma non risponde a niente di quello che ha chiesto.",
+        prompt: "Cosa rispondi?",
         choices: [
           {
             text: "Sto cercando di migliorare il mio italiano in contesto.",
             tone: "cold",
             feedback:
-              "A purpose statement, and a dodge of her son. She asked about your days and about him. In contesto is the town hall, relocated to a pot of orecchiette.",
+              "Una dichiarazione di intenti, e uno scansare il figlio. Ha chiesto dei tuoi giorni e di lui. In contesto è il comune, trasferito su una pentola di orecchiette.",
           },
           {
             text: {
@@ -1766,7 +1766,7 @@ const turin: Stroll[] = [
             },
             tone: "near",
             feedback:
-              "You accepted the alliance. It will please her for a minute and leave him alone with it. She teased him so you could reassure her, not so you would sign up.",
+              "Hai accettato l'alleanza. Le farà piacere per un minuto e lascerà lui solo con quella. L'ha preso in giro perché tu potessi rassicurarla, non perché firmassi.",
           },
           {
             text: {
@@ -1775,24 +1775,24 @@ const turin: Stroll[] = [
             },
             tone: "fit",
             feedback:
-              "Time, a true feeling, and a defense of him that still lets her tease. Qualcosa fa is the joke at the right size: he is not perfect, and he is not absent.",
+              "Il tempo, un sentimento vero, e una difesa di lui che le lascia ancora la presa in giro. Qualcosa fa è la battuta della misura giusta: non è perfetto, e non è assente.",
           },
         ],
       },
       {
         id: "nonna-4",
-        short: "the hallway",
-        place: "The hall, while she steps back to the pot",
-        who: "Marco, low",
+        short: "l'ingresso",
+        place: "L'ingresso, mentre lei torna alla pentola",
+        who: "Marco, a bassa voce",
         mode: "answer",
         scene:
-          "Ten steps of tile. This building carries sound. He is slightly embarrassed and slightly loyal, and he is trying to hand you the rule without making you choose a side.",
+          "Dieci passi di piastrelle. Questo palazzo porta la voce. È un po' imbarazzato e un po' leale, e cerca di passarti la regola senza farti scegliere da che parte stare.",
         heard: "Diventa Lecce in dieci minuti. Tu rispondile, se no ci resta male. Scusa.",
         heardFrom: "Marco",
-        gloss: "She turns into Lecce in ten minutes. Answer her, otherwise she'll be hurt. Sorry. Rispondile: answer her, tu imperative, her as the object.",
+        gloss: "Tra dieci minuti diventa Lecce. Rispondile, se no ci resta male. Scusa. Rispondile: imperativo del tu, lei come oggetto.",
         teach:
-          "Short, on his side of the volume, loyal to her. You don't scheme a later exit, and you don't promise him a differentiated register like a strategy memo. She is ten steps away.",
-        prompt: "What do you say?",
+          "Corto, dal lato suo del volume, fedele a lei. Non tramare un'uscita per dopo, e non promettergli un registro differenziato come un promemoria. È a dieci passi.",
+        prompt: "Cosa dici?",
         choices: [
           {
             text: {
@@ -1801,19 +1801,19 @@ const turin: Stroll[] = [
             },
             tone: "near",
             feedback:
-              "A plot, in a hallway with echoes, against a woman cooking for you. Even if she misses the words she may catch the posture. He asked you to answer her, not to escape her.",
+              "Un complotto, in un corridoio che rimbomba, contro una donna che cucina per te. Anche se le sfuggono le parole può cogliere la postura. Ti ha chiesto di risponderle, non di scappare da lei.",
           },
           {
             text: "Ma figurati. È a posto così.",
             tone: "fit",
             feedback:
-              "You released him from the apology and kept faith with her. Then you go back in at her volume, not at this whisper. Two distances, and you didn't drop either on the floor.",
+              "L'hai liberato dalla scusa e hai tenuto fede a lei. Poi rientri al volume di lei, non a questo sussurro. Due distanze, e non ne hai lasciata cadere nessuna.",
           },
           {
             text: "Ricevuto. Differenzierò i registri.",
             tone: "cold",
             feedback:
-              "You confirmed a tactic. He was being a son, not a commander. Differenzierò is the notice-board version of a feeling he just trusted you with.",
+              "Hai confermato una tattica. Stava facendo il figlio, non il comandante. Differenzierò è la versione da bacheca di un sentimento che ti ha appena affidato.",
           },
         ],
       },
@@ -1825,142 +1825,142 @@ const turin: Stroll[] = [
     town: "turin",
     title: "La passeggiata di ritorno",
     time: "22:15",
-    place: "Via Po, back toward Porta Nuova",
-    skill: "The one line that never changed, and the voice note that is not a thesis.",
+    place: "Via Po, verso Porta Nuova",
+    skill: "La frase che non è mai cambiata, e il vocale che non è una tesi.",
     promise:
-      "Same kinds of people as the first night in Lecce. A different size in your mouth. Then Marta, who started this, gets the evening and not the essay.",
+      "Gli stessi tipi di persone della prima sera a Lecce. Una misura diversa in bocca. Poi Marta, che ha cominciato tutto questo, riceve la sera e non il tema.",
     stops: [
       {
         id: "ritorno-1",
-        short: "the driver again",
-        place: "The step of a bus",
-        who: "A driver, end of a route",
+        short: "l'autista, di nuovo",
+        place: "Il gradino di un pullman",
+        who: "Un autista, a fine corsa",
         mode: "answer",
         scene:
-          "Porta Nuova is ahead and you are one stop off, again, because cities do this to you on purpose. He has the same hand on the same kind of door. You have twelve nights in your pocket and a strong wish to spend them.",
+          "Porta Nuova è avanti e sei sceso una fermata prima, di nuovo, perché le città ti fanno questo apposta. Ha la stessa mano sullo stesso tipo di porta. Hai dodici sere in tasca e una gran voglia di spenderle.",
         heard: "Attenzione al gradino.",
-        heardFrom: "The driver",
-        gloss: "Watch the step. You heard this in Lecce. It did not become more complicated.",
+        heardFrom: "L'autista",
+        gloss: "Attenzione al gradino. L'hai sentito a Lecce. Non è diventato più complicato.",
         teach:
-          "Grazie, buonasera. This is the line that did not need resizing. Almost everything else did. The autobiography of your two cities is not his fare.",
-        prompt: "Same step, other city. What do you say?",
+          "Grazie, buonasera. È la riga che non andava ridimensionata. Quasi tutto il resto sì. L'autobiografia delle due città non è la sua corsa.",
+        prompt: "Lo stesso gradino, un'altra città. Cosa dici?",
         choices: [
           {
             text: "Grazie! Di dove è? Ho fatto Lecce e adesso Torino.",
             tone: "near",
             feedback:
-              "You paid him with your curriculum. He warned you about a step. The comparison of two Italys is real, and it is not a conversation he opened.",
+              "L'hai pagato col programma. Ti ha avvertito di un gradino. Il confronto tra due Italie è vero, e non è una conversazione che ha aperto lui.",
           },
           {
-            text: "You step off looking at your phone and say nothing.",
+            text: "Scendi guardando il telefono e non dici niente.",
             tone: "cold",
             feedback:
-              "Brevity was never silence. You learned a short line and then skipped even that, which is how a lesson becomes a pose. He still said something. It still has an answer.",
+              "Essere corti non è mai stato il silenzio. Hai imparato una riga corta e poi hai saltato anche quella, ed è così che una lezione diventa una posa. Ha detto comunque qualcosa. Ha comunque una risposta.",
           },
           {
             text: "Grazie, buonasera.",
             tone: "fit",
             feedback:
-              "Notice how small it is. The map was about everything around this sentence. The sentence itself survived both towns unchanged, which is why you can trust it.",
+              "Nota com'è piccola. La mappa riguardava tutto quello che sta intorno a questa frase. La frase è sopravvissuta alle due città uguale, ed è per questo che puoi fidarti.",
           },
         ],
       },
       {
         id: "ritorno-2",
-        short: "the glove",
-        place: "Under the arcade",
-        who: "A man who picked up what you dropped",
+        short: "il guanto",
+        place: "Sotto il portico",
+        who: "Un uomo che ha raccolto quello che ti è caduto",
         mode: "answer",
         scene:
-          "Your glove is in his hand before you have turned around. He is already extending it. There is the smallest formal distance in the gesture, and it is deliberate, and it is kind.",
+          "Il guanto è nella sua mano prima che tu ti giri. Te lo sta già porgendo. Nel gesto c'è una distanza formale minima, ed è voluta, ed è gentile.",
         heard: "Tenga.",
-        heardFrom: "The man",
-        gloss: "Here. Lei imperative of tenere. The same word that was wrong for a child in the piazza is right for a stranger under the arcades.",
+        heardFrom: "L'uomo",
+        gloss: "Tenga. Imperativo del lei di tenere. La stessa parola che era sbagliata per un bambino in piazza è giusta per uno sconosciuto sotto i portici.",
         teach:
-          "Grazie mille, buonasera. You do not recruit him toward Porta Nuova, and you do not inflate a glove into squisita cortesia. Tenga already told you the distance. You return it.",
-        prompt: "What do you say as you take it?",
+          "Grazie mille, buonasera. Non lo arruoli verso Porta Nuova, e non gonfi un guanto in squisita cortesia. Tenga ti ha già detto la distanza. Tu la restituisci.",
+        prompt: "Cosa dici, mentre lo prendi?",
         choices: [
           {
             text: "Grazie, ma se vai verso Porta Nuova ti racconto una cosa.",
             tone: "near",
             feedback:
-              "He said tenga, which is lei, and you answered with tu and a claim on his walk. The glove was not an introduction. In Lecce it might have become a street. He has told you it isn't.",
+              "Ha detto tenga, che è lei, e tu hai risposto col tu e un diritto sulla sua camminata. Il guanto non era una presentazione. A Lecce forse diventava una via. Ti ha detto che qui no.",
           },
           {
             text: "La ringrazio infinitamente per il suo gesto di squisita cortesia.",
             tone: "cold",
             feedback:
-              "You built a podium for a glove. Infinitamente and squisita cortesia make him stand there while you perform gratitude. He wanted his hand back.",
+              "Hai costruito un podio per un guanto. Infinitamente e squisita cortesia lo fanno restare lì mentre reciti la gratitudine. Voleva indietro la mano.",
           },
           {
             text: "Grazie mille. Buonasera.",
             tone: "fit",
             feedback:
-              "The kindness is complete. You don't inspect the glove for drama and you don't start a walk. Finished is the polite version.",
+              "La gentilezza è completa. Non ispezioni il guanto in cerca di un dramma e non cominci una camminata. Finito è la versione educata.",
           },
         ],
       },
       {
         id: "ritorno-3",
-        short: "the loud bar",
-        place: "A bar spilling into via Po",
-        who: "A room that sounds like the south",
+        short: "il bar rumoroso",
+        place: "Un bar che esce su via Po",
+        who: "Una stanza che suona come il sud",
         mode: "overhear",
         scene:
-          "A goal, a roar, accents that could be the cousin's stairwell. Warmer than the arcade by several degrees. You could go in. The skill is knowing what changed, and what did not.",
+          "Un gol, un boato, accenti che potrebbero essere la scala del cugino. Più caldo del portico di qualche grado. Potresti entrare. Il mestiere è sapere cosa è cambiato, e cosa no.",
         teach:
-          "The room changed, so you may warm up with the room. The street you will walk back into has not changed. And nobody here has offered you a cousin's doorway. Un caffè, grazie is still the whole hello.",
-        prompt: "What just became possible?",
+          "La stanza è cambiata, quindi puoi scaldarti con la stanza. La via in cui rientrerai no. E nessuno qui ti ha offerto la soglia di un cugino. Un caffè, grazie è ancora tutto il saluto.",
+        prompt: "Cosa è appena diventato possibile?",
         choices: [
           {
-            text: "You may match this room, because this room is louder. You don't carry it back onto the arcade, and you don't greet strangers as if they had cooked you dinner.",
+            text: "Puoi stare al volume di questa stanza, perché questa stanza è più forte. Non te lo porti sotto i portici, e non saluti gli sconosciuti come se ti avessero cucinato la cena.",
             tone: "fit",
             feedback:
-              "If you step in: «Un caffè, grazie.» If someone asks where you're from, a city and a number of weeks, then, if the room is actually warm, you may ask whether they are from here or from the south. You ask because you heard them. That is the advanced version. It is still not the doorway.",
+              "Se entri: «Un caffè, grazie.» Se qualcuno chiede di dove sei, una città e un numero di settimane, poi, se la stanza è davvero calda, puoi chiedere se sono di qui o del sud. Lo chiedi perché li hai sentiti. È la versione avanzata. Non è ancora la soglia.",
           },
           {
-            text: "This is the real Italy, and the quiet street was a failure. You should stay and say so.",
+            text: "Questa è l'Italia vera, e la strada quieta era un fallimento. Devi restare e dirlo.",
             tone: "near",
             feedback:
-              "You just erased Turin because it wasn't Lecce. The loud room is real. The arcade is real. Calling one of them a failure is how a traveler stops listening.",
+              "Hai appena cancellato Torino perché non era Lecce. La stanza rumorosa è vera. Il portico è vero. Chiamarne uno un fallimento è il modo in cui chi viaggia smette di ascoltare.",
           },
           {
-            text: "Volume is wrong in this city. You order in a whisper, and you leave if anyone laughs.",
+            text: "Il volume è sbagliato in questa città. Ordini sottovoce, e te ne vai se qualcuno ride.",
             tone: "cold",
             feedback:
-              "You learned brevity and applied it as a law against joy. The arcade has a volume. This bar has another. Register follows the room you are actually in.",
+              "Hai imparato la brevità e l'hai applicata come una legge contro la gioia. Il portico ha un volume. Questo bar ne ha un altro. Il registro segue la stanza in cui sei davvero.",
           },
         ],
       },
       {
         id: "ritorno-4",
-        short: "the voice note",
-        place: "Under the portici, before the station",
-        who: "Marta, who will hear this later",
+        short: "il vocale",
+        place: "Sotto i portici, prima della stazione",
+        who: "Marta, che lo sentirà dopo",
         mode: "answer",
         scene:
-          "Your phone is in your hand. She is the reason there was a doorway in Lecce at all. She doesn't need the theory. She was the one who knew it before you had words for it.",
+          "Il telefono è in mano. È lei il motivo per cui a Lecce c'era una porta. La teoria non le serve. Lo sapeva lei, prima che tu avessi le parole.",
         teach:
-          "Three sentences: where you are, what happened, and one true thing about the volume of the city. The thesis stays in your pocket. So does the verdict against Turin. She wants the evening.",
-        prompt: "What do you send?",
+          "Tre frasi: dove sei, cos'è successo, e una cosa vera sul volume della città. La tesi resta in tasca. Anche il verdetto contro Torino. Lei vuole la sera.",
+        prompt: "Cosa le mandi?",
         choices: [
           {
             text: "Ti aggiorno: ho confrontato il registro salentino e quello torinese in diversi contesti.",
             tone: "cold",
             feedback:
-              "True, and useless to her. Confrontare i registri is what this map did to you. Saying it that way puts her in the audience of a paper. She is your friend.",
+              "Vero, e inutile per lei. Confrontare i registri è quello che questa mappa ha fatto a te. Dirlo così la mette in platea a un tema. È un'amica.",
           },
           {
             text: "Sono sotto i portici, piove un po'. La mamma di Marco mi ha fatto le orecchiette. Ti racconto domani, che qui di sera si parla più piano.",
             tone: "fit",
             feedback:
-              "Place, a plate, a promise, and the whole essay in one clause: si parla più piano. You didn't declare a winner. You sounded like a person who had walked.",
+              "Un posto, un piatto, una promessa, e tutto il tema in una frase: si parla più piano. Non hai dichiarato un vincitore. Hai suonato come una persona che ha camminato.",
           },
           {
             text: "Torino è morta, non parla nessuno. Salvami. Lecce è l'unica Italia vera.",
             tone: "near",
             feedback:
-              "You betrayed the arcade to please the south, and you asked her to rescue you from a city that was careful with you. Too close to Lecce is still too close. It just faces the other direction.",
+              "Hai tradito il portico per far piacere al sud, e le hai chiesto di salvarti da una città che è stata attenta con te. Troppo vicino a Lecce è ancora troppo vicino. Guarda solo dall'altra parte.",
           },
         ],
       },
