@@ -8,9 +8,10 @@ Ogni passeggiata si può leggere. La successiva conta solo quando la precedente 
 
 ```bash
 npm install
-npm run dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3847](http://localhost:3847).
+Open [http://localhost:3847](http://localhost:3847). Reload if a previous tab is still spinning: that tab was waiting on a dev socket that never arrives.
 
 Femminile e maschile, per le frasi che dici, è un interruttore in alto. Cambia parole come *aspettata* / *aspettato*. La sera non cambia.
