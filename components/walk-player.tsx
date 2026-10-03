@@ -372,10 +372,15 @@ function ChoiceButton({
         type="button"
         variant="ghost"
         disabled={revealed}
-        className="h-auto w-full items-start justify-start whitespace-normal px-3 py-3 text-left text-base leading-relaxed disabled:opacity-100"
+        className="h-auto w-full min-h-11 items-start justify-start whitespace-normal px-3 py-3 text-left text-base leading-relaxed disabled:opacity-100"
+        style={{ height: "auto", whiteSpace: "normal" }}
         onClick={onPick}
       >
-        <span lang={english ? "en" : "it"} className={english ? "" : "font-serif"}>
+        <span
+          lang={english ? "en" : "it"}
+          className={`block w-full text-left ${english ? "" : "font-serif"}`}
+          style={{ whiteSpace: "normal" }}
+        >
           {text}
         </span>
       </Button>
