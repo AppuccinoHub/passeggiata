@@ -47,7 +47,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
   const stop = stroll.stops[index];
   const frame = frames[index % frames.length];
   const zoom = phase === "walk" ? 1.08 + index * 0.06 : 1.04;
-  const stage = "h-24";
+  const stage = "min-h-24";
 
   const shell = turin
     ? "town-turin bg-background text-foreground"
@@ -81,7 +81,7 @@ export function WalkPlayer({ slug }: { slug: string }) {
           style={{ objectPosition: frame, transform: `scale(${zoom})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/25" />
-        <div className={`relative flex flex-col justify-end px-5 pb-3 text-white ${stage}`}>
+        <div className="relative flex flex-col justify-end px-5 py-3 text-white">
           <div className="mx-auto w-full max-w-2xl">
             <p className="text-sm text-white/80">
               <Link href="/" className="underline decoration-white/40 underline-offset-4">
@@ -90,22 +90,13 @@ export function WalkPlayer({ slug }: { slug: string }) {
               <span>
                 {" "}
                 · {town.name} · {nightLabel(stroll.number)} · {stroll.time}
+                {phase === "walk" ? ` · Fermata ${index + 1} di ${stroll.stops.length}` : ""}
               </span>
-            </p>
-            <p className="text-sm uppercase tracking-[0.16em] text-white/70">
-              {phase === "done"
-                ? "Fine della passeggiata"
-                : `Fermata ${index + 1} di ${stroll.stops.length}`}
             </p>
             <h1 className="mt-1 font-serif text-2xl italic leading-tight">
               {phase === "done" ? stroll.title : stop.short}
             </h1>
-            {phase === "walk" ? (
-              <p className="mt-2 text-white/85">
-                {stop.place} · {stop.who}
-              </p>
-            ) : null}
-            <div className="mt-5 flex gap-1.5" aria-hidden>
+            <div className="mt-3 flex gap-1.5" aria-hidden>
               {stroll.stops.map((item, stopIndex) => (
                 <span
                   key={item.id}
@@ -269,19 +260,15 @@ function WalkStop({
           <p className="text-base leading-snug">
             Tap Ascolta. Hear the Italian. Then tap I heard it.
           </p>
-          <p className="mt-3 leading-relaxed">{stop.scene}</p>
-          <figure className="mt-4">
+          <figure className="mt-3">
             {stop.heardFrom ? (
               <figcaption className={`text-sm ${mute}`}>{stop.heardFrom}</figcaption>
             ) : null}
             <blockquote lang="it" className="mt-1 font-serif text-2xl leading-snug italic">
               {spoken}
             </blockquote>
-            {stop.gloss ? (
-              <p className={`mt-2 text-sm leading-relaxed ${mute}`}>Meaning: {stop.gloss}</p>
-            ) : null}
           </figure>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             <Button type="button" className="h-12 px-5" onClick={() => speakItalian(spoken)}>
               Ascolta
             </Button>
@@ -289,6 +276,10 @@ function WalkStop({
               I heard it
             </Button>
           </div>
+          <p className="mt-3 leading-relaxed">{stop.scene}</p>
+          {stop.gloss ? (
+            <p className={`mt-2 text-sm leading-relaxed ${mute}`}>Meaning: {stop.gloss}</p>
+          ) : null}
           {!voiceReady() ? (
             <p className={`mt-3 text-sm ${mute}`}>
               This phone has no speaker for the app. Read the line out loud.

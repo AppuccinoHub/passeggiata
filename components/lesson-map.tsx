@@ -25,7 +25,8 @@ export function LessonMap() {
   return (
     <main>
       <div className="h-2 bg-gradient-to-r from-[#c46a3a] via-[#6e4a58] to-[#243044]" />
-      <section className="mx-auto max-w-2xl px-5 py-5">
+      <div className="mx-auto grid max-w-6xl md:grid-cols-2 md:items-stretch">
+      <section className="px-5 py-5">
         <h1 className="font-serif text-3xl italic">How to walk</h1>
         <ol className="mt-3 grid gap-2 text-base leading-snug">
           <li>1. Tap Entra on the photo.</li>
@@ -38,23 +39,23 @@ export function LessonMap() {
         </p>
       </section>
       {tonight ? (
-        <Link href={`/s/${tonight.slug}`} className="group relative block h-[28svh] overflow-hidden bg-black text-white">
+        <Link href={`/s/${tonight.slug}`} className="group relative block h-full min-h-64 overflow-hidden bg-black text-white">
           <img
             src={strollScene[tonight.slug].src}
             alt={strollScene[tonight.slug].alt}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
           <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
-          <span className="relative flex h-[28svh] flex-col justify-end px-5 pb-5">
-            <span className="mx-auto w-full max-w-2xl">
+          <span className="relative flex h-full min-h-64 flex-col justify-end px-5 py-5">
+            <span className="w-full">
               <span className="block font-serif text-lg italic text-white/80">Passeggiata</span>
               <span className="mt-2 block text-sm uppercase tracking-[0.16em] text-white/70">
                 Stasera · {tonight.time}
               </span>
-              <span className="mt-2 block font-serif text-4xl leading-none italic sm:text-5xl">
+              <span className="mt-2 block font-serif text-4xl leading-none italic">
                 {tonight.title}
               </span>
-              <span className="mt-3 block max-w-md text-lg text-white/90">{tonight.place}</span>
+              <span className="mt-3 block text-lg text-white/90">{tonight.place}</span>
               <span className="mt-4 inline-flex h-11 items-center rounded-lg bg-white px-5 text-sm font-medium text-[#241c16]">
                 Entra · Start
               </span>
@@ -80,6 +81,7 @@ export function LessonMap() {
           </div>
         </section>
       )}
+      </div>
 
       <TownPath town="lecce" walked={walked} tonightSlug={tonight?.slug ?? null} />
 
@@ -168,12 +170,12 @@ function TownPath({
   const mute = inverted ? "text-[#4e5c6b]" : "text-muted-foreground";
 
   return (
-    <section className="mx-auto max-w-2xl px-5 py-10">
+    <section className="mx-auto max-w-6xl px-5 py-10">
       <p className={`font-serif text-lg italic ${mute}`}>
         {info.region}. {info.kicker}
       </p>
       <h2 className="mt-1 font-serif text-4xl italic">{info.name}</h2>
-      <ol className="mt-6 grid gap-4">
+      <ol className="mt-6 grid gap-4 md:grid-cols-2">
         {nights.map((stroll) => {
           const state = walked.includes(stroll.slug)
             ? "walked"
