@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# phone download of the source, rebuilt when the evening changes
+/public/passeggiata-codice.zip
