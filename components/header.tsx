@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <header className="border-b border-border/80">
-      <div className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-5 py-3.5">
+      <div className="mx-auto flex max-w-2xl flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:justify-between">
         {home ? (
           <p className="font-serif text-sm italic text-muted-foreground">
             Dodici passeggiate
@@ -32,13 +32,11 @@ export function Header() {
           </Link>
         )}
         <div
-          className="flex items-center gap-2"
+          className="flex shrink-0 items-center gap-2"
           role="group"
-          aria-label="Accordo grammaticale per le frasi che dici"
+          aria-label="You are speaking as a woman or a man"
         >
-          <span className="hidden text-sm text-muted-foreground sm:inline">
-            Io dico
-          </span>
+          <span className="shrink-0 text-sm text-muted-foreground">You are</span>
           <div className="flex rounded-full border border-border bg-card p-0.5">
             {options.map((option) => {
               const selected = gender === option.id;
