@@ -11,12 +11,10 @@ import {
   nightLabel,
   say,
   strolls,
-  toneLabel,
   tonightOf,
   towns,
   walkedThrough,
   type Choice,
-  type Tone,
 } from "@/lib/curriculum";
 import { strollScene } from "@/lib/scenes";
 import { speakItalian, voiceReady } from "@/lib/speak";
@@ -319,13 +317,10 @@ function WalkStop({
           </ul>
           {revealed && picked ? (
             <div className="mt-4">
-              <p className="font-serif text-lg italic">{toneLabel[picked.tone]}</p>
+              <p className={`text-lg font-medium ${picked.tone === "fit" ? "text-[#146c3a]" : "text-[#a12626]"}`}>
+                {picked.tone === "fit" ? "Right." : "Wrong. The green one is the right reply."}
+              </p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{picked.feedback}</p>
-              {picked.tone !== "fit" ? (
-                <p className="mt-3 leading-relaxed">
-                  The fitting line: <span lang="it" className="font-serif italic">{fitLine}</span>
-                </p>
-              ) : null}
               <div className="mt-4 flex flex-wrap gap-2">
                 <Button type="button" variant="outline" className="h-12 px-5" onClick={() => speakItalian(practiceLine)}>
                   Ascolta
@@ -401,7 +396,15 @@ function PracticeLine({
 
   return (
     <div className="mt-4">
-      <div className="min-h-16 rounded-xl border border-dashed border-border bg-card/60 px-3 py-3">
+      <div
+        className={`min-h-16 rounded-xl border px-3 py-3 ${
+          solved
+            ? "border-[#1f7a4d] bg-[#e5f6ec]"
+            : missed
+              ? "border-[#c44b4b] bg-[#fdecec]"
+              : "border-dashed border-border bg-card/60"
+        }`}
+      >
         {built.length === 0 ? (
           <p className="text-sm text-muted-foreground">The line builds here.</p>
         ) : (
@@ -423,10 +426,10 @@ function PracticeLine({
         ))}
       </div>
       {missed && !solved ? (
-        <p className="mt-3 text-sm">Not that order. Take the last word back, or start again.</p>
+        <p className="mt-3 text-sm font-medium text-[#a12626]">Wrong order. Take the last word back, or start again.</p>
       ) : null}
       {solved ? (
-        <p className="mt-3 font-serif text-lg italic">Così. That is the line.</p>
+        <p className="mt-3 text-lg font-medium text-[#146c3a]">Right. That is the line.</p>
       ) : null}
       <div className="mt-4 flex flex-wrap gap-2">
         <Button type="button" variant="outline" className="h-11" onClick={() => speakItalian(line)}>
@@ -481,29 +484,36 @@ function ChoiceButton({
   onHear: () => void;
 }) {
   const text = say(choice.text, gender);
+  const right = choice.tone === "fit";
+  const tone = revealed
+    ? right
+      ? "border-[#1f7a4d] bg-[#e5f6ec]"
+      : "border-[#c44b4b] bg-[#fdecec]"
+    : "border-border bg-card";
 
   return (
-    <div
-      className={`rounded-lg border bg-card/70 ${
-        revealed ? `border-l-4 ${borderFor(choice.tone)}` : "border-border"
-      } ${selected ? "bg-card" : ""}`}
-    >
+    <div className={`overflow-hidden rounded-lg border ${tone}`}>
+      {revealed ? (
+        <p className={`px-3 pt-2 text-sm font-medium ${right ? "text-[#146c3a]" : "text-[#a12626]"}`}>
+          {right ? "Right" : "Wrong"}
+          {selected ? " · you picked this" : ""}
+        </p>
+      ) : null}
       <div className="flex items-stretch">
-        <Button
+        <button
           type="button"
-          variant="outline"
           disabled={revealed}
-          className="h-auto min-h-11 flex-1 items-start justify-start whitespace-normal rounded-r-none border-0 px-3 py-3 text-left text-base leading-relaxed disabled:opacity-100"
+          className="h-auto min-h-11 flex-1 px-3 py-3 text-left text-base leading-relaxed disabled:opacity-100"
           style={{ height: "auto", whiteSpace: "normal" }}
           onClick={onPick}
         >
           <span lang="it" className="block w-full text-left font-serif" style={{ whiteSpace: "normal" }}>
             {text}
           </span>
-        </Button>
+        </button>
         <button
           type="button"
-          className="shrink-0 border-l border-border px-3 text-sm"
+          className="shrink-0 border-l border-current/10 px-3 text-sm"
           aria-label="Ascolta questa frase"
           onClick={onHear}
         >
@@ -512,10 +522,4 @@ function ChoiceButton({
       </div>
     </div>
   );
-}
-
-function borderFor(tone: Tone): string {
-  if (tone === "fit") return "border-l-[#8c3d1e]";
-  if (tone === "cold") return "border-l-[#8a8378]";
-  return "border-l-[#a33b3b]";
 }
